@@ -10,29 +10,35 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
-        <div>
-            <a href="#">
-                <img src="">
-            </a>
-            <div>
-                <ul class="navbar-list">
-                    <li>
-                        <a href="detection.html">Early Detection</a>
-                    </li>
-                    <li>
-                        <a href="stages.html">Stages & Types</a>
-                    </li>
-                    <li>
-                        <a href="therapies.html">Therapies</a>
-                    </li>
-                    <li>
-                        <a href="authors.html">About Authors</a>
-                    </li>
-                </ul>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark nb-background-color">
+        <!-- lg = large breakpoint, navbar-light = make text dark, header-->
+            <div class="container">
+                <a href="#" class="navbar-brand">
+                    <img src="images/clipart-leaf-icon-2.png" alt="Water Logo" class="d-inline-block align-text-top w-25">
+                </a>
+    
+                <!-- Hamburger Menu Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span class="navbar-toggler-icon"></span>    
+                </button>
+    
+                <!-- Collapsible navbar menu with custom hover underline CSS animation-->
+                <div class="collapse navbar-collapse" id="navmenu">
+                    <!-- Links to hamburger menu button -->
+                    <ul class="navbar-nav ms-auto"> <!-- ms-auto is margin spacing -->
+                        <li class="nav-item">
+                            <a href="authors.html" class="nav-link hover-underline-animation nbMenuItem">Authors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="procedure.html" class="nav-link hover-underline-animation nbMenuItem">Procedure</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="results.html" class="nav-link hover-underline-animation nbMenuItem">Results</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
     
 </body>
 </html>
