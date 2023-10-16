@@ -11,6 +11,7 @@
     margin-right: 10px;
     color:antiquewhite;
     font-family:'Times New Roman', Times, serif;
+    white-space: nowrap;
 }
 
 
@@ -21,6 +22,14 @@
 }
 .showcase .display-4 {
     color:black;
+}
+
+/*source: https://cssgradient.io/blog/css-gradient-text/ */
+.text-gradient {
+  background: linear-gradient(to right, #0b7dee 0%, #1cbe8e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
 }
 /* underline animation CSS */
 
@@ -48,19 +57,18 @@
     /*transform-origin: bottom left;*/
 }
 
-
+/* Footer Wave Animation */
 footer { height: 100%; }
 footer {
   background:radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
   overflow: hidden;
 }
-
+/* source: https://codepen.io/tedmcdo/pen/PqxKXg */
 .ocean { 
   height: 5%;
   width:100%;
   position:absolute;
   bottom: 0;
-
   left:0;
   background: #015871;
 }
@@ -71,9 +79,10 @@ footer {
   top: -198px;
   width: 6400px;
   height: 198px;
-  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
   transform: translate3d(0, 0, 0);
 }
+
 
 .wave:nth-of-type(2) {
   top: -175px;
