@@ -20,11 +20,18 @@
 
 /* showcase background and text color*/
 .showcase {
-    background-color: white;
-    color:black;
+    color: white;
+    background-image: linear-gradient(to top, rgb(80,117,164), transparent 50%, transparent), url(img/ChildrenSailingBGImage.jpeg);
+    background-repeat: no-repeat, no-repeat;
+    /*background-attachment: fixed;*/
+    background-size: cover, cover;
+    min-height: 500px;
+    font-family: 'Courier New', Courier, monospace;
+    
+        
 }
 .showcase .display-4 {
-    color:black;
+    color:white;;
 }
 /* underline animation CSS */
 
