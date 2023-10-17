@@ -27,16 +27,16 @@
                     <!-- Links to hamburger menu button -->
                     <ul class="navbar-nav ms-auto"> <!-- ms-auto is margin spacing -->
                         <li class="nav-item">
-                            <a href="detection.html" class="nav-link hover-underline-animation nbMenuItem">Early Detection</a>
+                            <a href="detection.html" class="nav-link hover-underline-animation nbMenuItem">Events</a>
                         </li>
                         <li class="nav-item">
-                            <a href="stages.html" class="nav-link hover-underline-animation nbMenuItem">Stages & Types</a>
+                            <a href="stages.html" class="nav-link hover-underline-animation nbMenuItem">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a href="therapies.html" class="nav-link hover-underline-animation nbMenuItem">Therapies</a>
+                            <a href="therapies.html" class="nav-link hover-underline-animation nbMenuItem">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a href="authors.html" class="nav-link hover-underline-animation nbMenuItem">Authors</a>
+                            <a href="authors.html" class="nav-link hover-underline-animation nbMenuItem">Donate</a>
                         </li>
                     </ul>
                 </div>
@@ -58,18 +58,57 @@
     </section>
     
 
-    <!--Footer Section-->    
-      <!-- Footer (requires Bootstrap icons CSS)-->
-      <footer class="p-5 footer text-light text-center position-relative">
-        <div class="container">
-            <div class="ocean">
-                <div class="wave"></div>
-                <div class="wave"></div>
-            </div>
-             <p class="lead">Copyright &copy; SE 2023 Bootstrap Demo</p> 
-             <a href="#" class="position-absolute bottom-0 end-0 p-5">
-                 <i class="bi bi-arrow-up-circle h2 icon-white"></i>
-             </a>
-     </footer>
+    <footer>
+        <svg viewBox="0 0 120 28">
+         <defs> 
+           <mask id="xxx">
+             <circle cx="7" cy="12" r="40" fill="#fff" />
+           </mask>
+           
+           <filter id="goo">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+              <feColorMatrix in="blur" mode="matrix" values="
+                   1 0 0 0 0  
+                   0 1 0 0 0  
+                   0 0 1 0 0  
+                   0 0 0 13 -9" result="goo" />
+              <feBlend in="SourceGraphic" in2="goo" />
+              </filter>
+             <path id="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
+          </defs> 
+        
+           <use id="wave3" class="wave" xlink:href="#wave" x="0" y="-2" ></use> 
+           <use id="wave2" class="wave" xlink:href="#wave" x="0" y="0" ></use>
+
+           <a href="#" class="navbar-brand">
+          <g class="topball">
+          <circle class="ball" cx="110" cy="9.5" r="3" stroke="none" stroke-width="0" fill="#3e7de3" />
+
+          
+            <g class="arrow">
+                <polyline class="" points="108,9.5 110,7.5 112,9.5" fill="none"  />
+                <polyline class="" points="110,7.5 ,110,12" fill="none"  />
+                </g>
+        </a>
+            
+            
+          
+
+          <!--Bubble animation-->
+         <!-- <g class="gooeff"> 
+          <circle class="drop drop1" cx="20" cy="2" r="1.8"  />
+          <circle class="drop drop2" cx="25" cy="2.5" r="1.5"  />
+          <circle class="drop drop3" cx="16" cy="2.8" r="1.2"  /> -->
+            <use id="wave1" class="wave" xlink:href="#wave" x="0" y="1" /> 
+          
+            <!-- g mask="url(#xxx)">
+            <path   id="wave1"  class="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
+            </g>
+        </g -->
+        
+        </svg>  
+        
+          <div>Copyright ETC</div>
+        </footer> 
 </body>
 </html>
