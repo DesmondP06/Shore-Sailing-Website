@@ -1,6 +1,36 @@
 
 /* navbar color and text size */
-
+/* Create a sticky/fixed navbar */
+#navbar {
+    overflow: visible;
+    position: fixed;
+    background-color: #f1f1f1;
+    padding: 50px 10px; /* Large padding which will shrink on scroll (using JS)*/
+    transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+    position: fixed; /* Sticky/fixed navbar */
+    width: 100%;
+    top: 0; /* At the top */
+    z-index: 99;
+    
+  }
+  #navbar #logo {
+    max-width: 500px; 
+    height: auto;
+  }
+  /*@media screen and (max-width: 580px) {
+    #navbar {
+      padding: 100px 10px !important; /* Use !important to make sure that JavaScript doesn't override the padding on small screens */ 
+  /*  }
+    #navbar .nav-item {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    #navbar-right {
+      float: none;
+    }
+  }*/
+  
 .nb-background-color {      /* navbar background color */
     background-color: #3e7de3 !important;
 }
@@ -10,20 +40,22 @@
     margin-left: 10px;
     margin-right: 10px;
     color:white;
-    font-family:'Times New Roman', Times, serif;
+    font-family: "Merriweather", Georgia, serif;
     white-space: nowrap;
 }
 
 
+
 /* showcase background and text color*/
 .showcase {
+    margin-top: 30px;
     color: white;
-    background-image: linear-gradient(to top, rgb(80,117,164), transparent 50%, transparent), url(img/ChildrenSailingBGImage.jpeg);
+    background-image: linear-gradient(to top, rgb(80,117,164), transparent 50%, transparent), url(img/BG.jpg);
     background-repeat: no-repeat, no-repeat;
     /*background-attachment: fixed;*/
     background-size: cover, cover;
-    min-height: 500px;
-    font-family: 'Courier New', Courier, monospace;
+    min-height: 700px;
+    font-family: 'Merriweather', Georgia, monospace;
     
     
         
@@ -72,7 +104,7 @@ body {
 }
 
 footer {
-margin-top:100px;
+margin-top:200px;
 background-color: transparent;/*placeholder background color*/
 position: absolute;
 width:100vw;
