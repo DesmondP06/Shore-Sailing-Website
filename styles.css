@@ -35,6 +35,12 @@
     background-color: #3e7de3 !important;
 }
 
+.nb-donate {
+  background-color: white;
+  border-radius: 10px;
+  color: #3e7de3 !important;
+}
+
 .nbMenuItem {               /* navbar link text properties*/
     font-size: 25px;
     margin-left: 10px;
