@@ -70,6 +70,11 @@
     color:white;;
 }
 
+/* authors text font and color */
+.authors {
+  font-family: 'Merriweather', Georgia, monospace;
+}
+
 /*source: https://cssgradient.io/blog/css-gradient-text/ */
 .text-gradient {
   background: linear-gradient(to right, #0b7dee 0%, #1cbe8e 100%);
