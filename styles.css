@@ -96,12 +96,21 @@
     transform: scaleX(1);
     /*transform-origin: bottom left;*/
 }
+
+.footer {
+  background-color:rgb(80,117,164);
+}
+.bi-arrow-up-circle{
+  color: white;
+}
+
 /*wave animation*/
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
 
 body {
   font-family: Lato, sans-serif;
 }
+
 
 footer {
 margin-top:200px;
