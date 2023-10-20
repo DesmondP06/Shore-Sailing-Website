@@ -4,7 +4,7 @@
 #navbar-index {
     overflow: visible;
     position: fixed;
-    padding: 30px 10px; /* Large padding which will shrink on scroll (using JS)*/
+    padding: 30px; /* Large padding which will shrink on scroll (using JS)*/
     transition: 0.4s; /* Adds a transition effect when the padding is decreased */
     position: fixed; /* Sticky/fixed navbar */
     width: 100%;
@@ -73,6 +73,10 @@
   font-family: 'Merriweather', Georgia, monospace;
 }
 
+.basic-info {
+    min-height: 50vh;
+
+}
 /*source: https://cssgradient.io/blog/css-gradient-text/ */
 
 /* underline animation CSS */
@@ -117,7 +121,6 @@ body {
 
 
 footer {
-margin-top:200px;
 background-color: transparent;/*placeholder background color*/
 position: absolute;
 width:100vw;
