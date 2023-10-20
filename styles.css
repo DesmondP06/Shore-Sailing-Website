@@ -72,12 +72,16 @@
 .authors {
   font-family: 'Merriweather', Georgia, monospace;
 }
-.sizing {
+.img-sizing {
   width:50%;
   display: block;
   margin: auto;
   position: relative;
   bottom: 25px;
+}
+.author-position{
+  width:75%;
+  margin: 20px auto;
 }
 .bold {
 
