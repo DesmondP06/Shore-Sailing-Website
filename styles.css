@@ -1,7 +1,7 @@
 
 /* navbar color and text size */
 /* Create a sticky/fixed navbar */
-#navbar {
+#navbar-index {
     overflow: visible;
     position: fixed;
     padding: 30px 10px; /* Large padding which will shrink on scroll (using JS)*/
@@ -12,7 +12,7 @@
     z-index: 99;
     background-color: rgba(62,125,227,0);
   }
-  #navbar #logo {
+  #navbar-index #logo {
     max-width: 500px; 
     height: auto;
   }
@@ -74,12 +74,7 @@
 }
 
 /*source: https://cssgradient.io/blog/css-gradient-text/ */
-.text-gradient {
-  background: linear-gradient(to right, #0b7dee 0%, #1cbe8e 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
-}
+
 /* underline animation CSS */
 
 .hover-underline-animation {
