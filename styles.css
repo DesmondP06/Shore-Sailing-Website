@@ -1,7 +1,7 @@
 
 /* navbar color and text size */
 /* Create a sticky/fixed navbar */
-#navbar-index {
+.navbarClass {
     overflow: visible;
     position: fixed;
     padding: 30px; /* Large padding which will shrink on scroll (using JS)*/
@@ -10,11 +10,14 @@
     width: 100%;
     top: 0; /* At the top */
     z-index: 99;
-    background-color: rgba(62,125,227,0);
+    background-color: rgba(62,125,227,1);
   }
-  #navbar-index #logo {
+  a.logo {
     max-width: 500px; 
     height: auto;
+  }
+  #navbar-index{
+    background-color: rgba(62,125,227,0 )
   }
   /*@media screen and (max-width: 580px) {
     #navbar {
@@ -71,6 +74,7 @@
 /* authors text font and color */
 .authors {
   font-family: 'Merriweather', Georgia, monospace;
+  margin-top:160px;
 }
 .sizing {
   width:50%;
