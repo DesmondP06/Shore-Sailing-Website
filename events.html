@@ -14,23 +14,24 @@
             crossorigin="anonymous">defer</script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark nb-background-color">
+    <nav class="navbar navbarClass navbar-expand-lg nb-background-color" id = "navbar-events">
         <!-- lg = large breakpoint, navbar-light = make text dark, header-->
+        
             <div class="container">
-                <a href="/index.html" class="navbar-brand">
+                <a href="index.html" class="logo navbar-brand">
                     <img src="img/R.png" alt="Placeholder Logo" class="d-inline-block align-text-top w-25">
                 </a>
-    
-                <!-- Hamburger Menu Button -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-                    <span class="navbar-toggler-icon"></span>    
+
+                <button class = "navbar-toggler" type = "button" data-bs-toggle = "collapse" data-bs-target = "#navmenu">
+                    <span class = "navbar-toggler-icon"></span>
                 </button>
+                
     
                 <!-- Collapsible navbar menu with custom hover underline CSS animation-->
-                <div class="collapse navbar-collapse" id="navmenu">
+                <div class = "collapse navbar-collapse" id="navmenu">
                     <!-- Links to hamburger menu button -->
                     <ul class="navbar-nav ms-auto"> <!-- ms-auto is margin spacing -->
-                        <li class="nav-item">
+                       <li class="nav-item">
                             <a href="events.html" class="nav-link hover-underline-animation nbMenuItem">Events</a>
                         </li>
                         <li class="nav-item">
@@ -45,6 +46,16 @@
                     </ul>
                 </div>
             </div>
+          <script > window.onscroll = scrollFunction;
+
+                function scrollFunction() {
+                  if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+                    document.getElementById("navbar-events").style.padding = "10px";
+                    
+                  } else {
+                    document.getElementById("navbar-events").style.padding = "30px";
+                  }
+                }</script>
         </nav>
     <section class="events">
         <div class="container">
