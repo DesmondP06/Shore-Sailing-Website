@@ -72,6 +72,16 @@
 .authors {
   font-family: 'Merriweather', Georgia, monospace;
 }
+.sizing {
+  width:50%;
+  display: block;
+  margin: auto;
+  position: relative;
+  bottom: 25px;
+}
+.bold {
+  font-weight: bold;
+}
 
 /*source: https://cssgradient.io/blog/css-gradient-text/ */
 .text-gradient {
