@@ -73,6 +73,27 @@
   font-family: 'Merriweather', Georgia, monospace;
 }
 
+/* events formatting */
+.events {
+  display:flexbox;
+}
+
+/*.event-1 {
+  width: 50%;
+}
+
+.event-2 {
+  width: 50%;
+}
+
+.event-3 {
+  width: 50%;
+}
+
+.event-4 {
+  width: 50%;
+}*/
+
 /*source: https://cssgradient.io/blog/css-gradient-text/ */
 .text-gradient {
   background: linear-gradient(to right, #0b7dee 0%, #1cbe8e 100%);
