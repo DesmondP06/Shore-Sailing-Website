@@ -34,6 +34,12 @@
    
 }
 
+.nb-donate {
+  background-color: white;
+  border-radius: 10px;
+  color: #3e7de3 !important;
+}
+
 .nbMenuItem {               /* navbar link text properties*/
     font-size: 25px;
     margin-left: 10px;
@@ -60,6 +66,11 @@
 }
 .showcase .display-4 {
     color:white;;
+}
+
+/* authors text font and color */
+.authors {
+  font-family: 'Merriweather', Georgia, monospace;
 }
 
 /*source: https://cssgradient.io/blog/css-gradient-text/ */
@@ -94,12 +105,21 @@
     transform: scaleX(1);
     /*transform-origin: bottom left;*/
 }
+
+.footer {
+  background-color:rgb(80,117,164);
+}
+.bi-arrow-up-circle{
+  color: white;
+}
+
 /*wave animation*/
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
 
 body {
   font-family: Lato, sans-serif;
 }
+
 
 footer {
 margin-top:200px;
