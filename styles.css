@@ -4,14 +4,13 @@
 #navbar {
     overflow: visible;
     position: fixed;
-    background-color: #f1f1f1;
-    padding: 50px 10px; /* Large padding which will shrink on scroll (using JS)*/
+    padding: 30px 10px; /* Large padding which will shrink on scroll (using JS)*/
     transition: 0.4s; /* Adds a transition effect when the padding is decreased */
     position: fixed; /* Sticky/fixed navbar */
     width: 100%;
     top: 0; /* At the top */
     z-index: 99;
-    
+    background-color: rgba(62,125,227,0);
   }
   #navbar #logo {
     max-width: 500px; 
@@ -32,7 +31,7 @@
   }*/
   
 .nb-background-color {      /* navbar background color */
-    background-color: #3e7de3 !important;
+   
 }
 
 .nbMenuItem {               /* navbar link text properties*/
@@ -48,13 +47,12 @@
 
 /* showcase background and text color*/
 .showcase {
-    margin-top: 30px;
     color: white;
     background-image: linear-gradient(to top, rgb(80,117,164), transparent 50%, transparent), url(img/BG.jpg);
     background-repeat: no-repeat, no-repeat;
     /*background-attachment: fixed;*/
     background-size: cover, cover;
-    min-height: 700px;
+    height: 100vh;
     font-family: 'Merriweather', Georgia, monospace;
     
     
