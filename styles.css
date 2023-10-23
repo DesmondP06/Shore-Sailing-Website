@@ -181,7 +181,7 @@ svg {
   width:100%;
 }
 .arrow {
-  stroke-width: .425px;
+  stroke-width: .4px;
   stroke: white; /*color of arrow on ball*/
 }
 .topball {
