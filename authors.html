@@ -68,7 +68,7 @@
         <div class="row row-cols-1 row-cols-md-2 mb-4 g-4">
             <div class="col">
                 <div class="card about author-position">
-                    <button type="button" class="btn">
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#author-modal1">
                     <img src="img/R.png" class="card-img-top img-sizing" alt="Name 1">
                     <div class="card-body">
                         <h4 class="card-title bold">Student Name</h4>
@@ -76,6 +76,23 @@
                        
                     </div>
                     </button>
+                    <!--Modal backdrop that pops up on the click of the card-->
+                    <div class="modal fade" id="author-modal1" tabindex="-1" aria-labelledby="author-modal1" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              ...
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                 </div>
               
             </div>
