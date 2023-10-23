@@ -42,10 +42,11 @@ body {
    
 }*/
 
-.nb-donate {
+.nb-box {
   background-color: white;
   border-radius: 10px;
   color: #3e7de3 !important;
+
 }
 
 .nbMenuItem {               /* navbar link text properties*/
@@ -135,11 +136,13 @@ body {
   margin-left: 5rem; 
 }
 
+/* event popup formatting*/
 .event-popup {
   position: relative;
   display: inline-block;
   cursor: pointer;
 }
+
 
 .event-popup .event-text {
   visibility: hidden;
@@ -177,6 +180,7 @@ body {
   position: absolute;
   text-align: center;
   color: white; 
+
   top: 75%;
   left: 35%;
   size: 2rem;
@@ -244,6 +248,29 @@ body {
     /*transform-origin: bottom left;*/
 }
 
+.hover-underline-animation-box {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline-animation-box:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: gray;
+  color: white;
+  transition: transform 0.35s ease-out;
+}
+
+.hover-underline-animation-box:hover:after {
+  transform: scaleX(1);
+  /*transform-origin: bottom left;*/
+}
+
 .footer {
   background-color:rgb(80,117,164);
 }
@@ -270,7 +297,7 @@ svg {
   width:100%;
 }
 .arrow {
-  stroke-width: .425px;
+  stroke-width: .4px;
   stroke: white; /*color of arrow on ball*/
 }
 .topball {
