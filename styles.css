@@ -87,7 +87,17 @@
   width:75%;
   margin: 20px auto;
 }
-.bold {}
+
+.modal-author {
+  display: inline-flex;
+  margin-left: 5%;
+}
+.btn-position {
+  
+}
+.bold {
+  font-weight: bold;
+}
 
 /* events formatting */
 .events {
