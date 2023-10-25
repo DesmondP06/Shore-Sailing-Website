@@ -23,7 +23,7 @@
 
 
 .nbMenuItem {               /* navbar link text properties*/
-    font-size: 25px;
+    font-size: 23px;
     margin-left: 15px;
     margin-right: 15px;
     color:white;
@@ -77,11 +77,15 @@
 }
 
 #cmp-btn {
-  background-color: #353C55;
+  background-color: #49516f;;
   color: #fff;
   font-size: 18px;
 }
 
+#cmp-btn:hover {
+  background-color: #353C55;
+  transition: background-color 0.35s;
+}
 .img-sizing {
   width:50%;
   display: block;
@@ -110,54 +114,16 @@
   margin-left: 5rem; 
 }
 
-.event-popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
+.event-img:hover {
+  transform: scale(1.5);
 }
 
-.event-popup .event-text {
-  visibility: hidden;
-  width: 160px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -80px;
+.event-text {
+  display: hidden;
 }
 
-.event-popup .event-text::after {
-  content: "Event: Date: Description";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-.event-popup .show{
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s
-}
-
-.event-title {
-  position: absolute;
-  text-align: center;
-  color: white; 
-  top: 75%;
-  left: 35%;
-  size: 2rem;
-  background-color: #555;
-  border-radius: 10px;
-  padding: 5px;
+.event-text:hover {
+  display: visible;
 }
 
 @-webkit-keyframes fadeIn {
@@ -226,7 +192,7 @@
 
 .hover-signin {
   background-color: white;
-  color: black;
+  color: rgb(126, 124, 124);
   border-radius: 10px;
 }
 
