@@ -10,34 +10,21 @@
     width: 100%;
     top: 0; /* At the top */
     z-index: 99;
-    background-color: rgba(62,125,227,1);
+    background-color: rgba(80,117,164,1);
   }
   a.logo {
-    max-width: 500px; 
+    max-width: 300px; 
     height: auto;
   }
   #navbar-index{
-    background-color: rgba(62,125,227,0 )
+    background-color: rgba(80,117,164,0)
   }
-  /*@media screen and (max-width: 580px) {
-    #navbar {
-      padding: 100px 10px !important; /* Use !important to make sure that JavaScript doesn't override the padding on small screens */ 
-  /*  }
-    #navbar .nav-item {
-      float: none;
-      display: block;
-      text-align: left;
-    }
-    #navbar-right {
-      float: none;
-    }
-  }*/
-  
-/*.nb-background-color {      navbar background color 
-   
-}*/
 
-
+.nb-donate {
+  background-color: white;
+  border-radius: 10px;
+  color: #3e7de3 !important;
+}
 
 .nbMenuItem {               /* navbar link text properties*/
     font-size: 25px;
@@ -58,10 +45,7 @@
     /*background-attachment: fixed;*/
     background-size: cover, cover;
     height: 100vh;
-    font-family: 'Merriweather', Georgia, monospace;
-    
-    
-        
+    font-family: 'Merriweather', Georgia, serif;
 }
 .showcase .display-4 {
     color:white;;
@@ -69,8 +53,7 @@
 
 /* authors text font and color */
 .authors {
-  font-family: 'Merriweather', Georgia, monospace;
-  margin-top:160px;
+  margin-top: 120px;
 }
 .img-sizing {
   width:50%;
@@ -100,13 +83,11 @@
   margin-left: 5rem; 
 }
 
-/* event popup formatting*/
 .event-popup {
   position: relative;
   display: inline-block;
   cursor: pointer;
 }
-
 
 .event-popup .event-text {
   visibility: hidden;
@@ -144,7 +125,6 @@
   position: absolute;
   text-align: center;
   color: white; 
-
   top: 75%;
   left: 35%;
   size: 2rem;
@@ -217,44 +197,8 @@
     /*transform-origin: bottom left;*/
 }
 
-.hover-underline-animation-box {
-  display: inline-block;
-  position: relative;
-}
-
-.hover-underline-animation-box:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: gray;
-  color: white;
-  transition: transform 0.35s ease-out;
-}
-
-.hover-underline-animation-box:hover:after {
-  transform: scaleX(1);
-  /*transform-origin: bottom left;*/
-}
-
-/*signin button formatting*/
-.hover-signin {
-  background-color: white;
-  border-radius: 10px;
-  color: black;
-}
-
-.hover-signin:hover {
-  background-color: rgb(151, 147, 147);
-  color: white; 
-  transition: background-color 0.35s, color 0.35s;
-}
-
 .footer {
-  background-color:rgb(80,117,164);
+  background-color:rgba(80,117,164,1);
 }
 .bi-arrow-up-circle{
   color: white;
@@ -264,7 +208,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
 
 body {
-  font-family: Lato, sans-serif;
+    font-family: "Merriweather", Georgia, serif;
 }
 
 
@@ -284,7 +228,7 @@ svg {
   width:100%;
 }
 .arrow {
-  stroke-width: .425px;
+  stroke-width: .4px;
   stroke: white; /*color of arrow on ball*/
 }
 .topball {
