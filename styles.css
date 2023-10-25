@@ -37,12 +37,7 @@
    
 }*/
 
-.nb-box {
-  background-color: white;
-  border-radius: 10px;
-  color: #3e7de3 !important;
 
-}
 
 .nbMenuItem {               /* navbar link text properties*/
     font-size: 25px;
@@ -168,6 +163,11 @@
   to {opacity:1 ;}
 }
 
+@keyframes fadeOut {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
 .white-sailboat {
   max-width: 200px;
   height: auto;
@@ -238,6 +238,19 @@
 .hover-underline-animation-box:hover:after {
   transform: scaleX(1);
   /*transform-origin: bottom left;*/
+}
+
+/*signin button formatting*/
+.hover-signin {
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+}
+
+.hover-signin:hover {
+  background-color: rgb(151, 147, 147);
+  color: white; 
+  transition: background-color 0.35s, color 0.35s;
 }
 
 .footer {
