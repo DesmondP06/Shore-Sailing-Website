@@ -4,7 +4,7 @@
 .navbarClass {
     overflow: visible;
     position: fixed;
-    padding: 30px; /* Large padding which will shrink on scroll (using JS)*/
+    padding: 4vh; /* Large padding which will shrink on scroll (using JS)*/
     transition: 0.4s; /* Adds a transition effect when the padding is decreased */
     position: fixed; /* Sticky/fixed navbar */
     width: 100%;
@@ -240,12 +240,12 @@ body {
 }
 
 
-footer {
+.footer-main {
 background-color: transparent;/*placeholder background color*/
 position: absolute;
 width:100vw;
 }
-footer div {
+.footer-main div {
   background-color: rgb(80,117,164);
   margin: -5px 0px 0px 0px;
   padding:0px;
@@ -253,7 +253,7 @@ footer div {
   text-align:center;
 }
 svg {
-  width:100%;
+  width:100vw;
 }
 .arrow {
   stroke-width: .4px;

@@ -50,11 +50,11 @@
 
                 function scrollFunction() {
                   if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
-                    document.getElementById("navbar-index").style.padding = "10px";
+                    document.getElementById("navbar-index").style.padding = "1vh";
                     document.getElementById("navbar-index").style.backgroundColor = "rgba(80,117,164,1)";
                     
                   } else {
-                    document.getElementById("navbar-index").style.padding = "20px";
+                    document.getElementById("navbar-index").style.padding = "4vh";
                     document.getElementById("navbar-index").style.backgroundColor = "rgba(80,117,164,0)";
                   }
                 }
@@ -76,7 +76,7 @@
 
     </section>
 
-    <footer>
+    <footer class = "footer-main">
         <svg viewBox="0 0 120 28">
             <defs> 
                 <mask id="xxx">
@@ -109,7 +109,7 @@
             </a>
             <use id="wave1" class="wave" xlink:href="#wave" x="0" y="1" />
         </svg>  
-        <div>Copyright Shore Sailing 2023</div>
+        <div id = "main-footer">Copyright Shore Sailing 2023</div>
     </footer>
 </body>
 </html>
