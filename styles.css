@@ -19,23 +19,6 @@
   #navbar-index{
     background-color: rgba(62,125,227,0 )
   }
-  /*@media screen and (max-width: 580px) {
-    #navbar {
-      padding: 100px 10px !important; /* Use !important to make sure that JavaScript doesn't override the padding on small screens */ 
-  /*  }
-    #navbar .nav-item {
-      float: none;
-      display: block;
-      text-align: left;
-    }
-    #navbar-right {
-      float: none;
-    }
-  }*/
-  
-/*.nb-background-color {      navbar background color 
-   
-}*/
 
 .nb-donate {
   background-color: white;
@@ -62,10 +45,7 @@
     /*background-attachment: fixed;*/
     background-size: cover, cover;
     height: 100vh;
-    font-family: 'Merriweather', Georgia, monospace;
-    
-    
-        
+    font-family: 'Merriweather', Georgia, serif;
 }
 .showcase .display-4 {
     color:white;;
@@ -73,8 +53,7 @@
 
 /* authors text font and color */
 .authors {
-  font-family: 'Merriweather', Georgia, monospace;
-  margin-top:160px;
+  margin-top:175px;
 }
 .img-sizing {
   width:50%;
@@ -224,7 +203,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
 
 body {
-  font-family: Lato, sans-serif;
+    font-family: "Merriweather", Georgia, serif;
 }
 
 
