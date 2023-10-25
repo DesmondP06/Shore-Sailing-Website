@@ -240,6 +240,7 @@ body {
 }
 
 /*calendar formatting*/
+/* source: https://codepen.io/PepitaK/pen/mdqpRee */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800&display=swap");
 
 .calendar {
@@ -255,9 +256,23 @@ body {
 	);
   margin-top: 7.5rem;
 }
+
+/*.cal-header {
+  text-align: center;
+}*/
+
 .cal-title {
 	font-weight: 800;
 	margin: 1rem 0 0;
+}
+
+.cal-caption {
+  font-weight: 600;
+	margin: 0.5rem 0 0;
+}
+
+.cal-boxes {
+  margin: 1rem;
 }
 
 .cal-days{
@@ -284,6 +299,25 @@ body {
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.day-head {
+  display: flex;
+  width: 10rem;
+  height: 2.5rem;
+  margin: 0.25rem;
+  flex-flow: column;
+  border-radius: 0.2rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  align-items: center;
 }
 
 time {
