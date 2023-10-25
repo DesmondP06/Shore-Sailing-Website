@@ -10,14 +10,14 @@
     width: 100%;
     top: 0; /* At the top */
     z-index: 99;
-    background-color: rgba(62,125,227,1);
+    background-color: rgba(80,117,164,1);
   }
   a.logo {
-    max-width: 500px; 
+    max-width: 300px; 
     height: auto;
   }
   #navbar-index{
-    background-color: rgba(62,125,227,0 )
+    background-color: rgba(80,117,164,0)
   }
 
 .nb-donate {
@@ -53,7 +53,7 @@
 
 /* authors text font and color */
 .authors {
-  margin-top:175px;
+  margin-top: 120px;
 }
 .img-sizing {
   width:50%;
@@ -193,7 +193,7 @@
 }
 
 .footer {
-  background-color:rgb(80,117,164);
+  background-color:rgba(80,117,164,1);
 }
 .bi-arrow-up-circle{
   color: white;

@@ -31,17 +31,17 @@
                 <div class = "collapse navbar-collapse" id="navmenu">
                     <!-- Links to hamburger menu button -->
                     <ul class="navbar-nav ms-auto"> <!-- ms-auto is margin spacing -->
-                       <li class="nav-item">
+                        <li class="nav-item">
                             <a href="events.html" class="nav-link hover-underline-animation nbMenuItem">Events</a>
                         </li>
                         <li class="nav-item">
                             <a href="authors.html" class="nav-link hover-underline-animation nbMenuItem">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a href="contact.html" class="nav-link hover-underline-animation nbMenuItem">Contact</a>
+                            <a href="donate.html" class="nav-link hover-underline-animation nbMenuItem">Donate</a>
                         </li>
                         <li class="nav-item">
-                            <a href="donate.html" class="nav-link hover-underline-animation nbMenuItem nb-donate">Donate</a>
+                            <a href="signin.html" class="nav-link hover-underline-animation nbMenuItem nb-box">Sign in</a>
                         </li>
                     </ul>
                 </div>
@@ -53,7 +53,7 @@
                     document.getElementById("navbar-authors").style.padding = "10px";
                     
                   } else {
-                    document.getElementById("navbar-authors").style.padding = "30px";
+                    document.getElementById("navbar-authors").style.padding = "20px";
                   }
                 }</script>
         </nav>
@@ -200,6 +200,21 @@
         <br>
         </section>
         
+        <section class="cmp-container">
+            <div class="row cmp-container-info ">
+                <div class="col-sm-8 p-3 d-flex flex-column justify-content-center align-items-start">
+                    <h1 class="ovPadLeft bold" id="cmp-title">Interested in Donating?</h1> <!-- ovPadLeft - custom padding left side-->
+                    <p class="lead overview-font ovPadRight" id="cmp-text">Please go to our donating page to explore our donating options.</p>
+                    <button type="button" class="btn" id="cmp-btn">Go to donating page <i class="bi bi-arrow-right"></i></button>
+                </div>
+                <div class="col-sm-4 p-3 pb-3">
+                    <!-- pt - 3 = padding top -->
+                    <img class="img-fluid" id="cmp-image" src="img/R.png" alt="placeholder">
+                    
+                </div>
+                
+            </div>
+        </section>
     
     
 

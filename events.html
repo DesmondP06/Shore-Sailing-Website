@@ -31,17 +31,17 @@
                 <div class = "collapse navbar-collapse" id="navmenu">
                     <!-- Links to hamburger menu button -->
                     <ul class="navbar-nav ms-auto"> <!-- ms-auto is margin spacing -->
-                       <li class="nav-item">
+                        <li class="nav-item">
                             <a href="events.html" class="nav-link hover-underline-animation nbMenuItem">Events</a>
                         </li>
                         <li class="nav-item">
                             <a href="authors.html" class="nav-link hover-underline-animation nbMenuItem">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a href="contact.html" class="nav-link hover-underline-animation nbMenuItem">Contact</a>
+                            <a href="donate.html" class="nav-link hover-underline-animation nbMenuItem">Donate</a>
                         </li>
                         <li class="nav-item">
-                            <a href="donate.html" class="nav-link hover-underline-animation nbMenuItem nb-donate">Donate</a>
+                            <a href="signin.html" class="nav-link hover-underline-animation-box nbMenuItem nb-box">Sign in</a>
                         </li>
                     </ul>
                 </div>
@@ -58,7 +58,7 @@
                 }</script>
         </nav>
     <section class="events">
-        <div class="event-popup" onclick="myFunction()">
+        <!--<div class="event-popup" onclick="myFunction()">
             <img src="img/420-sailboat.jpg" alt="Sailboat image" class="sailboat img-fluid">
             <div class="event-title">
                 Event 1
@@ -68,7 +68,30 @@
                 Date & Time:
                 Description:
             </span>
-        </div>
+        </div>-->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal">
+            <img src="img/420-sailboat.jpg" alt="Sailboat image" class="sailboat img-fluid">
+            <div class="event-title">
+                Event 1
+            </div>
+        </button><div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        
     </section>
 
     <!--Footer Section-->    
