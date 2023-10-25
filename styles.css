@@ -51,6 +51,37 @@
 .authors {
   margin-top: 120px;
 }
+
+.cmp-container {
+  
+  background-color: #F7F5F3;
+}
+
+.cmp-container-info {
+  margin: 0 5%;
+  position:relative;
+}
+
+#cmp-title {
+  color: #001936;
+  font-size: 33px;
+}
+
+#cmp-text {
+  color: #001936;
+  font-size: 24px;
+}
+
+#cmp-image {
+  border-radius: 5%;
+}
+
+#cmp-btn {
+  background-color: #353C55;
+  color: #fff;
+  font-size: 18px;
+}
+
 .img-sizing {
   width:50%;
   display: block;
