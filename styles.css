@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,700&display=swap');
+
+body {
+    font-family: "Montserrat", Georgia, serif;
+}
 
 /* navbar color and text size */
 /* Create a sticky/fixed navbar */
@@ -27,7 +32,7 @@
     margin-left: 15px;
     margin-right: 15px;
     color:white;
-    font-family: "Merriweather", Georgia, serif;
+    
     white-space: nowrap;
 }
 
@@ -41,7 +46,6 @@
     /*background-attachment: fixed;*/
     background-size: cover, cover;
     height: 100vh;
-    font-family: 'Merriweather', Georgia, serif;
 }
 .showcase .row {
     padding-bottom: 30px;
@@ -60,7 +64,6 @@
   /*background-attachment: fixed;*/
   background-size: cover;
   height: 80vh;
-  font-family: 'Merriweather', Georgia, serif;
 }
 
 #author-showcase .row{
@@ -232,12 +235,6 @@
   color: white;
 }
 
-/*wave animation*/
-@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
-
-body {
-    font-family: "Merriweather", Georgia, serif;
-}
 
 
 footer {
@@ -245,6 +242,7 @@ background-color: transparent;/*placeholder background color*/
 position: absolute;
 width:100vw;
 }
+
 footer div {
   background-color: rgb(80,117,164);
   margin: -5px 0px 0px 0px;
