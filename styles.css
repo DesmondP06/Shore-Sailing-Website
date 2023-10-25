@@ -77,11 +77,15 @@
 }
 
 #cmp-btn {
-  background-color: #353C55;
+  background-color: #49516f;;
   color: #fff;
   font-size: 18px;
 }
 
+#cmp-btn:hover {
+  background-color: #353C55;
+  transition: background-color 0.35s;
+}
 .img-sizing {
   width:50%;
   display: block;
