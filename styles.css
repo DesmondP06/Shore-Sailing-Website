@@ -169,7 +169,6 @@
 .hover-underline-animation {
     display: inline-block;
     position: relative;
-    /*color: #0087ca;*/
   }
   
 .hover-underline-animation:after {
@@ -184,10 +183,15 @@
     /*transform-origin: bottom right;*/
     transition: transform 0.35s ease-out;
 }
+
+.hover-underline-animation:hover {
+  color:  rgb(182, 176, 176) !important;
+  transition: color 0.35s;
+}
   
 .hover-underline-animation:hover:after {
     transform: scaleX(1);
-    /*transform-origin: bottom left;*/
+    /*transform-origin: bottom left;*/    
 }
 
 .hover-signin {
@@ -208,6 +212,68 @@
 .bi-arrow-up-circle{
   color: white;
 }
+
+/*calendar formatting*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800&display=swap");
+
+.calendar {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	font-family: "Poppins", serif;
+	background: rgb(238, 174, 202);
+	background: radial-gradient(
+		circle,
+		rgba(238, 174, 202, 1) 0%,
+		rgba(148, 187, 233, 1) 100%
+	);
+  margin-top: 7.5rem;
+}
+.cal-title {
+	font-weight: 800;
+	margin: 1rem 0 0;
+}
+
+.cal-days{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	flex-wrap: wrap;
+	list-style: none;
+}
+
+.day {
+  display: flex;
+  width: 10rem;
+  height: 10rem;
+  margin: 0.25rem;
+  flex-flow: column;
+  border-radius: 0.2rem;
+  padding: 1rem;
+  font-weight: 300;
+  font-size: 0.8rem;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+time {
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+}
+
+.today {
+  background: #ffffff70;
+}
+
+.today time {
+  font-weight: 800;
+}
+
 
 /*wave animation*/
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
