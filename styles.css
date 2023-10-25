@@ -20,11 +20,7 @@
     background-color: rgba(80,117,164,0)
   }
 
-.nb-donate {
-  background-color: white;
-  border-radius: 10px;
-  color: #3e7de3 !important;
-}
+
 
 .nbMenuItem {               /* navbar link text properties*/
     font-size: 25px;
@@ -195,6 +191,18 @@
 .hover-underline-animation:hover:after {
     transform: scaleX(1);
     /*transform-origin: bottom left;*/
+}
+
+.hover-signin {
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+}
+
+.hover-signin:hover {
+  background-color: rgb(158, 155, 155);
+  color: white;
+  transition: color 0.35s, background-color 0.35s;
 }
 
 .footer {
