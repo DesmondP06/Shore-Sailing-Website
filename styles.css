@@ -48,7 +48,7 @@ body {
     height: 100vh;
 }
 .showcase .row {
-    padding-bottom: 30px;
+    padding-top: 25vh;
 }
 
 /* authors text font and color */
@@ -59,7 +59,7 @@ body {
 #author-showcase {
   
   color: white;
-  background-image: url(img/BG.jpg);
+  background-image: url(img/IMG_0099.jpg);
   background-repeat: no-repeat;
   /*background-attachment: fixed;*/
   background-size: cover;
@@ -186,7 +186,12 @@ body {
 
 .basic-info {
     min-height: 50vh;
-
+    color: cornflowerblue;
+    font-weight: bold;
+}
+.basic-info .row {
+  padding-left: 10vw;
+  padding-right: 10vw;
 }
 /*source: https://cssgradient.io/blog/css-gradient-text/ */
 
