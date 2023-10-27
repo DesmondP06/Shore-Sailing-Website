@@ -9,7 +9,7 @@ body {
 .navbarClass {
     overflow: visible;
     position: fixed;
-    padding: 1.5vh; /* Large padding which will shrink on scroll (using JS)*/
+    padding: 2vh; /* Large padding which will shrink on scroll (using JS)*/
     transition: 0.4s; /* Adds a transition effect when the padding is decreased */
     position: fixed; /* Sticky/fixed navbar */
     width: 100%;
@@ -18,7 +18,7 @@ body {
     background-color: rgba(80,117,164,1);
   }
   a.logo {
-    max-width: 300px; 
+    max-width: 350px; 
     height: auto;
   }
   #navbar-index{
