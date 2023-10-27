@@ -187,11 +187,13 @@ body {
 .basic-info {
     min-height: 50vh;
     color: cornflowerblue;
-    font-weight: bold;
 }
 .basic-info .row {
   padding-left: 10vw;
   padding-right: 10vw;
+}
+.basic-info a {
+  color: cornflowerblue;
 }
 /*source: https://cssgradient.io/blog/css-gradient-text/ */
 
