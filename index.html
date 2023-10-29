@@ -38,7 +38,9 @@
                             <a href="authors.html" class="nav-link hover-underline-animation nbMenuItem">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a href="donate.html" class="nav-link hover-underline-animation nbMenuItem">Donate</a>
+                            <button type = "button" class = "nav-link hover-underline-animation nbMenuItem"  data-bs-toggle="modal" data-bs-target="#donate-modal">
+                                Donate
+                            </button>
                         </li>
                         <li class="nav-item">
                             <a href="signin.html" class="nav-link hover-signin nbMenuItem nb-box">Sign in</a>
@@ -60,7 +62,62 @@
                 }
             </script>
     </nav>
+    <section>
+        <div class="col">
+            <!--Modal backdrop that pops up on the click of the card-->
+            <div class="modal fade" id="donate-modal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class = "modal-title">Make a donation</h3>
+                      <button type="button" class="btn-close btn-position" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body row text-center">
+                        <div class = "donation_wrapper">
+                                <div class="single_amount_wrapper">
+                                    <button class="single_amount btn-primary btn" value="10">10$</button>
+                                    <button class="single_amount btn-primary btn" value="25">25$</button>
+                                    <button class="single_amount btn-primary btn" value="50">50$</button>
+                                    <button class="single_amount btn-primary btn" value="100">100$</button>
+                                </div>
+                            <h4>Or enter custom amount</h2>
+                            <div class="amount_wrapper">
+                                <input id = "input" type="number" value="10.00" step="1" min="1.00">
+                                <div class="suffix">$</div>
+                            </div>
+                            <a href="https://www.paypal.me/" target="_blank" rel="nofollow" class="btn btn-primary">Donate with paypal.me</a>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                let donationButtons = document.querySelectorAll(".single_amount");
     
+                donationButtons.forEach(function(btn) {
+                    btn.addEventListener("click", function() {
+                        let inputElem = document.getElementById("input");
+                        let btnValue = parseFloat(btn.value);
+                        inputElem.value = btnValue.toFixed(2);
+                    });
+                });
+            });
+            document.addEventListener("DOMContentLoaded", function() {
+                let inputElem = document.getElementById("input");
+                let timeout;
+                inputElem.addEventListener("change", function() {
+                    let value = parseFloat(inputElem.value);
+                    if (!isNaN(value)) {
+                        inputElem.value = value.toFixed(2);} 
+                    else {
+                        inputElem.value = "0.00";}
+                });
+            });
+
+        </script>
+    </section>
     <!--Showcase Section-->
     <!-- Showcase-->
     <section class="showcase p-2 text-center d-flex align-items-start"> <!-- showcase is custom CSS-->
@@ -69,8 +126,10 @@
             <div class = "row ">
                 <h1 class = "display-1">Shore Sailing</h1>
                 <h4 class>Setting Sail for Success</h4>
-            </div>   
+            </div>
+            
         </div>
+        <div class="down-arrow"></div>
     </section>
     <section class="basic-info p-2 text-center d-flex align-items-center">
         <div class = "container">
