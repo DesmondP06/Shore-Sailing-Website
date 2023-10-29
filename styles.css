@@ -31,10 +31,11 @@ body {
     font-size: 23px;
     margin-left: 15px;
     margin-right: 15px;
-    color:white;
-    
+    color:white !important;
     white-space: nowrap;
+    padding: 8px;
 }
+
 
 
 
@@ -207,7 +208,7 @@ body {
 
 .hover-signin {
   background-color: white;
-  color: rgb(126, 124, 124);
+  color: rgb(126, 124, 124) !important;
   border-radius: 10px;
 }
 

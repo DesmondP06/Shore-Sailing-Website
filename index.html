@@ -38,7 +38,9 @@
                             <a href="authors.html" class="nav-link hover-underline-animation nbMenuItem">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a href="donate.html" class="nav-link hover-underline-animation nbMenuItem">Donate</a>
+                            <button type = "button" class = "nav-link hover-underline-animation nbMenuItem"  data-bs-toggle="modal" data-bs-target="#donate-modal">
+                                Donate
+                            </button>
                         </li>
                         <li class="nav-item">
                             <a href="signin.html" class="nav-link hover-signin nbMenuItem nb-box">Sign in</a>
@@ -60,7 +62,26 @@
                 }
             </script>
     </nav>
-    
+    <section>
+        <div class="col">
+            <!--Modal backdrop that pops up on the click of the card-->
+            <div class="modal fade" id="donate-modal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="btn-close btn-position" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body row">
+                        Placeholder
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!--Showcase Section-->
     <!-- Showcase-->
     <section class="showcase p-2 text-center d-flex align-items-start"> <!-- showcase is custom CSS-->
