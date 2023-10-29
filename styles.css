@@ -140,18 +140,6 @@ body {
   margin-left: 5rem; 
 }
 
-.event-img:hover {
-  transform: scale(1.5);
-}
-
-.event-text {
-  display: hidden;
-}
-
-.event-text:hover {
-  display: visible;
-}
-
 @-webkit-keyframes fadeIn {
   from {opacity: 0;}
   to {opacity: 1;}
@@ -256,12 +244,8 @@ body {
 	align-items: center;
 	font-family: "Poppins", serif;
 	background-image: url(img/cal-bg2.jpg);
-  margin-top: 7.5rem;
+  margin-top: 6.6rem;
 }
-
-/*.cal-header {
-  text-align: center;
-}*/
 
 .cal-title {
 	font-weight: 800;
@@ -322,6 +306,24 @@ body {
   align-items: center;
 }
 
+.event-title {
+  font-weight: 800;
+  margin-top: -1rem;
+}
+
+.event-des {
+  display: none;
+}
+
+.day:hover .event-des{
+  display: flex;
+}
+
+.day:hover {
+  transform: scale(1.25);
+  transition: transform 0.25s ease;
+}
+
 time {
   font-size: 2rem;
   margin: 0 0 1rem 0;
@@ -329,11 +331,11 @@ time {
 }
 
 .today {
-  background: #ffffff70;
+  background: rgba(255, 255, 255, 0.75);
 }
 
 .today time {
-  font-weight: 800;
+  font-weight: 1000;
 }
 
 
