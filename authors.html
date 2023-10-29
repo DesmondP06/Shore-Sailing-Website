@@ -39,7 +39,9 @@
                             <a href="authors.html" class="nav-link hover-underline-animation nbMenuItem">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a href="donate.html" class="nav-link hover-underline-animation nbMenuItem">Donate</a>
+                            <button type = "button" class = "nav-link hover-underline-animation nbMenuItem"  data-bs-toggle="modal" data-bs-target="#donate-modal">
+                                Donate
+                            </button>
                         </li>
                         <li class="nav-item">
                             <a href="signin.html" class="nav-link hover-signin nbMenuItem nb-box">Sign in</a>
@@ -70,10 +72,64 @@
                         and sailing opportunities to our friends at local Jersey Shore schools.
                     </h4>
                 </div>
-    
-                
             </div>
         </section>
+        <!--Donation Modal that pops up upon clicking of the donate button-->
+    <section>
+        <div class="col">
+            <div class="modal fade" id="donate-modal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class = "modal-title">Make a donation</h3>
+                      <button type="button" class="btn-close btn-position" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body row text-center">
+                        <div class = "donation_wrapper">
+                                <div class="single_amount_wrapper">
+                                    <button class="single_amount btn-primary btn" value="10">10$</button>
+                                    <button class="single_amount btn-primary btn" value="25">25$</button>
+                                    <button class="single_amount btn-primary btn" value="50">50$</button>
+                                    <button class="single_amount btn-primary btn" value="100">100$</button>
+                                </div>
+                            <h4>Or enter custom amount</h2>
+                            <div class="amount_wrapper">
+                                <input id = "input" type="number" value="10.00" step="1" min="1.00">
+                                <div class="suffix">$</div>
+                            </div>
+                            <a href="https://www.paypal.me/" target="_blank" rel="nofollow" class="btn btn-primary">Donate with paypal.me</a>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                let donationButtons = document.querySelectorAll(".single_amount");
+    
+                donationButtons.forEach(function(btn) {
+                    btn.addEventListener("click", function() {
+                        let inputElem = document.getElementById("input");
+                        let btnValue = parseFloat(btn.value);
+                        inputElem.value = btnValue.toFixed(2);
+                    });
+                });
+            });
+            document.addEventListener("DOMContentLoaded", function() {
+                let inputElem = document.getElementById("input");
+                let timeout;
+                inputElem.addEventListener("change", function() {
+                    let value = parseFloat(inputElem.value);
+                    if (!isNaN(value)) {
+                        inputElem.value = value.toFixed(2);} 
+                    else {
+                        inputElem.value = "0.00";}
+                });
+            });
+
+        </script>
+    </section>
         
 
         <section class="authors">
@@ -122,7 +178,7 @@
             </div>
             <div class="col">
                 <div class="card about author-position">
-                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#author-modal1">
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#author-modal2">
                     <img src="img/R.png" class="card-img-top img-sizing" alt="Name 1">
                     <div class="card-body">
                         <h4 class="card-title bold">Sophia Behar</h4>
@@ -130,7 +186,7 @@
                     </div>
                     </button>
                     <!--Modal backdrop that pops up on the click of the card-->
-                    <div class="modal fade" id="author-modal1" tabindex="-1" aria-labelledby="author-modal1" aria-hidden="true">
+                    <div class="modal fade" id="author-modal2" tabindex="-1" aria-labelledby="author-modal1" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                           <div class="modal-content">
                             <div class="modal-header">
@@ -156,7 +212,7 @@
         <div class="row row-cols-1 row-cols-md-2 g-4">
             <div class="col">
                 <div class="card about author-position">
-                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#author-modal1">
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#author-modal3">
                     <img src="img/R.png" class="card-img-top img-sizing" alt="Name 1">
                     <div class="card-body">
                         <h4 class="card-title bold">Anders Nielsen</h4>
@@ -164,7 +220,7 @@
                     </div>
                     </button>
                     <!--Modal backdrop that pops up on the click of the card-->
-                    <div class="modal fade" id="author-modal1" tabindex="-1" aria-labelledby="author-modal1" aria-hidden="true">
+                    <div class="modal fade" id="author-modal3" tabindex="-1" aria-labelledby="author-modal1" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                           <div class="modal-content">
                             <div class="modal-header">
@@ -188,22 +244,22 @@
             </div>
             <div class="col">
                 <div class="card about author-position">
-                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#author-modal1">
-                    <img src="img/R.png" class="card-img-top img-sizing" alt="Name 1">
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#author-modal4">
+                    <img src="img/owen-aboutme.jpg" class="card-img-top img-sizing" alt="Name 1">
                     <div class="card-body">
                         <h4 class="card-title bold">Owen Chen</h4>
                         <h5>Sofware Engineer</h5>
                     </div>
                     </button>
                     <!--Modal backdrop that pops up on the click of the card-->
-                    <div class="modal fade" id="author-modal1" tabindex="-1" aria-labelledby="author-modal1" aria-hidden="true">
+                    <div class="modal fade" id="author-modal4" tabindex="-1" aria-labelledby="author-modal1" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                           <div class="modal-content">
                             <div class="modal-header">
                               <button type="button" class="btn-close btn-position" data-bs-dismiss="modal" aria-label="Close" ></button>
                             </div>
                             <div class="modal-body row">
-                                <img src="img/R.png" class="col-6 align-text-top w-50" alt="Name 1">
+                                <img src="img/owen-aboutme.jpg" class="col-6 align-text-top w-50" alt="Name 1">
                                 <div class="col-6 d-flex flex-column justify-content-center">
                                     <h4 class="bold modal-author">Owen Chen</h4> 
                                     <h5 class="modal-author text-center">Software Engineer</h5>
@@ -227,9 +283,8 @@
                 <div class="col-sm-8 p-3 d-flex flex-column justify-content-center align-items-start">
                     <h1 class="ovPadLeft bold" id="cmp-title">Interested in Donating?</h1> <!-- ovPadLeft - custom padding left side-->
                     <p class="lead overview-font ovPadRight" id="cmp-text">Please go to our donation page to donate to our charity.</p>
-                    <form action="/donate.html">
-                        <button type="submit" class="btn" id="cmp-btn">Go to donation page <i class="bi bi-arrow-right"></i></button>
-                    </form>
+                    <button type="submit" class="btn" id="cmp-btn" data-bs-toggle="modal" data-bs-target="#donate-modal">Donate Now <i class="bi bi-arrow-right"></i></button>
+                
                 </div>
                 <div class="col-sm-4 p-3 pb-3">
                     <!-- pt - 3 = padding top -->
