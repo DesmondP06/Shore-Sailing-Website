@@ -20,7 +20,7 @@
         
             <div class="container">
                 <a href="index.html" class="logo navbar-brand">
-                    <img src="img/logo.png" alt="Placeholder Logo" class="d-inline-block align-text-top w-25">
+                    <img src="img/logo.png" alt="Shore Sailing Boat" class="d-inline-block align-text-top w-25">
                 </a>
 
                 <button class = "navbar-toggler" type = "button" data-bs-toggle = "collapse" data-bs-target = "#navmenu">
@@ -61,8 +61,9 @@
                 }</script>
         </nav>
         
-        <section class="p-2 d-flex align-items-center" id="author-showcase"> <!-- showcase is custom CSS-->
-            <!-- headerBG = custom css BG color, p-2 = padding 2 -->
+
+        <!-- Showcase Section-->
+        <section class="p-2 d-flex align-items-center" id="author-showcase"> <!-- author-showcase is custom CSS, formats the background image -->
             <div class="container">
                 <div class = "row text-center ">
                     <h1 class = "display-4 bold a-showcase-text">About Us</h1>
@@ -70,8 +71,8 @@
                         to bring the joys of sailing free of charge to those who may not otherwise 
                         have the chance to “learn the ropes.” Shore Sailing brings camaraderie, sailing education, 
                         and sailing opportunities to our friends at local Jersey Shore schools.
-                    </h4>
-                </div>
+                    </h5> <!-- a-showcase-text is custom CSS, formats the text. bold is custom css, sets font weight bold-->
+                </div>            
             </div>
         </section>
         <!--Donation Modal that pops up upon clicking of the donate button-->
@@ -132,7 +133,8 @@
     </section>
         
 
-        <section class="authors">
+        <!-- Authors Section-->
+        <section class="authors"> <!-- authors is custom CSS, positions the section -->
             <div class="container">
                 <br>
                 <h1 class="text-center about-team">Meet the Team</h1>
@@ -141,15 +143,18 @@
               <!-- Cards organized in 2 x 2 format -->
         <div class="row row-cols-1 row-cols-md-2 mb-4 g-4">
             <div class="col">
-                <div class="card about author-position">
+                <!-- Uses cards, modals, and buttons from the Bootstrap 5 framework -->
+                <div class="card about author-position"> <!-- author-position is custom CSS, formats the position of the cards in this page -->
+                    <!-- Content in the cards -->
                     <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#author-modal1">
-                    <img src="img/IMG_3654.jpg" class="card-img-top img-sizing" alt="Name 1">
+                    <img src="img/IMG_3654.jpg" class="card-img-top img-sizing" alt="Desmond Pepe"> 
+                    <!-- img-sizing is custom CSS, positions and sizes the img-->
                     <div class="card-body">
-                        <h4 class="card-title bold">Desmond Pepe</h4>
-                        <h5>Founder/Sofware Engineer</h5>
+                        <h4 class="card-title bold">Desmond Pepe</h4> <!-- bold is custom CSS, sets font weight bold-->
+                        <h5>Founder/Software Engineer</h5>
                     </div>
                     </button>
-                    <!--Modal backdrop that pops up on the click of the card-->
+                    <!--Modal backdrop that pops up on the click of the card, Bootstrap 5 -->
                     <div class="modal fade" id="author-modal1" tabindex="-1" aria-labelledby="author-modal1" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                           <div class="modal-content">
@@ -157,10 +162,12 @@
                               <button type="button" class="btn-close btn-position" data-bs-dismiss="modal" aria-label="Close" ></button>
                             </div>
                             <div class="modal-body row">
-                                <img src="img/IMG_3654.jpg" class="col-6 align-text-top w-50" alt="Name 1">
+                                <!-- Content in modal backdrop -->
+                                <img src="img/IMG_3654.jpg" class="col-6 align-text-top w-50" alt="Desmond Pepe">
                                 <div class="col-6 d-flex flex-column justify-content-center">
-                                    <h4 class="bold modal-author">Desmond Pepe</h4> 
-                                    <h5 class="modal-author text-center">Founder<br>Sofware Engineer</h5>
+                                    <h4 class="bold modal-author">Desmond Pepe</h4> <!-- bold is custom CSS, sets font weight bold -->
+                                    <h5 class="modal-author text-center">Founder<br>Software Engineer</h5>
+                                    <!-- modal-author is custom CSS, positions and formats text -->
                                 </div>
                                 <p><br>Desmond Pepe is a junior at High Technology High School in Lincroft, NJ. 
                                     His academic interests include research, which he pursued at the Memorial Sloan 
@@ -177,26 +184,31 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card about author-position">
+                 <!-- Uses cards, modals, and buttons from the Bootstrap 5 framework -->
+                <div class="card about author-position"> <!-- author-position is custom CSS, formats the position of the cards in this page -->
+                    <!-- Content in the cards -->
                     <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#author-modal2">
-                    <img src="img/R.png" class="card-img-top img-sizing" alt="Name 1">
+                    <img src="img/R.png" class="card-img-top img-sizing" alt="Sophia Behar">
+                    <!-- img-sizing is custom CSS, positions and sizes the img-->
                     <div class="card-body">
-                        <h4 class="card-title bold">Sophia Behar</h4>
+                        <h4 class="card-title bold">Sophia Behar</h4> <!-- bold is custom CSS, sets font weight bold-->
                         <h5>Founder</h5>
                     </div>
                     </button>
-                    <!--Modal backdrop that pops up on the click of the card-->
-                    <div class="modal fade" id="author-modal2" tabindex="-1" aria-labelledby="author-modal1" aria-hidden="true">
+                    <!--Modal backdrop that pops up on the click of the card, Bootstrap 5-->
+                    <div class="modal fade" id="author-modal2" tabindex="-1" aria-labelledby="author-modal2" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                           <div class="modal-content">
                             <div class="modal-header">
                               <button type="button" class="btn-close btn-position" data-bs-dismiss="modal" aria-label="Close" ></button>
                             </div>
                             <div class="modal-body row">
-                                <img src="img/R.png" class="col-6 align-text-top w-50" alt="Name 1">
+                                 <!-- Content in modal backdrop -->
+                                <img src="img/R.png" class="col-6 align-text-top w-50" alt="Sophia Behar">
                                 <div class="col-6 d-flex flex-column justify-content-center">
-                                    <h4 class="bold modal-author">Sophia Behar</h4> 
+                                    <h4 class="bold modal-author">Sophia Behar</h4> <!-- bold is custom CSS, sets font weight bold-->
                                     <h5 class="modal-author text-center">Founder</h5>
+                                    <!-- modal-author is custom CSS, positions and formats text -->
                                 </div>
                                 <p><br>...</p>
                             </div>
@@ -211,26 +223,31 @@
         </div>
         <div class="row row-cols-1 row-cols-md-2 g-4">
             <div class="col">
-                <div class="card about author-position">
+                 <!-- Uses cards, modals, and buttons from the Bootstrap 5 framework -->
+                <div class="card about author-position"> <!-- author-position is custom CSS, formats the position of the cards in this page -->
+                    <!-- Content in the cards -->
                     <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#author-modal3">
-                    <img src="img/R.png" class="card-img-top img-sizing" alt="Name 1">
+                    <img src="img/R.png" class="card-img-top img-sizing" alt="Anders Nielsen">
+                    <!-- img-sizing is custom CSS, positions and sizes the img--> 
                     <div class="card-body">
-                        <h4 class="card-title bold">Anders Nielsen</h4>
+                        <h4 class="card-title bold">Anders Nielsen</h4> <!-- bold is custom CSS, sets font weight bold-->
                         <h5>Software Engineer</h5>
                     </div>
                     </button>
-                    <!--Modal backdrop that pops up on the click of the card-->
-                    <div class="modal fade" id="author-modal3" tabindex="-1" aria-labelledby="author-modal1" aria-hidden="true">
+                    <!--Modal backdrop that pops up on the click of the card, Bootstrap 5 -->
+                    <div class="modal fade" id="author-modal3" tabindex="-1" aria-labelledby="author-modal3" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                           <div class="modal-content">
                             <div class="modal-header">
                               <button type="button" class="btn-close btn-position" data-bs-dismiss="modal" aria-label="Close" ></button>
                             </div>
                             <div class="modal-body row">
-                                <img src="img/R.png" class="col-6 align-text-top w-50" alt="Name 1">
+                                 <!-- Content in modal backdrop -->
+                                <img src="img/R.png" class="col-6 align-text-top w-50" alt="Anders Nielsen">
                                 <div class="col-6 d-flex flex-column justify-content-center">
-                                    <h4 class="bold modal-author">Anders Nielsen</h4> 
+                                    <h4 class="bold modal-author">Anders Nielsen</h4> <!-- bold is custom CSS, sets font weight bold-->
                                     <h5 class="modal-author text-center">Software Engineer</h5>
+                                    <!-- modal-author is custom CSS, positions and formats text -->
                                 </div>
                                 <p><br>...</p>
                             </div>
@@ -243,28 +260,34 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card about author-position">
+                 <!-- Uses cards, modals, and buttons from the Bootstrap 5 framework -->
+                <div class="card about author-position"> <!-- author-position is custom CSS, formats the position of the cards in this page -->
+                    <!-- Content in the cards -->
                     <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#author-modal4">
-                    <img src="img/owen-aboutme.jpg" class="card-img-top img-sizing" alt="Name 1">
+                    <img src="img/owen-aboutme.jpg" class="card-img-top img-sizing" alt="Owen Chen">
+                    <!-- img-sizing is custom CSS, positions and sizes the img-->
                     <div class="card-body">
-                        <h4 class="card-title bold">Owen Chen</h4>
-                        <h5>Sofware Engineer</h5>
+                        <h4 class="card-title bold">Owen Chen</h4> <!-- bold is custom CSS, sets font weight bold-->
+                        <h5>Software Engineer</h5>
                     </div>
                     </button>
-                    <!--Modal backdrop that pops up on the click of the card-->
-                    <div class="modal fade" id="author-modal4" tabindex="-1" aria-labelledby="author-modal1" aria-hidden="true">
+                    <!--Modal backdrop that pops up on the click of the card, Bootstrap 5-->
+                    <div class="modal fade" id="author-modal4" tabindex="-1" aria-labelledby="author-modal4" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                           <div class="modal-content">
                             <div class="modal-header">
                               <button type="button" class="btn-close btn-position" data-bs-dismiss="modal" aria-label="Close" ></button>
                             </div>
                             <div class="modal-body row">
-                                <img src="img/owen-aboutme.jpg" class="col-6 align-text-top w-50" alt="Name 1">
+                                 <!-- Content in modal backdrop -->
+                                <img src="img/owen-aboutme.jpg" class="col-6 align-text-top w-50" alt="Owen Chen">
                                 <div class="col-6 d-flex flex-column justify-content-center">
-                                    <h4 class="bold modal-author">Owen Chen</h4> 
+                                    <h4 class="bold modal-author">Owen Chen</h4> <!-- bold is custom CSS, sets font weight bold-->
                                     <h5 class="modal-author text-center">Software Engineer</h5>
+                                    <!-- modal-author is custom CSS, positions and formats text -->
                                 </div>
-                                <p><br>...</p>
+                                <p><br>Owen Chen is a junior at High Technology High School in Lincroft, NJ. 
+                                       He helped in developing the functionality and aesthetics of this website.</p>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
@@ -278,35 +301,35 @@
         <br>
         </section>
         
-        <section class="cmp-container">
-            <div class="row cmp-container-info ">
+        <!--Section that leads to Donating Page -->
+        <section class="cmp-container"> <!-- cmp-container is custom CSS, bg color-->
+            <div class="row cmp-container-info "> <!-- cmp-container-info is customCSS, positions the content inside this section-->
                 <div class="col-sm-8 p-3 d-flex flex-column justify-content-center align-items-start">
                     <h1 class="ovPadLeft bold" id="cmp-title">Interested in Donating?</h1> <!-- ovPadLeft - custom padding left side-->
+                    <!-- cmp-title is customCSS, text font and color. bold is custom CSS, sets font weight bold --> 
                     <p class="lead overview-font ovPadRight" id="cmp-text">Please go to our donation page to donate to our charity.</p>
-                    <button type="submit" class="btn" id="cmp-btn" data-bs-toggle="modal" data-bs-target="#donate-modal">Donate Now <i class="bi bi-arrow-right"></i></button>
-                
+                    <!-- cmp-text is custom CSS, text font and color-->
+                    <form action="/donate.html">
+                        <button type="submit" class="btn" id="cmp-btn">Go to donation page <i class="bi bi-arrow-right"></i></button>
+                    </form> <!-- cmp-btn is custom css, formats the transition, color, and font size. Also Bootstrap 5 icon arrow CSS-->
                 </div>
                 <div class="col-sm-4 p-3 pb-3">
                     <!-- pt - 3 = padding top -->
-                    <img class="img-fluid" id="cmp-image" src="img/IMG_3922.jpg" alt="placeholder">
-                    
+                    <img class="img-fluid" id="cmp-image" src="img/IMG_3922.jpg" alt="Sailing Boat">
+                    <!-- cmp-image is custom css, change border radius-->
                 </div>
-                
             </div>
         </section>
     
     
-
     <!--Footer Section-->    
       <!-- Footer (requires Bootstrap icons CSS)-->
-      <footer class="p-5 footer text-light text-center position-relative">
+      <footer class="p-5 footer text-light text-center position-relative"> <!-- footer is custom css, bg color-->
         <div class="container">
              <p class="lead">Copyright &copy; Shore Sailing 2023</p> 
              <a href="#" class="position-absolute bottom-0 end-0 p-5">
                  <i class="bi bi-arrow-up-circle h2 icon-white"></i>
              </a>
-     </footer>
-
-    
+     </footer>    
 </body>
 </html>
