@@ -256,14 +256,14 @@ transition: background-color 0.35s;       /* Transition for background color */
 
 /* Styling for elements with the class calendar */
 .calendar {
-  display: flex;              /* Display as a flex container */
-  flex-flow: column;          /* Arrange items in a column */
-  align-items: center;        /* Center items horizontally */
-  font-family: "Poppins", serif; /* Font family */
-  background-image: url(img/cal-bg2.jpg); /* Background image */
-  margin-top: 6.5rem;         /* Top margin */
-  margin-bottom: -2rem;       /* Negative bottom margin */
-  padding: 1rem 4rem 1rem 4rem; /* Padding */
+  display: flex;                              /* Display as a flex container */
+  flex-flow: column;                          /* Arrange items in a column */
+  align-items: center;                        /* Center items horizontally */
+  font-family: "Poppins", serif;              /* Font family */
+  background-image: url(img/cal-bg2.jpg);     /* Background image */
+  margin-top: 6.5rem;                         /* Top margin */
+  margin-bottom: -2rem;                       /* Negative bottom margin */
+  padding: 1rem 4rem 1rem 4rem;               /* Padding */
 }
 
 /* Styling for the element with the ID calendar-1 */
@@ -328,8 +328,8 @@ transition: background-color 0.35s;       /* Transition for background color */
 
 /* Styling for elements with the class prev on hover */
 .prev:hover {
-  background-color: #898989;  /* Background color on hover */
-  transition: background-color 0.35s; /* Transition effect */
+  background-color: #898989;                  /* Background color on hover */
+  transition: background-color 0.35s;           /* Transition effect */
 }
 
 /* Styling for elements with the class next */
@@ -340,8 +340,8 @@ transition: background-color 0.35s;       /* Transition for background color */
 
 /* Styling for elements with the class next on hover */
 .next:hover {
-  background-color: #898989;  /* Background color on hover */
-  transition: background-color 0.35s; /* Transition effect */
+  background-color: #898989;              /* Background color on hover */
+  transition: background-color 0.35s;       /* Transition effect */
 }
 
 /* Styling for elements with the class cal-boxes */
@@ -351,10 +351,10 @@ transition: background-color 0.35s;       /* Transition for background color */
 
 /* Styling for elements with the class cal-days */
 .cal-days {
-  display: grid;              /* Display as a grid */
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /* Grid template columns */
-  flex-wrap: wrap;            /* Wrap items */
-  list-style: none;           /* Remove list style */
+  display: grid;                                          /* Display as a grid */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;     /* Grid template columns */
+  flex-wrap: wrap;                                        /* Wrap items */
+  list-style: none;                                       /* Remove list style */
 }
 
 /* Styling for elements with the class day */
@@ -367,7 +367,7 @@ transition: background-color 0.35s;       /* Transition for background color */
   border-radius: 0.2rem;                              /* Border radius */
   padding: 1rem;                                      /* Padding */
   font-weight: 300;                                   /* Font weight */
-  font-size: 0.8rem;                                  /* Font size */
+  font-size: 1.75rem;                                 /* Font size */
   box-sizing: border-box;                             /* Box sizing */
   background: rgba(255, 255, 255, 0.25);            /* Background color with opacity */
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Box shadow */
@@ -399,14 +399,24 @@ transition: background-color 0.35s;       /* Transition for background color */
 
 /* Styling for elements with the class event-title */
 .event-title {
-  font-weight: 1000;          /* Font weight */
-  font-size: 125%;            /* Font size */
-  margin-top: -1rem;          /* Top margin */
+  font-weight: 1000;         /* Font weight */
+  font-size: 50%;            /* Font size */
+}
+
+/* Styling for elements within class event-day */
+.event-day {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 /* Styling for elements with the class event-des */
 .event-des {
-  display: none;              /* Hidden by default */
+  display: none;            /* Hidden by default */
+  font-size: 50%;           /* 50% font-size */
+}
+
+.day:hover .event-des{
+  display: block;
+  transition: 0.5s;
 }
 
 /* Styling for elements with the class day on hover */
@@ -525,51 +535,60 @@ svg {
   align-items: center;                /* Center vertically */
   margin-bottom: 20px;                /* Bottom margin */
 }
-.single_amount {
-    padding: 10px 20px;
-    margin: 0 5px;
-    border-radius: 25px;
-    color: #fff;
-    background: #0070ba;
-    cursor: pointer;
-  }
-.amount_wrapper {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-}
-.suffix {
-  padding: 8px;
-  border: 0;
-  font-weight: bold;
-  box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
-  background: #fff;
-  border-radius: 0 8px 8px 0;
-  }
-  .amount_wrapper input {
-    border-radius: 8px 0 0 8px;
-    padding: 8px;
-    border: 0;
-    font-weight: bold;
-    box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
-    background: #fff;
 
-  }
-  
-.modal-body a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 25px;
-  padding: 10px;
-  border: 0;
-  color: #fff;
-  font-size: 16px;
-  text-decoration: none;
-  border-radius: 25px;
-  background: #0070ba;
+/* Styling for elements with the class single_amount */
+.single_amount {
+    padding: 10px 20px;              /* Padding */
+    margin: 0 5px;                   /* Margins */
+    border-radius: 25px;             /* Border radius */
+    color: #fff;                   /* Text color */
+    background: #0070ba;           /* Background color */
+    cursor: pointer;                 /* Cursor style */
 }
+
+/* Styling for elements with the class amount_wrapper */
+.amount_wrapper {
+  margin-top: 20px;                   /* Top margin */
+  display: flex;                      /* Display as a flex container */
+  justify-content: center;            /* Center horizontally */
+  align-items: stretch;               /* Stretch items vertically */
+}
+
+/* Styling for elements with the class suffix */
+.suffix {
+  padding: 8px;                                 /* Padding */
+  border: 0;                                    /* No border */
+  font-weight: bold;                            /* Font weight */
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.1);      /* Box shadow */
+  background: #fff;                           /* Background color */
+  border-radius: 0 8px 8px 0;                   /* Border radius */
+}
+
+/* Styling for input elements within amount_wrapper */
+.amount_wrapper input {
+  border-radius: 8px 0 0 8px;                   /* Border radius */
+  padding: 8px;                                 /* Padding */
+  border: 0;                                    /* No border */
+  font-weight: bold;                            /* Font weight */
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.1);      /* Box shadow */
+  background: #fff;                           /* Background color */
+}
+
+/* Styling for a elements within elements with the class modal-body */
+.modal-body a {
+  display: flex;                      /* Display as a flex container */
+  justify-content: center;            /* Center horizontally */
+  align-items: center;                /* Center vertically */
+  margin-top: 25px;                   /* Top margin */
+  padding: 10px;                      /* Padding */
+  border: 0;                          /* No border */
+  color: #fff;                      /* Text color */
+  font-size: 16px;                    /* Font size */
+  text-decoration: none;              /* Remove text decoration */
+  border-radius: 25px;                /* Border radius */
+  background: #0070ba;              /* Background color */
+}
+
 /*Arrow animation based on arrow animation from https://unused-css.com/blog/animated-down-arrow/*/
 .down-arrow {
   position: absolute;
