@@ -14,7 +14,7 @@ body {
     position: fixed; /* Sticky/fixed navbar */
     width: 100%;
     top: 0; /* At the top */
-    z-index: 99;
+    z-index: 100;
     background-color: rgba(80,117,164,1);
   }
   a.logo {
@@ -314,7 +314,7 @@ body {
 .day:hover {
   transform: scale(1.25);
   transition: transform 0.5s ease;
-  z-index:100;
+  z-index:99;
 }
 
 .sign-up {
@@ -337,7 +337,7 @@ time {
 }
 
 
-/* wave animation adapted from https://codepen.io/uchardon/pen/bxbqoG */
+/* Wave animation adapted from https://codepen.io/uchardon/pen/bxbqoG */
 
 
 .footer-main {
