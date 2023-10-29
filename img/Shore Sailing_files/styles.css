@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,700&display=swap');
+
+body {
+    font-family: "Montserrat", Georgia, serif;
+}
+
+/* navbar color and text size */
+/* Create a sticky/fixed navbar */
+.navbarClass {
+    overflow: visible;
+    position: fixed;
+    padding: 2vh; /* Large padding which will shrink on scroll (using JS)*/
+    transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+    position: fixed; /* Sticky/fixed navbar */
+    width: 100%;
+    top: 0; /* At the top */
+    z-index: 99;
+    background-color: rgba(80,117,164,1);
+  }
+  a.logo {
+    max-width: 350px; 
+    height: auto;
+  }
+  #navbar-index{
+    background-color: rgba(80,117,164,0)
+  }
+
+
+
+.nbMenuItem {               /* navbar link text properties*/
+    font-size: 23px;
+    margin-left: 15px;
+    margin-right: 15px;
+    color:white;
+    
+    white-space: nowrap;
+}
+
+
+
+/* showcase background and text color*/
+.showcase {
+    color: white;
+    background-image: linear-gradient(to top, rgb(80,117,164), transparent 50%, transparent), url(img/indexbackground.jpg);
+    background-repeat: no-repeat, no-repeat;
+    /*background-attachment: fixed;*/
+    background-size: cover, cover;
+    height: 100vh;
+}
+.showcase .row {
+    padding-top: 20vh;
+}
+
+/* authors text font and color */
+.authors {
+  margin-top: 20px;
+}
+
+#author-showcase {
+  
+  color: white;
+  background-image: url(img/IMG_0099.jpg);
+  background-repeat: no-repeat;
+  /*background-attachment: fixed;*/
+  background-size: cover;
+  height: 80vh;
+}
+
+#author-showcase .row{
+  padding-right: 10vw;
+  padding-left: 10vw;
+  padding-top: 10vw;
+  text-align: justify;
+  
+}
+.a-showcase-text {
+  padding-top: 2vw;
+  text-align: justify;
+}
+
+.cmp-container {
+  
+  background-color: #F7F5F3;
+}
+
+.cmp-container-info {
+  margin: 0 5%;
+  position:relative;
+}
+
+#cmp-title {
+  color: #001936;
+  font-size: 33px;
+}
+
+#cmp-text {
+  color: #001936;
+  font-size: 24px;
+}
+
+#cmp-image {
+  border-radius: 5%;
+}
+
+#cmp-btn {
+  background-color: #49516f;;
+  color: #fff;
+  font-size: 18px;
+}
+
+#cmp-btn:hover {
+  background-color: #353C55;
+  transition: background-color 0.35s;
+}
+.img-sizing {
+  width:50%;
+  display: block;
+  margin: auto;
+  position: relative;
+  bottom: 25px;
+}
+.author-position{
+  width:75%;
+  margin: 20px auto;
+}
+
+.modal-author {
+  display: inline-flex;
+  margin-left: 5%;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/* events formatting */
+.events{
+  margin-top: 15rem;
+  margin-bottom: 10rem;
+  margin-left: 5rem; 
+}
+
+.event-img:hover {
+  transform: scale(1.5);
+}
+
+.event-text {
+  display: hidden;
+}
+
+.event-text:hover {
+  display: visible;
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+@keyframes fadeOut {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
+.white-sailboat {
+  max-width: 200px;
+  height: auto;
+}
+
+.sailboat {
+  max-width: 200px;
+  height: auto;
+}
+
+
+/*source: https://cssgradient.io/blog/css-gradient-text/ */
+.text-gradient {
+  background: linear-gradient(to right, #0b7dee 0%, #1cbe8e 100%);
+  font-weight: bold;
+}
+
+.basic-info {
+    min-height: 50vh;
+    color: cornflowerblue;
+}
+.basic-info .row {
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+.basic-info a {
+  color: cornflowerblue;
+}
+/*source: https://cssgradient.io/blog/css-gradient-text/ */
+
+/* underline animation CSS */
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+  }
+  
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #eae6e6;
+    /*transform-origin: bottom right;*/
+    transition: transform 0.35s ease-out;
+}
+
+.hover-underline-animation:hover {
+  color:  rgb(182, 176, 176) !important;
+  transition: color 0.35s;
+}
+  
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    /*transform-origin: bottom left;*/    
+}
+
+.hover-signin {
+  background-color: white;
+  color: rgb(126, 124, 124);
+  border-radius: 10px;
+}
+
+.hover-signin:hover {
+  background-color: rgb(158, 155, 155);
+  color: white;
+  transition: color 0.35s, background-color 0.35s;
+}
+
+.footer {
+  background-color:rgba(80,117,164,1);
+}
+.bi-arrow-up-circle{
+  color: white;
+}
+
+/*calendar formatting*/
+/* source: https://codepen.io/PepitaK/pen/mdqpRee */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800&display=swap");
+
+.calendar {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	font-family: "Poppins", serif;
+	background: rgb(238, 174, 202);
+	background: radial-gradient(
+		circle,
+		rgba(238, 174, 202, 1) 0%,
+		rgba(148, 187, 233, 1) 100%
+	);
+  margin-top: 7.5rem;
+}
+
+/*.cal-header {
+  text-align: center;
+}*/
+
+.cal-title {
+	font-weight: 800;
+	margin: 1rem 0 0;
+}
+
+.cal-caption {
+  font-weight: 600;
+	margin: 0.5rem 0 0;
+}
+
+.cal-boxes {
+  margin: 1rem;
+}
+
+.cal-days{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	flex-wrap: wrap;
+	list-style: none;
+}
+
+.day {
+  display: flex;
+  width: 10rem;
+  height: 10rem;
+  margin: 0.25rem;
+  flex-flow: column;
+  border-radius: 0.2rem;
+  padding: 1rem;
+  font-weight: 300;
+  font-size: 0.8rem;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.day-head {
+  display: flex;
+  width: 10rem;
+  height: 2.5rem;
+  margin: 0.25rem;
+  flex-flow: column;
+  border-radius: 0.2rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  align-items: center;
+}
+
+time {
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+}
+
+.today {
+  background: #ffffff70;
+}
+
+.today time {
+  font-weight: 800;
+}
+
+
+/*wave animation*/
+
+
+.footer-main {
+background-color: transparent;/*placeholder background color*/
+position: absolute;
+width:100vw;
+}
+
+
+footer div {
+  background-color: rgb(80,117,164);
+  margin: -5px 0px 0px 0px;
+  padding:0px;
+  color: #fff; /* color of text on bottom*/
+  text-align:center;
+}
+svg {
+  width:100vw;
+}
+.arrow {
+  stroke-width: .4px;
+  stroke: white; /*color of arrow on ball*/
+}
+.topball {
+  animation: ball 1.5s ease-in-out;
+  animation-iteration-count:infinite;
+  animation-direction: alternate;
+  animation-delay: 0.3s;
+  cursor:pointer;
+}
+
+.wave {
+  animation: wave 3s linear;
+  animation-iteration-count:infinite;
+  fill: rgb(80,117,164); /*changes color of waves*/
+}
+.drop {
+  fill: transparent;
+  animation: drop 5s ease infinite normal;
+  stroke: purple; /*Changes color of bubble*/
+  stroke-width:0.5;
+  opacity:.6; 
+  transform: translateY(80%);
+}
+.drop1 {    
+  transform-origin: 20px 3px;
+}
+.drop2 {
+  animation-delay: 3s;
+  animation-duration:3s;
+  transform-origin: 25px 3px;
+}
+.drop3 {
+  animation-delay: -2s;
+  animation-duration:3.4s;
+  transform-origin: 16px 3px;
+}
+.gooeff {
+  	filter: url(#goo);
+}
+#wave2 {
+  animation-duration:5s;
+  animation-direction: reverse;
+  opacity: .6
+}
+#wave3 {
+  animation-duration: 7s;
+  opacity:.3;
+}
+@keyframes drop {
+  0% {
+    transform: translateY(80%); 
+    opacity:.6; 
+  }
+  80% {
+    transform: translateY(80%); 
+    opacity:.6; 
+  }
+  90% { 
+    transform: translateY(10%) ; 
+    opacity:.6; 
+  }
+  100% { 
+    transform: translateY(0%) scale(1.5);  
+    stroke-width:0.2;
+    opacity:0; 
+  }
+}
+@keyframes wave {
+  to {transform: translateX(-100%);}
+}
+@keyframes ball {
+  to {transform: translateY(20%);}
+}
+

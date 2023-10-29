@@ -19,7 +19,7 @@
         
             <div class="container">
                 <a href="#" class="logo navbar-brand">
-                    <img src="img/R.png" alt="Placeholder Logo" class="d-inline-block align-text-top w-25">
+                    <img src="img/logo.png" alt="Placeholder Logo" class="d-inline-block align-text-top w-25">
                 </a>
 
                 <button class = "navbar-toggler" type = "button" data-bs-toggle = "collapse" data-bs-target = "#navmenu">
@@ -50,11 +50,11 @@
 
                 function scrollFunction() {
                   if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
-                    document.getElementById("navbar-index").style.padding = "10px";
+                    document.getElementById("navbar-index").style.padding = ".1vh";
                     document.getElementById("navbar-index").style.backgroundColor = "rgba(80,117,164,1)";
                     
                   } else {
-                    document.getElementById("navbar-index").style.padding = "20px";
+                    document.getElementById("navbar-index").style.padding = "1.5vh";
                     document.getElementById("navbar-index").style.backgroundColor = "rgba(80,117,164,0)";
                   }
                 }
@@ -63,22 +63,30 @@
     
     <!--Showcase Section-->
     <!-- Showcase-->
-    <section class="showcase p-2 text-center d-flex align-items-end"> <!-- showcase is custom CSS-->
+    <section class="showcase p-2 text-center d-flex align-items-start"> <!-- showcase is custom CSS-->
         <!-- headerBG = custom css BG color, p-2 = padding 2 -->
         <div class="container">
             <div class = "row ">
-                <h1 class = "display-4">Shore Sailing</h1>
+                <h1 class = "display-1">Shore Sailing</h1>
                 <h4 class>Setting Sail for Success</h4>
-            </div>
-
-            
+            </div>   
         </div>
     </section>
-    <section class="basic-info p-2 text-center d-flex align-items-end">
-
+    <section class="basic-info p-2 text-center d-flex align-items-center">
+        <div class = "container">
+            <div class = "row">
+                <h2>
+                    Shore Sailing is a not for profit 501(c)(3) organization founded by Jersey Shore students 
+                    who love sailing to open the world of sailing to those who may not otherwise have the opportunity
+                    to enjoy this lifelong activity. Donations are tax deductible and 100% of all donations go back to 
+                    the community. <br> <br>Click <a href = "/events.html">Events</a> for details about upcoming events. 
+                </h2>
+               
+            </div>
+        </div>
     </section>
 
-    <footer>
+    <footer class = "footer-main">
         <svg viewBox="0 0 120 28">
             <defs> 
                 <mask id="xxx">
@@ -111,7 +119,7 @@
             </a>
             <use id="wave1" class="wave" xlink:href="#wave" x="0" y="1" />
         </svg>  
-        <div>Copyright Shore Sailing 2023</div>
+        <div id = "main-footer">Copyright &copy; Shore Sailing 2023</div>
     </footer>
 </body>
 </html>
