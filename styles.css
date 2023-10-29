@@ -228,13 +228,23 @@ body {
 /* source: https://codepen.io/PepitaK/pen/mdqpRee */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800&display=swap");
 
-.calendar1 {
+.calendar {
 	display: flex; 
 	flex-flow: column; 
 	align-items: center;
 	font-family: "Poppins", serif;
-	background-image: url(img/cal-bg2.jpg); 
-  margin-top: 6.6rem; 
+  background-image: url(img/cal-bg2.jpg); 
+  margin-top: 6.5rem;
+  margin-bottom: -2rem;
+  padding: 1rem 4rem 1rem 4rem;
+}
+
+#calendar-1 {
+  margin-bottom: -9rem;
+}
+
+#cal-head-1 {
+  margin-top: 0.5rem;
 }
 
 .cal-title {
@@ -245,6 +255,52 @@ body {
 .cal-caption {
   font-weight: 600;
 	margin: 0.5rem 0 0;
+}
+
+.cal-head {
+  display: inline-flex;
+  margin: auto;
+}
+
+#cal-head-1 {
+  display: inline-flex;
+}
+
+#cal-head-2 {
+  display: none;
+}
+
+#cal-1 {
+  display: grid;
+}
+
+#cal-2 {
+  display: none;
+}
+
+.btn {
+  height: 75%;
+}
+
+.prev {
+  margin-right: 18rem;
+  margin-top: 1rem;
+  opacity:0.25;
+}
+
+.prev:hover {
+  background-color:#898989;
+  transition: background-color 0.35s;
+}
+
+.next {
+  margin-left: 18rem;
+  margin-top: 1rem;
+}
+
+.next:hover {
+  background-color:#898989;
+  transition: background-color 0.35s;
 }
 
 .cal-boxes {
@@ -298,6 +354,7 @@ body {
 
 .event-title {
   font-weight: 1000;
+  font-size: 125%;
   margin-top: -1rem;
 }
 
@@ -317,7 +374,7 @@ body {
 }
 
 .sign-up {
-  color: rgb(27, 204, 180);
+  color: rgb(77, 153, 225);
   font-weight: 800;
 }
 

@@ -59,13 +59,34 @@
         </nav>
     
 
-    <!-- source: https://codepen.io/PepitaK/pen/mdqpRee -->
-    <section class="calendar1">
+<!-- source: https://codepen.io/PepitaK/pen/mdqpRee -->
+<div class="calendars">
+    <div class="calendar cal1" id="calendar-1">
+        <div class="cal-head" id="cal-head-1">
+            <button type="button" class="btn prev" id="prev-1">
+                <img src="img/left-arrow.png" class="arrow">
+            </button>
             <div class="text-center cal-header">
                 <h1 class = "cal-title">October 2023</h1>
-                <p class = "cal-caption">Events during the month of October</a>
+                <p class = "cal-caption">Events during the month of October</p>
             </div>
-        <div class="cal-boxes">
+            <button type="button" onclick="clickFunction1()" class="btn next" id="next-1">
+                <img src="img/right-arrow.png" class="arrow">
+            </button>
+            <script>
+                function clickFunction1() {
+                    document.getElementById("cal-head-1").style.display = "none";
+                    document.getElementById("cal-head-2").style.display = "inline-flex";
+                    document.getElementById("next-2").style.opacity = "0.25";
+                    document.getElementById("prev-2").style.opacity = "1";
+                    document.getElementById("cal-1").style.display = "none";
+                    document.getElementById("cal-2").style.display = "grid";
+                    document.getElementById("calendar-1").style.transition = "1s";
+                    document.getElementById("calendar-2").style.transition = "1s";
+                }
+            </script>
+        </div>
+        <div class="cal-boxes" id="cal-1">
             <ul class="cal-days">
                 <li class="day-head">Sunday</li>
                 <li class="day-head">Monday</li>
@@ -75,15 +96,6 @@
                 <li class="day-head">Friday</li>
                 <li class="day-head">Saturday</li>
                 <li class="day"><time datetime="2023-10-01">1</time></li>
-                <!--<script > window.Window = dayFunction1;
-                    function dayFunction1(){
-                        const d1 = new Date();
-                        let day1 = d1.getDate();
-                        if (day1==1) {
-                            document.getElementById("day1").style.backgroundColor = "rgba(0, 0, 255 0.75)";
-                        }
-                    }
-                </script>-->
                 <li class="day"><time datetime="2023-10-02">2</time></li>
                 <li class="day"><time datetime="2023-10-03">3</time></li>
                 <li class="day"><time datetime="2023-10-04">4</time></li>
@@ -100,7 +112,7 @@
                     <div class="event-title">
                         Event Title: 
                     </div>
-                   
+                
                     <div class="event-des">
                         Event Time:
                     </div>
@@ -127,20 +139,95 @@
                 <li class="day"><time datetime="2023-10-28">28</time></li>
                 <li class="day"><time datetime="2023-10-29">29</time></li>
                 <li class="day"><time datetime="2023-10-30">30</time></li>
-                <!--<script> window.Window = dayFunction30;
-                    function dayFunction30(){
-                        const d30 = new Date();
-                        let day30 = d30.getDate();
-                        if (day30==30) {
-                            document.getElementById("day30").setAttribute() = "rgba(0, 0, 255 0.75)";
-                        }
-                    }
-                </script>-->
                 <li class="day"><time datetime="2023-10-31">31</time></li>
             </ul>
         </div>
-    </section>
-
+    </div>x
+    <div class="calendar cal2" id="calendar-2">
+        <div class="cal-head" id="cal-head-2">
+            <button type="button" onclick="clickFunction2()" class="btn prev" id="prev-2">
+                <img src="img/left-arrow.png" class="arrow">
+            </button>
+            <script>
+                function clickFunction2() {
+                    document.getElementById("cal-head-1").style.display = "inline-flex";
+                    document.getElementById("cal-head-2").style.display = "none";
+                    document.getElementById("next-2").style.opacity = "0.25";
+                    document.getElementById("prev-2").style.opacity = "1";
+                    document.getElementById("cal-1").style.display = "grid";
+                    document.getElementById("cal-2").style.display = "none";
+                    document.getElementById("calendar-1").style.transition = "1s";
+                    document.getElementById("calendar-2").style.transition = "1s";
+                }
+            </script>
+            <div class="text-center cal-header card-title">
+                <h1 class = "cal-title">November 2023</h1>
+                <p class = "cal-caption">Events during the month of November</p>
+            </div>
+            <button type="button" class="btn next" id="next-2">
+                <img src="img/right-arrow.png" class="arrow">
+            </button>
+        </div>
+        <div class="cal-boxes" id="cal-2">
+            <ul class="cal-days">
+                <li class="day-head">Sunday</li>
+                <li class="day-head">Monday</li>
+                <li class="day-head">Tuesday</li>
+                <li class="day-head">Wednesday</li>
+                <li class="day-head">Thursday</li>
+                <li class="day-head">Friday</li>
+                <li class="day-head">Saturday</li>
+                <li class="day"><time datetime="undef"></time></li>
+                <li class="day"><time datetime="undef"></time></li>
+                <li class="day"><time datetime="undef"></time></li>
+                <li class="day"><time datetime="2023-11-01">1</time></li>
+                <li class="day"><time datetime="2023-11-02">2</time></li>
+                <li class="day"><time datetime="2023-11-03">3</time></li>
+                <li class="day"><time datetime="2023-11-04">4</time></li>
+                <li class="day"><time datetime="2023-11-05">5</time></li>
+                <li class="day"><time datetime="2023-11-06">6</time></li>
+                <li class="day"><time datetime="2023-11-07">7</time></li>
+                <li class="day"><time datetime="2023-11-08">8</time></li>
+                <li class="day"><time datetime="2023-11-09">9</time></li>
+                <li class="day"><time datetime="2023-11-10">10</time></li>
+                <li class="day"><time datetime="2023-11-11">11</time></li>
+                <li class="day"><time datetime="2023-11-12">12</time></li>
+                <li class="day"><time datetime="2023-11-13">13</time></li>
+                <li class="day"><time datetime="2023-10-14">14</time></li>
+                <li class="day"><time datetime="2023-11-15">15</time></li>
+                <li class="day"><time datetime="2023-11-16">16</time></li>
+                <li class="day"><time datetime="2023-11-17">17</time></li>
+                <li class="day event-day"><time datetime="2023-11-18">18</time>
+                    <div class="event-title">
+                        Event Title: 
+                    </div>
+                    
+                    <div class="event-des">
+                        Event Time:
+                    </div>
+                    <div class="event-des">
+                        Event Description:
+                    </div>
+                    <div class="event-des">
+                        <a href="signin.html" class="sign-up">Sign Up</a>
+                    </div>
+                </li>
+                <li class="day"><time datetime="2023-11-19">19</time></li>
+                <li class="day"><time datetime="2023-11-20">20</time></li>
+                <li class="day"><time datetime="2023-11-21">21</time></li>
+                <li class="day"><time datetime="2023-11-22">22</time></li>
+                <li class="day"><time datetime="2023-11-23">23</time></li>
+                <li class="day"><time datetime="2023-11-24">24</time></li>
+                <li class="day"><time datetime="2023-11-25">25</time></li>
+                <li class="day"><time datetime="2023-11-26">26</time></li>
+                <li class="day"><time datetime="2023-11-27">27</time></li>
+                <li class="day"><time datetime="2023-11-28">28</time></li>
+                <li class="day"><time datetime="2023-11-29">29</time></li>
+                <li class="day"><time datetime="2023-11-30">30</time></li>
+            </ul>
+        </div>
+    </div>
+</div>  
     <!--Footer Section-->    
       <!-- Footer (requires Bootstrap icons CSS)-->
       <footer class="p-5 footer text-light text-center position-relative">
