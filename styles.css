@@ -54,6 +54,7 @@ background-repeat: no-repeat, no-repeat;                                        
 }
 
 /* Style for text in the authors class */
+/* About Us or Authors CSS, formats position, color, or size */
 .authors {
 margin-top: 20px;
 }
@@ -523,6 +524,63 @@ svg {
   justify-content: space-between;     /* Space between items */
   align-items: center;                /* Center vertically */
   margin-bottom: 20px;                /* Bottom margin */
+}
+.single_amount {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 25px;
+    color: #fff;
+    background: #0070ba;
+    cursor: pointer;
+  }
+.amount_wrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+.suffix {
+  padding: 8px;
+  border: 0;
+  font-weight: bold;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+  background: #fff;
+  border-radius: 0 8px 8px 0;
+  }
+  .amount_wrapper input {
+    border-radius: 8px 0 0 8px;
+    padding: 8px;
+    border: 0;
+    font-weight: bold;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+    background: #fff;
+
+  }
+  
+.modal-body a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  padding: 10px;
+  border: 0;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 25px;
+  background: #0070ba;
+}
+/*Arrow animation based on arrow animation from https://unused-css.com/blog/animated-down-arrow/*/
+.down-arrow {
+  position: absolute;
+  bottom: 40px; /* Adjust this value if you want the arrow higher or lower from the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 30px;
+  border: 2px solid;
+  border-radius: 2px;
+  animation: jumpInfinite 1.5s infinite;
 }
 
 /* Styling for elements with the class single_amount */
