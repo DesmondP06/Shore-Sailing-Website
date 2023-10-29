@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,700&display=swap'); /*
 
 body {
     font-family: "Montserrat", Georgia, serif;
@@ -155,16 +155,6 @@ body {
   to {opacity: 0;}
 }
 
-.white-sailboat {
-  max-width: 200px;
-  height: auto;
-}
-
-.sailboat {
-  max-width: 200px;
-  height: auto;
-}
-
 
 /*source: https://cssgradient.io/blog/css-gradient-text/ */
 .text-gradient {
@@ -238,13 +228,13 @@ body {
 /* source: https://codepen.io/PepitaK/pen/mdqpRee */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800&display=swap");
 
-.calendar {
-	display: flex;
-	flex-flow: column;
+.calendar1 {
+	display: flex; 
+	flex-flow: column; 
 	align-items: center;
 	font-family: "Poppins", serif;
-	background-image: url(img/cal-bg2.jpg);
-  margin-top: 6.6rem;
+	background-image: url(img/cal-bg2.jpg); 
+  margin-top: 6.6rem; 
 }
 
 .cal-title {
@@ -323,10 +313,11 @@ body {
 .day:hover {
   transform: scale(1.25);
   transition: transform 0.5s ease;
+  z-index:100;
 }
 
 .sign-up {
-  color: rgb(0, 0, 0);
+  color: rgb(27, 204, 180);
   font-weight: 800;
 }
 
@@ -336,11 +327,11 @@ time {
   font-weight: 500;
 }
 
-.today {
+.event-day {
   background: rgba(255, 255, 255, 0.75);
 }
 
-.today time {
+.event-day time {
   font-weight: 1000;
 }
 
