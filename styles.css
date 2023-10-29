@@ -279,9 +279,7 @@ body {
   display: none;
 }
 
-.btn {
-  height: 75%;
-}
+
 
 .prev {
   margin-right: 18rem;
@@ -470,90 +468,90 @@ svg {
 }
 
 .single_amount_wrapper {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.single_amount {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 25px;
+    color: #fff;
+    background: #0070ba;
+    cursor: pointer;
   }
-  .single_amount {
-			padding: 10px 20px;
-			margin: 0 5px;
-			border-radius: 25px;
-			color: #fff;
-			background: #0070ba;
-			cursor: pointer;
-	  }
-	.amount_wrapper {
-    margin-top: 20px;
-		display: flex;
-		justify-content: center;
-		align-items: stretch;
+.amount_wrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+.suffix {
+  padding: 8px;
+  border: 0;
+  font-weight: bold;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+  background: #fff;
+  border-radius: 0 8px 8px 0;
   }
-	.suffix {
+  .amount_wrapper input {
+    border-radius: 8px 0 0 8px;
     padding: 8px;
     border: 0;
     font-weight: bold;
     box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
     background: #fff;
-    border-radius: 0 8px 8px 0;
-		}
-		.amount_wrapper input {
-			border-radius: 8px 0 0 8px;
-      padding: 8px;
-      border: 0;
-      font-weight: bold;
-      box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
-      background: #fff;
 
-		}
-		
-	.modal-body a {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin-top: 25px;
-		padding: 10px;
-		border: 0;
-		color: #fff;
-		font-size: 16px;
-		text-decoration: none;
-		border-radius: 25px;
-		background: #0070ba;
-	}
+  }
+  
+.modal-body a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  padding: 10px;
+  border: 0;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 25px;
+  background: #0070ba;
+}
 /*Arrow animation based on arrow animation from https://unused-css.com/blog/animated-down-arrow/*/
-  .down-arrow {
-    position: absolute;
-    bottom: 40px; /* Adjust this value if you want the arrow higher or lower from the bottom */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 30px;
-    border: 2px solid;
-    border-radius: 2px;
-    animation: jumpInfinite 1.5s infinite;
+.down-arrow {
+  position: absolute;
+  bottom: 40px; /* Adjust this value if you want the arrow higher or lower from the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 30px;
+  border: 2px solid;
+  border-radius: 2px;
+  animation: jumpInfinite 1.5s infinite;
 }
 
 .down-arrow:after {
-    content: " ";
-    position: absolute;
-    bottom: -4px; 
-    left: 50%;
-    transform: translateX(-50%) rotateZ(45deg);
-    width: 16px;
-    height: 16px;
-    border-bottom: 4px solid;
-    border-right: 4px solid;
-    border-radius: 4px;
+  content: " ";
+  position: absolute;
+  bottom: -4px; 
+  left: 50%;
+  transform: translateX(-50%) rotateZ(45deg);
+  width: 16px;
+  height: 16px;
+  border-bottom: 4px solid;
+  border-right: 4px solid;
+  border-radius: 4px;
 }
 
 @keyframes jumpInfinite {
-    0% {
-        bottom: 30px;
-    }
-    50% {
-        bottom: 50px;
-    }
-    100% {
-        bottom: 30px;
-    }
+  0% {
+      bottom: 30px;
+  }
+  50% {
+      bottom: 50px;
+  }
+  100% {
+      bottom: 30px;
+  }
 }
