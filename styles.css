@@ -270,7 +270,6 @@ transition: background-color 0.35s;       /* Transition for background color */
 #calendar-1 {
   margin-bottom: -9rem;       /* Negative bottom margin */
 }
-
 /* Styling for the element with the ID cal-head-1 */
 #cal-head-1 {
   margin-top: 0.5rem;          /* Top margin */
