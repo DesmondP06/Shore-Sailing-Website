@@ -254,13 +254,17 @@ transition: background-color 0.35s;       /* Transition for background color */
 /* source: https://codepen.io/PepitaK/pen/mdqpRee */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800&display=swap");
 
+.calendars {
+  background-image: url(img/cal-bg2.jpg);     /* Background image */
+  background-repeat: no-repeat;
+}
+
 /* Styling for elements with the class calendar */
 .calendar {
   display: flex;                              /* Display as a flex container */
   flex-flow: column;                          /* Arrange items in a column */
   align-items: center;                        /* Center items horizontally */
   font-family: "Poppins", serif;              /* Font family */
-  background-image: url(img/cal-bg2.jpg);     /* Background image */
   margin-top: 6.5rem;                         /* Top margin */
   margin-bottom: -2rem;                       /* Negative bottom margin */
   padding: 1rem 4rem 1rem 4rem;               /* Padding */
@@ -268,12 +272,16 @@ transition: background-color 0.35s;       /* Transition for background color */
 
 /* Styling for the element with the ID calendar-1 */
 #calendar-1 {
-  margin-bottom: -9rem;       /* Negative bottom margin */
+  margin-bottom: -12.5%;       /* Negative bottom margin */
+  padding-bottom: 5%;
+  height: 100%;
+  width: 100%;
 }
 
-/* Styling for the element with the ID cal-head-1 */
-#cal-head-1 {
-  margin-top: 0.5rem;          /* Top margin */
+#calendar-2 {
+  margin-top: 7%;
+  height: 100%;
+  width: 100%;
 }
 
 /* Styling for elements with the class cal-title */
@@ -296,6 +304,7 @@ transition: background-color 0.35s;       /* Transition for background color */
 
 /* Styling for the element with the ID cal-head-1 */
 #cal-head-1 {
+  margin-top: 0.5rem;          /* Top margin */
   display: inline-flex;       /* Display as inline-flex container */
 }
 
