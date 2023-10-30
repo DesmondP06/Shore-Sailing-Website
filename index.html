@@ -149,14 +149,17 @@
         <!-- headerBG = custom css BG color, p-2 = padding 2 -->
         <div class="container">
             <div class = "row ">
+                <!--Title and slogan in h1 and h4 elements-->
                 <h1 class = "display-1">Shore Sailing</h1>
                 <h4 class>Setting Sail for Success</h4>
             </div>
             
         </div>
     </section>
-    <section class="basic-info p-2 text-center d-flex align-items-center">
+    <!--Section for information about the charity-->
+    <section class="basic-info p-2 text-center d-flex align-items-center"> <!--Basic info is custom css-->
         <div class = "container">
+            <!--H2 text with a clickable link to events page-->
             <div class = "row">
                 <h2>
                     Shore Sailing is a nonprofit 501(c)(3) organization founded by Jersey Shore students 
@@ -170,57 +173,57 @@
     </section>
 
     <!--main footer container-->
-<footer class="footer-main">
+    <footer class="footer-main">
 
-    <!--SVG element for the wave footer and ball graphics-->
-    <svg viewBox="0 0 120 28">
-        <!--Definitions for the SVG elements-->
-        <defs> 
-            <!--Mask for the circle-->
-            <mask id="xxx">
-                <circle cx="7" cy="12" r="40" fill="#fff" />
-            </mask>
-            
-            <!--Gooey effect filter -->
-            <filter id="goo">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
-                <feColorMatrix in="blur" mode="matrix" values="
-                    1 0 0 0 0  
-                    0 1 0 0 0  
-                    0 0 1 0 0  
-                    0 0 0 13 -9" result="goo" />
-                <feBlend in="SourceGraphic" in2="goo" />
-            </filter>
-            
-            <!--Defining the path for the wave shape-->
-            <path id="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
-        </defs> 
+        <!--SVG element for the wave footer and ball graphics-->
+        <svg viewBox="0 0 120 28">
+            <!--Definitions for the SVG elements-->
+            <defs> 
+                <!--Mask for the circle-->
+                <mask id="xxx">
+                    <circle cx="7" cy="12" r="40" fill="#fff" />
+                </mask>
+                
+                <!--Gooey effect filter -->
+                <filter id="goo">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+                    <feColorMatrix in="blur" mode="matrix" values="
+                        1 0 0 0 0  
+                        0 1 0 0 0  
+                        0 0 1 0 0  
+                        0 0 0 13 -9" result="goo" />
+                    <feBlend in="SourceGraphic" in2="goo" />
+                </filter>
+                
+                <!--Defining the path for the wave shape-->
+                <path id="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
+            </defs> 
 
-        <!--Using the wave shape for the 3rd layer-->
-        <use id="wave3" class="wave" xlink:href="#wave" x="0" y="-2"></use>
+            <!--Using the wave shape for the 3rd layer-->
+            <use id="wave3" class="wave" xlink:href="#wave" x="0" y="-2"></use>
+            
+            <!--Using the wave shape for the 2nd Layer-->
+            <use id="wave2" class="wave" xlink:href="#wave" x="0" y="0"></use>
+            
+            <!--Link to navbar with ball and arrow graphic-->
+            <a href="#" class="navbar-brand">
+                <g class="topball">
+                    <!--Ball graphic-->
+                    <circle class="ball" cx="110" cy="10" r="2.5" stroke="none" stroke-width="0" fill="#3e7de3" />
+                    <!--Arrow graphic-->
+                    <g class="arrow">
+                        <polyline class="" points="108.5,10 110,8.5 111.5,10" fill="none"  />
+                        <polyline class="" points="110,8.5 ,110,12" fill="none"  />
+                    </g> 
+                </g>
+            </a>
+            
+            <!--Using the Wave Shape for the 1st Layer-->
+            <use id="wave1" class="wave" xlink:href="#wave" x="0" y="1" />
+        </svg>  
         
-        <!--Using the wave shape for the 2nd Layer-->
-        <use id="wave2" class="wave" xlink:href="#wave" x="0" y="0"></use>
-        
-        <!--Link to navbar with ball and arrow graphic-->
-        <a href="#" class="navbar-brand">
-            <g class="topball">
-                <!--Ball graphic-->
-                <circle class="ball" cx="110" cy="10" r="2.5" stroke="none" stroke-width="0" fill="#3e7de3" />
-                <!--Arrow graphic-->
-                <g class="arrow">
-                    <polyline class="" points="108.5,10 110,8.5 111.5,10" fill="none"  />
-                    <polyline class="" points="110,8.5 ,110,12" fill="none"  />
-                </g> 
-            </g>
-        </a>
-        
-        <!--Using the Wave Shape for the 1st Layer-->
-        <use id="wave1" class="wave" xlink:href="#wave" x="0" y="1" />
-    </svg>  
-    
-    <!--Copyright information-->
-    <div id="main-footer">Copyright &copy; Shore Sailing 2023</div>
-</footer>
+        <!--Copyright information-->
+        <div id="main-footer">Copyright &copy; Shore Sailing 2023</div>
+    </footer>
 </body>
 </html>
