@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800&display=swap");
 
 /* Elements (alphebetized) */
-/* Styling for anchor (a) elements with the 'logo' class */
+/* Styling for a elements with the logo class */
 a.logo {
   max-width: 300px;  /* Set maximum width to 300 pixels */
   height: auto;      /* Automatically adjust height to maintain aspect ratio */
@@ -63,7 +63,7 @@ margin-top: 20px;
   color: cornflowerblue;      /* Text color in cornflower blue */
 }
 
-/* Styling for 'row' elements within elements with the class basic-info */
+/* Styling for row elements within elements with the class basic-info */
 .basic-info .row {
   padding-left: 10vw;       /* Left padding using viewport width units */
   padding-right: 10vw;      /* Right padding using viewport width units */
@@ -84,8 +84,8 @@ margin-top: 20px;
   font-weight: bold;    /* Apply bold font weight */
 }
 
-/*calendar formatting*/
-/* source: https://codepen.io/PepitaK/pen/mdqpRee */
+/* Calendar formatting */
+/* Source: https://codepen.io/PepitaK/pen/mdqpRee */
 .calendars {
   background-image: url(img/cal-bg2.jpg);     /* Background image */
   background-repeat: no-repeat;
@@ -191,6 +191,7 @@ margin-top: 20px;
   z-index: 99;                        /* Set z-index */
 }
 
+/* Styling for elements in event-des class for .day class on hover */
 .day:hover .event-des{
   display: block;
   transition: 0.5s;
@@ -233,7 +234,7 @@ margin-top: 20px;
   width: 100vw;                     /* Full viewport width */
 }
 
-/* Styling for the 'div' elements within elements with the class footer-main */
+/* Styling for the div elements within elements with the class footer-main */
 .footer-main div {
   background-color: rgb(80, 117, 164);      /* Background color */
   margin: -5px 0px 0px 0px;                   /* Margins */
@@ -242,7 +243,7 @@ margin-top: 20px;
   text-align: center;                         /* Center text */
 }
 
-/* Applying a filter with 'filter: url(#goo)' to elements with the class gooeff */
+/* Styling for elements with the class gooeff */
 .gooeff {
   filter: url(#goo);        /* Apply a filter */
 }
@@ -335,7 +336,7 @@ margin-top: 20px;
   background-color: rgba(80,117,164,1);   /* Background color blue */
 }
 
-/* Styling for the element with the ID 'navbar-index' */
+/* Styling for the element with the ID navbar-index */
 #navbar-index {
   background-color: rgba(80, 117, 164, 0); /* Transparent background color */
 }
@@ -455,7 +456,7 @@ background-repeat: no-repeat, no-repeat;                                        
   height: 80vh;                               /* Set the height to 80% of the viewport height */
 }
 
-/* Styling for the row elements within the author-showcase class */
+/* Styling for the row elements within the author-showcase ID */
 #author-showcase .row {
   padding-right: 10vw;  /* Right padding using viewport width units */
   padding-left: 10vw;   /* Left padding using viewport width units */
@@ -527,7 +528,7 @@ font-size: 24px;            /* Font size */
 /* Styling for the hover effect on the element with the ID cmp-btn */
 #cmp-btn:hover {
   background-color: #353C55;            /* Background color on hover */
-transition: background-color 0.35s;       /* Transition for background color */
+  transition: background-color 0.35s;     /* Transition for background color */
 }
 
 /* Styling for the element with the ID wave2 */
