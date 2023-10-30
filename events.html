@@ -17,7 +17,7 @@
     <nav class="navbar navbarClass navbar-expand-lg nb-background-color" id = "navbar-events">
         <!-- lg = large breakpoint, navbar-light = make text dark, header-->
         
-            <div class="container">
+            <div class="container"> 
                 <a href="index.html" class="logo navbar-brand">
                     <img src="img/logo.png" alt="Shore Sailing Logo" class="d-inline-block align-text-top w-25">
                 </a>
@@ -117,40 +117,40 @@
     </section>
 
 <!-- source: https://codepen.io/PepitaK/pen/mdqpRee -->
-<div class="calendars">
-    <div class="calendar cal1" id="calendar-1">
-        <div class="cal-head" id="cal-head-1">
-            <button type="button" class="btn prev" id="prev-1">
-                <img src="img/left-arrow.png" alt="left arrow" class="arrow">
+<div class="calendars">     <!--Div for entire calendar section with class calendars-->
+    <div class="calendar cal1" id="calendar-1">     <!--First calendar (october) with classes calendar and cal1 with id calendar-1 for script function-->
+        <div class="cal-head" id="cal-head-1">      <!--Header of first calendar with class cal-head and id cal-head-1 for script function-->
+            <button type="button" class="btn prev" id="prev-1">     <!--Button for going to previous month-->
+                <img src="img/left-arrow.png" alt="left arrow" class="arrow">   <!--Image of left arrow for button-->
             </button>
-            <div class="text-center cal-header">
-                <h1 class = "cal-title">October 2023</h1>
-                <p class = "cal-caption">Events during the month of October</p>
+            <div class="text-center cal-header">    <!--Text of calendar header-->
+                <h1 class = "cal-title">October 2023</h1>       <!--Title of calendar-->
+                <p class = "cal-caption">Events during the month of October</p>     <!--Caption for calendar-->
             </div>
-            <button type="button" onclick="clickFunction1()" class="btn next" id="next-1">
-                <img src="img/right-arrow.png" alt="right arrow" class="arrow">
+            <button type="button" onclick="clickFunction1()" class="btn next" id="next-1">      <!--Button for going to next month with java script function-->
+                <img src="img/right-arrow.png" alt="right arrow" class="arrow">         <!--Image of right arrow for button-->
             </button>
-            <script>
-                function clickFunction1() {
-                    document.getElementById("cal-head-1").style.display = "none";
-                    document.getElementById("cal-head-2").style.display = "inline-flex";
-                    document.getElementById("next-2").style.opacity = "0.25";
-                    document.getElementById("prev-2").style.opacity = "1";
-                    document.getElementById("cal-1").style.display = "none";
-                    document.getElementById("cal-2").style.display = "grid";
+            <script>        /* Opening script tag for java script function */
+                function clickFunction1() {     /* Define function */
+                    document.getElementById("cal-head-1").style.display = "none";       /* Hides header of october calendar */
+                    document.getElementById("cal-head-2").style.display = "inline-flex";    /* Shows header of november calendar */
+                    document.getElementById("next-2").style.opacity = "0.25";   /* Sets of opacity of next button to 0.25 */
+                    document.getElementById("prev-2").style.opacity = "1";      /* Sets opcaity of previous button to 1 */
+                    document.getElementById("cal-1").style.display = "none";    /* Hides october calendar */
+                    document.getElementById("cal-2").style.display = "grid";    /* Shows november calendar */
                 }
             </script>
         </div>
-        <div class="cal-boxes" id="cal-1">
-            <ul class="cal-days">
-                <li class="day-head">Sunday</li>
+        <div class="cal-boxes" id="cal-1">  <!--Calendar for October with id for java script function-->
+            <ul class="cal-days">       <!--Unordered Llist for header and day boxes of calendar-->
+                <li class="day-head">Sunday</li>    <!--Header boxes with class day-head-->
                 <li class="day-head">Monday</li>
                 <li class="day-head">Tuesday</li>
                 <li class="day-head">Wednesday</li>
                 <li class="day-head">Thursday</li>
                 <li class="day-head">Friday</li>
                 <li class="day-head">Saturday</li>
-                <li class="day"><time datetime="2023-10-01">1</time></li>
+                <li class="day"><time datetime="2023-10-01">1</time></li>   <!--First of the month with value 1 and datetime 2023-10-01-->
                 <li class="day"><time datetime="2023-10-02">2</time></li>
                 <li class="day"><time datetime="2023-10-03">3</time></li>
                 <li class="day"><time datetime="2023-10-04">4</time></li>
@@ -163,18 +163,18 @@
                 <li class="day"><time datetime="2023-10-11">11</time></li>
                 <li class="day"><time datetime="2023-10-12">12</time></li>
                 <li class="day"><time datetime="2023-10-13">13</time></li>
-                <li class="day event-day"><time datetime="2023-10-14">14</time>
-                    <div class="event-title">
+                <li class="day event-day"><time datetime="2023-10-14">14</time> <!--Day of an event gets event-day class-->
+                    <div class="event-title">   <!-- Event title-->
                         Event Title: 
                     </div>
                 
-                    <div class="event-des">
+                    <div class="event-des">     <!--Time of event-->
                         Event Time:
                     </div>
-                    <div class="event-des">
+                    <div class="event-des">     <!--Descripton of event-->
                         Event Description:
                     </div>
-                    <div class="event-des">
+                    <div class="event-des">     <!--Sign in link to bring to sign in page-->
                         <a href="signin.html" class="sign-up">Sign Up</a>
                     </div>
                 </li>
@@ -198,42 +198,42 @@
             </ul>
         </div>
     </div>
-    <div class="calendar cal2" id="calendar-2">
-        <div class="cal-head" id="cal-head-2">
-            <button type="button" onclick="clickFunction2()" class="btn prev" id="prev-2">
-                <img src="img/left-arrow.png" alt="left arrow" class="arrow">
+    <div class="calendar cal2" id="calendar-2">     <!--Second calendar (November) with classes calendar and cal1 with id calendar-2 for script function-->
+        <div class="cal-head" id="cal-head-2">      <!--Header of second calendar with class cal-head and id cal-head-2 for script function-->
+            <button type="button" onclick="clickFunction2()" class="btn prev" id="prev-2">      <!--Button for going to previous month with java script function-->
+                <img src="img/left-arrow.png" alt="left arrow" class="arrow">           <!--Image of left arrow for button-->
             </button>
-            <script>
-                function clickFunction2() {
-                    document.getElementById("cal-head-1").style.display = "inline-flex";
-                    document.getElementById("cal-head-2").style.display = "none";
-                    document.getElementById("next-2").style.opacity = "0.25";
-                    document.getElementById("prev-2").style.opacity = "1";
-                    document.getElementById("cal-1").style.display = "grid";
-                    document.getElementById("cal-2").style.display = "none";
+            <script>    /* Opening script tag for java script function */
+                function clickFunction2() {     /* Define function */
+                    document.getElementById("cal-head-1").style.display = "inline-flex";     /* Shows header of october calender */
+                    document.getElementById("cal-head-2").style.display = "none";       /* Hides header of november calendar */
+                    document.getElementById("next-1").style.opacity = "1";       /* Sets of opacity of next button to 1 */
+                    document.getElementById("prev-1").style.opacity = "0.25";    /* Sets opacity of previous button to 0.25 */
+                    document.getElementById("cal-1").style.display = "grid";     /* Shows october calendar */
+                    document.getElementById("cal-2").style.display = "none";     /* Hides november calendar */
                 }
             </script>
-            <div class="text-center cal-header card-title">
-                <h1 class = "cal-title">November 2023</h1>
-                <p class = "cal-caption">Events during the month of November</p>
+            <div class="text-center cal-header">         <!--Text of calendar header-->
+                <h1 class = "cal-title">November 2023</h1>      <!--Title of calendar header-->
+                <p class = "cal-caption">Events during the month of November</p>    <!--Caption of calendar header-->
             </div>
-            <button type="button" class="btn next" id="next-2">
-                <img src="img/right-arrow.png" alt="right arrow" class="arrow">
+            <button type="button" class="btn next" id="next-2">     <!--Button for going to next month-->
+                <img src="img/right-arrow.png" alt="right arrow" class="arrow">     <!--Image for next button-->
             </button>
         </div>
-        <div class="cal-boxes" id="cal-2">
-            <ul class="cal-days">
-                <li class="day-head">Sunday</li>
+        <div class="cal-boxes" id="cal-2">      <!--Calendar for november with ID for java script function-->
+            <ul class="cal-days">       <!--Unordered list for header and day boxes-->
+                <li class="day-head">Sunday</li>    <!--Header boxes with class day-head-->
                 <li class="day-head">Monday</li>
                 <li class="day-head">Tuesday</li>
                 <li class="day-head">Wednesday</li>
                 <li class="day-head">Thursday</li>
                 <li class="day-head">Friday</li>
                 <li class="day-head">Saturday</li>
+                <li class="day"><time datetime="undef"></time></li>     <!--November starts on a Wednesday so first 3 days have datetime as undefined-->
                 <li class="day"><time datetime="undef"></time></li>
                 <li class="day"><time datetime="undef"></time></li>
-                <li class="day"><time datetime="undef"></time></li>
-                <li class="day"><time datetime="2023-11-01">1</time></li>
+                <li class="day"><time datetime="2023-11-01">1</time></li>   <!--First day of the month with datetim 2023-11-01 and value 1-->
                 <li class="day"><time datetime="2023-11-02">2</time></li>
                 <li class="day"><time datetime="2023-11-03">3</time></li>
                 <li class="day"><time datetime="2023-11-04">4</time></li>
@@ -250,18 +250,18 @@
                 <li class="day"><time datetime="2023-11-15">15</time></li>
                 <li class="day"><time datetime="2023-11-16">16</time></li>
                 <li class="day"><time datetime="2023-11-17">17</time></li>
-                <li class="day event-day"><time datetime="2023-11-18">18</time>
-                    <div class="event-title">
+                <li class="day event-day"><time datetime="2023-11-18">18</time>     <!--Event days have class event-day-->
+                    <div class="event-title">   <!--Event title-->
                         Event Title: 
                     </div>
                     
-                    <div class="event-des">
+                    <div class="event-des">     <!--Event time-->
                         Event Time:
                     </div>
-                    <div class="event-des">
+                    <div class="event-des">     <!--Event description-->
                         Event Description:
                     </div>
-                    <div class="event-des">
+                    <div class="event-des">     <!--Sign up link to sign in page-->
                         <a href="signin.html" class="sign-up">Sign Up</a>
                     </div>
                 </li>
@@ -283,7 +283,7 @@
 </div>  
     <!--Footer Section-->    
       <!-- Footer (requires Bootstrap icons CSS)-->
-      <footer class="p-5 footer text-light text-center position-relative">
+      <footer class="p-5 footer text-light text-center position-relative">      
         <div class="container">
              <p class="lead">Copyright &copy; Shore Sailing 2023</p> 
              <a href="#" class="position-absolute bottom-0 end-0 p-5">
