@@ -55,14 +55,12 @@
                     function scrollFunction() {
                     // Check if the user has scrolled more than 60 pixels from the top
                       if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
-                        // If scrolled more than 60 pixels, reduce navbar padding and set a solid background color
-                        document.getElementById("navbar-index").style.padding = ".1vh";
-                        document.getElementById("navbar-index").style.backgroundColor = "rgba(80,117,164,1)";
+                        // If scrolled more than 60 pixels, reduce navbar padding
+                        document.getElementById("navbar-events").style.padding = ".1vh";
                         
                       } else {
-                        // If scrolled less than 60 pixels, increase navbar padding and set a transparent background color
-                        document.getElementById("navbar-index").style.padding = "1.5vh";
-                        document.getElementById("navbar-index").style.backgroundColor = "rgba(80,117,164,0)";
+                        // If scrolled less than 60 pixels, increase navbar padding
+                        document.getElementById("navbar-events").style.padding = "1.5vh";
                       }
                     }
             </script>
