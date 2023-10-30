@@ -38,6 +38,7 @@
                             <a href="authors.html" class="nav-link hover-underline-animation nbMenuItem">About Us</a>
                         </li>
                         <li class="nav-item">
+                            <!--Link to donate modal-->
                             <button type = "button" class = "nav-link hover-underline-animation nbMenuItem"  data-bs-toggle="modal" data-bs-target="#donate-modal">
                                 Donate
                             </button>
@@ -48,14 +49,20 @@
                     </ul>
                 </div>
             </div>
-            <script > window.onscroll = scrollFunction;
-
+            
+            <script > 
+            // Add an event listener to the window for when the user scrolls
+            window.onscroll = scrollFunction;
+                 // Define the scroll function
                 function scrollFunction() {
+                // Check if the user has scrolled more than 60 pixels from the top
                   if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+                    // If scrolled more than 60 pixels, reduce navbar padding and set a solid background color
                     document.getElementById("navbar-index").style.padding = ".1vh";
                     document.getElementById("navbar-index").style.backgroundColor = "rgba(80,117,164,1)";
                     
                   } else {
+                    // If scrolled less than 60 pixels, increase navbar padding and set a transparent background color
                     document.getElementById("navbar-index").style.padding = "1.5vh";
                     document.getElementById("navbar-index").style.backgroundColor = "rgba(80,117,164,0)";
                   }
@@ -94,29 +101,39 @@
             </div>
         </div>
         <script>
+            //Event listener to execute code after the entire document is loaded
             document.addEventListener("DOMContentLoaded", function() {
+                //Get all the elements with the class "single_amount"
                 let donationButtons = document.querySelectorAll(".single_amount");
-    
+                //Loop over each donation button
                 donationButtons.forEach(function(btn) {
+                    //Add a click event listener to each donation button
                     btn.addEventListener("click", function() {
+                        //Get the input element
                         let inputElem = document.getElementById("input");
+                        //Get the value of the clicked button and convert it to float
                         let btnValue = parseFloat(btn.value);
+                        //Update the input element's value with the clicked button's value, formatted to 2 decimal places
                         inputElem.value = btnValue.toFixed(2);
                     });
                 });
             });
+            // Another event listener for when the document is loaded
             document.addEventListener("DOMContentLoaded", function() {
+                //Get the input element
                 let inputElem = document.getElementById("input");
-                let timeout;
+                 //Add an event listener for when the value of the input element changes
                 inputElem.addEventListener("change", function() {
+                    // Convert the input's value to a float
                     let value = parseFloat(inputElem.value);
+                     //If the value is a valid number, format it to 2 decimal places
                     if (!isNaN(value)) {
                         inputElem.value = value.toFixed(2);} 
+                    //If the value is not a valid number, set it to "0.00"
                     else {
                         inputElem.value = "0.00";}
                 });
             });
-
         </script>
     </section>
     <!--Showcase Section-->

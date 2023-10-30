@@ -49,17 +49,25 @@
                     </ul>
                 </div>
             </div>
-          <script > window.onscroll = scrollFunction;
-
-                function scrollFunction() {
-                  if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
-                    document.getElementById("navbar-authors").style.padding = ".1vh";
-                    
-                  } else {
-                    document.getElementById("navbar-authors").style.padding = "1.5vh";
-                  }
-                }</script>
-        </nav>
+            <script > 
+                // Add an event listener to the window for when the user scrolls
+                window.onscroll = scrollFunction;
+                     // Define the scroll function
+                    function scrollFunction() {
+                    // Check if the user has scrolled more than 60 pixels from the top
+                      if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+                        // If scrolled more than 60 pixels, reduce navbar padding and set a solid background color
+                        document.getElementById("navbar-index").style.padding = ".1vh";
+                        document.getElementById("navbar-index").style.backgroundColor = "rgba(80,117,164,1)";
+                        
+                      } else {
+                        // If scrolled less than 60 pixels, increase navbar padding and set a transparent background color
+                        document.getElementById("navbar-index").style.padding = "1.5vh";
+                        document.getElementById("navbar-index").style.backgroundColor = "rgba(80,117,164,0)";
+                      }
+                    }
+            </script>
+    </nav>
         
 
         <!-- Showcase Section-->
@@ -76,61 +84,79 @@
             </div>
         </section>
         <!--Donation Modal that pops up upon clicking of the donate button-->
-    <section>
-        <div class="col">
-            <div class="modal fade" id="donate-modal" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 class = "modal-title">Make a donation</h3>
-                      <button type="button" class="btn-close btn-position" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body row text-center">
-                        <div class = "donation_wrapper">
-                                <div class="single_amount_wrapper">
-                                    <button class="single_amount btn-primary btn" value="10">$10</button>
-                                    <button class="single_amount btn-primary btn" value="25">$25</button>
-                                    <button class="single_amount btn-primary btn" value="50">$50</button>
-                                    <button class="single_amount btn-primary btn" value="100">$100</button>
-                                </div>
-                            <h4>Or enter custom amount</h2>
-                            <div class="amount_wrapper">
-                                <input id = "input" type="number" value="10.00" step="1" min="1.00">
-                                <div class="suffix">$</div>
+        <section>
+            <div class="col">
+                <!--Modal backdrop that pops up on the click of the card, Bootstrap 5 -->
+                <div class="modal fade" id="donate-modal" tabindex="-1" aria-hidden="true">
+                    <!--Modal content centered-->
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <!--Donation modal header-->
+                            <div class="modal-header">
+                                <h3 class = "modal-title">Make a donation</h3>
+                                <!--Button to close modal-->
+                                <button type="button" class="btn-close btn-position" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <a href="https://www.paypal.me/" target="_blank" rel="nofollow" class="btn btn-primary">Donate with paypal.me</a>
+                            <div class="modal-body row text-center">
+                            <!--Based on donation card from https://codepen.io/Webevasion/details/BYwdgV--> 
+                                <div class = "donation_wrapper">
+                                        <div class="single_amount_wrapper">
+                                            <!--Buttons for preset donation amounts-->
+                                            <button class="single_amount btn-primary btn" value="10">$10</button>
+                                            <button class="single_amount btn-primary btn" value="25">$25</button>
+                                            <button class="single_amount btn-primary btn" value="50">$50</button>
+                                            <button class="single_amount btn-primary btn" value="100">$100</button>
+                                        </div>
+                                    <h4>Or enter custom amount</h2>
+                                    <!--Input field to enter custom donation amount-->
+                                    <div class="amount_wrapper">
+                                        <input id = "input" type="number" value="10.00" step="1" min="1.00">
+                                        <div class="suffix">$</div>
+                                    </div>
+                                    <!--Link to https://www.paypal.me/ styled the same as the other buttons-->
+                                    <a href="https://www.paypal.me/" target="_blank" rel="nofollow" class="btn btn-primary">Donate with paypal.me</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                  </div>
                 </div>
             </div>
-        </div>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                let donationButtons = document.querySelectorAll(".single_amount");
-    
-                donationButtons.forEach(function(btn) {
-                    btn.addEventListener("click", function() {
-                        let inputElem = document.getElementById("input");
-                        let btnValue = parseFloat(btn.value);
-                        inputElem.value = btnValue.toFixed(2);
+            <script>
+                //Event listener to execute code after the entire document is loaded
+                document.addEventListener("DOMContentLoaded", function() {
+                    //Get all the elements with the class "single_amount"
+                    let donationButtons = document.querySelectorAll(".single_amount");
+                    //Loop over each donation button
+                    donationButtons.forEach(function(btn) {
+                        //Add a click event listener to each donation button
+                        btn.addEventListener("click", function() {
+                            //Get the input element
+                            let inputElem = document.getElementById("input");
+                            //Get the value of the clicked button and convert it to float
+                            let btnValue = parseFloat(btn.value);
+                            //Update the input element's value with the clicked button's value, formatted to 2 decimal places
+                            inputElem.value = btnValue.toFixed(2);
+                        });
                     });
                 });
-            });
-            document.addEventListener("DOMContentLoaded", function() {
-                let inputElem = document.getElementById("input");
-                let timeout;
-                inputElem.addEventListener("change", function() {
-                    let value = parseFloat(inputElem.value);
-                    if (!isNaN(value)) {
-                        inputElem.value = value.toFixed(2);} 
-                    else {
-                        inputElem.value = "0.00";}
+                // Another event listener for when the document is loaded
+                document.addEventListener("DOMContentLoaded", function() {
+                    //Get the input element
+                    let inputElem = document.getElementById("input");
+                     //Add an event listener for when the value of the input element changes
+                    inputElem.addEventListener("change", function() {
+                        // Convert the input's value to a float
+                        let value = parseFloat(inputElem.value);
+                         //If the value is a valid number, format it to 2 decimal places
+                        if (!isNaN(value)) {
+                            inputElem.value = value.toFixed(2);} 
+                        //If the value is not a valid number, set it to "0.00"
+                        else {
+                            inputElem.value = "0.00";}
+                    });
                 });
-            });
-
-        </script>
-    </section>
+            </script>
+        </section>
         
 
         <!-- Authors Section-->
@@ -311,6 +337,7 @@
                     <!-- cmp-title is customCSS, text font and color. bold is custom CSS, sets font weight bold --> 
                     <p class="lead overview-font ovPadRight" id="cmp-text">Please go to our donation page to donate to our charity.</p>
                     <!-- cmp-text is custom CSS, text font and color-->
+                    <!--Toggles donation modal-->
                     <button type="submit" class="btn" id="cmp-btn" data-bs-toggle="modal" data-bs-target="#donate-modal">Donate Now <i class="bi bi-arrow-right"></i></button>
                     <!-- cmp-btn is custom css, formats the transition, color, and font size. Also Bootstrap 5 icon arrow CSS-->
                 </div>
