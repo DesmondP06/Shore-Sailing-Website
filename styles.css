@@ -272,16 +272,17 @@ transition: background-color 0.35s;       /* Transition for background color */
 
 /* Styling for the element with the ID calendar-1 */
 #calendar-1 {
-  margin-bottom: -12.5%;       /* Negative bottom margin */
-  padding-bottom: 5%;
-  height: 100%;
-  width: 100%;
+  margin-bottom: -12.5%;   /* Negative bottom margin */
+  padding-bottom: 5%;      /* Padding at the bottom */
+  height: 100%;            /* Full height */
+  width: 100%;             /* Full width */
 }
 
+/* Styling for the element with the ID calendar-2 */
 #calendar-2 {
-  margin-top: 7%;
-  height: 100%;
-  width: 100%;
+  margin-top: 7%;          /* Top margin */
+  height: 100%;            /* Full height */
+  width: 100%;             /* Full width */
 }
 
 /* Styling for elements with the class cal-title */
@@ -409,7 +410,7 @@ transition: background-color 0.35s;       /* Transition for background color */
 
 /* Styling for elements within class event-day */
 .event-day {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);   /* Background color */
 }
 
 /* Styling for elements with the class event-des */
@@ -591,19 +592,6 @@ svg {
   text-decoration: none;              /* Remove text decoration */
   border-radius: 25px;                /* Border radius */
   background: #0070ba;              /* Background color */
-}
-
-/*Arrow animation based on arrow animation from https://unused-css.com/blog/animated-down-arrow/*/
-.down-arrow {
-  position: absolute;
-  bottom: 40px; /* Adjust this value if you want the arrow higher or lower from the bottom */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 30px;
-  border: 2px solid;
-  border-radius: 2px;
-  animation: jumpInfinite 1.5s infinite;
 }
 
 /* Styling for elements with the class single_amount */
