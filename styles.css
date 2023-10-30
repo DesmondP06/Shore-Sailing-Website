@@ -277,14 +277,18 @@ margin-top: 20px;
 /* Styling for the hover-signin class */
 .hover-signin {
   background-color: white;                  /* Background color */
-  color: rgb(126, 124, 124) !important;     /* Text color */
+  color: rgb(124, 124, 126) !important;     /* Text color */
+  font-size: 23px;                            /* Font size */
+  margin: 15px;                               /* Margins all around */
   border-radius: 10px;                        /* Border radius */
+  white-space: nowrap;                        /* Prevent text wrapping */
+  padding: 8px;                               /* Padding around content */
 }
 
 /* Styling for the hover-signin class on hover */
 .hover-signin:hover {
   background-color: rgb(158, 155, 155);           /* Background color change on hover */
-  color: white;                                   /* Text color change on hover */
+  color: white !important;                                   /* Text color change on hover */
   transition: color 0.35s, background-color 0.35s;  /* Transition effects */
 }
 
