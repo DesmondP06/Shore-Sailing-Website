@@ -323,11 +323,6 @@ transition: background-color 0.35s;       /* Transition for background color */
   display: none;              /* Hidden */
 }
 
-/* Styling for elements with the class btn */
-.btn {
-  height: 75%;                /* Height */
-}
-
 /* Styling for elements with the class prev */
 .prev {
   margin-right: 18rem;        /* Right margin */
