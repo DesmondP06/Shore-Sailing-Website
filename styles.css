@@ -288,7 +288,7 @@ transition: background-color 0.35s;       /* Transition for background color */
 }
 
 /* Styling for elements with the class cal-head */
-.cal-head {
+.cal-head { 
   display: inline-flex;       /* Display as inline-flex container */
   margin: auto;               /* Center horizontally */
 }
