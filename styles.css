@@ -377,9 +377,9 @@ margin-top: 20px;
 
 /* Styling for the showcase class */
 .showcase {
-  color: white;                                                                                                           /* Text color */
+  color: white;                                                                                                         /* Text color */
   background-image: linear-gradient(to top, rgb(80,117,164), transparent 50%, transparent), url(img/indexbackground.jpg); /* Background image */
-background-repeat: no-repeat, no-repeat;                                                                                    /* Prevent background image from repeating */
+  background-repeat: no-repeat, no-repeat;                                                                                    /* Prevent background image from repeating */
   background-size: cover, cover;                                                                                            /* Scale background image to cover the container */
   height: 100vh;                                                                                                            /* Set the height to 100% of the viewport height */
 }

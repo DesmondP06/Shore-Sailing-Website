@@ -62,22 +62,20 @@
               }
             }</script>
     </nav>
-
-    
-    <div class="signUpForm mb-5">     
+    <div class="signUpForm">  
         <form>
             <div class="container">
-                <br><h2 class="text-center">Account Registration</h2><br>
+                <br><h2 class="text-center">Sign In</h2><br>
+            </div>  
+            <input type="email" placeholder="Email" id="loginEmail" class="form-control mb-3">
+            <input type="password" placeholder="password" id="loginPassword" class="form-control mb-3">
+            <div class="form-check form-switch mb-3">
+                <input class="form-check-input" type="checkbox" role="switch" id="keepLoggedInSwitch">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Keep me signed in</label>
             </div>
-            <input type="text" placeholder="First Name" id="firstName" class="form-control mb-3">
-            <input type="text" placeholder="Last Name" id="lastName" class="form-control mb-3">
-            <input type="email" placeholder="Email" id="userEmail" class="form-control mb-3">
-            <input type="password" placeholder="Password" id="userPass" class="form-control mb-3">
-            <button type = "button" id="submitData" name="submitData" class="btn btn-outline-primary mb-3 w-100">Register</button>
-            <a href="signup.html" class="badge bg-secondary py-1 w-100">Already have an account?</a>
+            <button type = "button" id="signIn" name="signIn" class="btn btn-outline-primary mb-3 w-100">Sign In</button>
         </form>
     </div>
-
 <!--Footer Section-->    
   <!-- Footer (requires Bootstrap icons CSS)-->
   <footer class="p-5 footer text-light text-center position-relative">      <!-- footer is custom css, bg color-->
