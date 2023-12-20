@@ -39,15 +39,6 @@ a.logo {
   color: white;         /* Text color set to white */
 }
 
-
-
-
-
-
-
-
-
-
 /* Styling for elements with the class footer */
 .footer {
   background-color: rgba(80, 117, 164, 1);      /* Background color in RGBA format */
@@ -74,6 +65,18 @@ a.logo {
 .gooeff {
   filter: url(#goo);        /* Apply a filter */
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* CSS for underline animation on hover */
 .hover-underline-animation {
