@@ -4,6 +4,11 @@
 
 /* CSS styling for elements in authors.html organized by location in authors.html file */
 
+/* Styling for elements with the class bold */
+.bold {
+    font-weight: bold;    /* Apply bold font weight */
+}
+
 /* Styling for text with the a-showcase-text class*/
 .a-showcase-text {
     padding-top: 2vw;       /* Top padding using viewport width units */
@@ -20,5 +25,16 @@
 .author-position {
     width: 75%;         /* Set width to 75% */
     margin: 20px auto;  /* Margin for centering */
+}
+
+/* Styling for elements with the class cmp-container */
+.cmp-container {
+    background-color: #F7F5F3; /* Background color */
+}
+
+/* Styling for elements with the class cmp-container-info */
+.cmp-container-info {
+    margin: 0 5%;           /* Margin on left and right */
+    position: relative;     /* Relative positioning */
 }
 
