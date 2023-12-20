@@ -1,0 +1,27 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800&display=swap");
+
+/* CSS styling for elements in index.html organized by location in index.html file */
+
+/* Styling for elements with the class basic-info */
+.basic-info {
+    min-height: 50vh;             /* Minimum height of 50% viewport height */
+    color: cornflowerblue;      /* Text color in cornflower blue */
+}
+
+    /* Styling for row elements within elements with the class basic-info */
+    .basic-info .row {
+    padding-left: 10vw;       /* Left padding using viewport width units */
+    padding-right: 10vw;      /* Right padding using viewport width units */
+}
+
+    /* Styling for a elements within elements with the class basic-info */
+    .basic-info a {
+    color: cornflowerblue;      /* Text color in cornflower blue */
+}
+  
+/* Styling for svg elements */
+svg {
+    width: 100vw;         /* Full viewport width */
+}
