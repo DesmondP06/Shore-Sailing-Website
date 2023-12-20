@@ -1,3 +1,5 @@
+/* CSS styling for elements in signin.html organized by location in signin.html file */
+
 table th{
     /*Keep column headers at the top as table is scrolled*/
     position: sticky;
