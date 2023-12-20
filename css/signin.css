@@ -42,3 +42,12 @@ table th{
     justify-content: center;
     align-items: center;
 }
+
+#navbar-sign {            
+    position: static;                          /* Fixed positioning */
+    padding: 1.5vh;                           /* Large padding which will shrink on scroll (using JS)*/       
+    width: 100%;                              /* Full width of page*/
+    top: 0;                                   /* At the top */
+    z-index: 100;                             /* Stacking order on the z-axis */
+    background-color: rgba(80,117,164,1);   /* Background color blue */
+}

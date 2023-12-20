@@ -329,7 +329,6 @@ margin-top: 20px;
   position: fixed;                          /* Fixed positioning */
   padding: 1.5vh;                           /* Large padding which will shrink on scroll (using JS)*/
   transition: 0.4s;                         /* Adds a transition effect when the padding is decreased */
-  position: fixed;                          /* Sticky/fixed navbar */
   width: 100%;                              /* Full width of page*/
   top: 0;                                   /* At the top */
   z-index: 100;                             /* Stacking order on the z-axis */
