@@ -1,8 +1,24 @@
+/* Imports */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,700&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800&display=swap");
+
+/* CSS styling for elements in authors.html organized by location in authors.html file */
 
 /* Styling for text with the a-showcase-text class*/
 .a-showcase-text {
     padding-top: 2vw;       /* Top padding using viewport width units */
     text-align: justify;    /* Justify text alignment */
 }
+
+/* Style for text in the authors class */
+/* About Us or Authors CSS, formats position, color, or size */
+.authors {
+    margin-top: 20px;
+}
+
+/* Styling for elements with the class author-position */
+.author-position {
+    width: 75%;         /* Set width to 75% */
+    margin: 20px auto;  /* Margin for centering */
+}
+
