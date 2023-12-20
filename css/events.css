@@ -3,3 +3,131 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800&display=swap");
 
 /* CSS styling for elements in events.html organized by location in events.html file */
+
+/* Calendar formatting */
+/* Source: https://codepen.io/PepitaK/pen/mdqpRee */
+.calendars {
+    background-image: url(../img/cal-bg2.jpg);     /* Background image */
+    background-repeat: no-repeat;
+}
+
+/* Styling for elements with the class calendar */
+.calendar {
+    display: flex;                              /* Display as a flex container */
+    flex-flow: column;                          /* Arrange items in a column */
+    align-items: center;                        /* Center items horizontally */
+    font-family: "Poppins", serif;              /* Font family */
+    margin-top: 6.5rem;                         /* Top margin */
+    margin-bottom: -2rem;                       /* Negative bottom margin */
+    padding: 1rem 4rem 1rem 4rem;               /* Padding */
+}
+
+/* Styling for elements with the class cal-head */
+.cal-head { 
+    display: inline-flex;       /* Display as inline-flex container */
+    margin: auto;               /* Center horizontally */
+}
+
+/* Styling for elements with the class cal-title */
+.cal-title {
+    font-weight: 800;           /* Font weight */
+    margin: 1rem 0 0;           /* Margins */
+}
+
+/* Styling for elements with the class cal-caption */
+.cal-caption {
+    font-weight: 600;           /* Font weight */
+    margin: 0.5rem 0 0;         /* Margins */
+}
+
+/* Styling for elements with the class cal-boxes */
+.cal-boxes {
+    margin: 1rem;               /* Margin */
+}
+
+/* Styling for elements with the class cal-days */
+.cal-days {
+    display: grid;                                          /* Display as a grid */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;     /* Grid template columns */
+    flex-wrap: wrap;                                        /* Wrap items */
+    list-style: none;                                       /* Remove list style */
+}
+
+/* Styling for elements with the class day-head */
+.day-head {
+    display: flex;                                        /* Display as flex container */
+    width: 10rem;                                         /* Width */
+    height: 2.5rem;                                       /* Height */
+    margin: 0.25rem;                                      /* Margin */
+    flex-flow: column;                                    /* Arrange items in a column */
+    border-radius: 0.2rem;                                /* Border radius */
+    font-weight: 600;                                     /* Font weight */
+    font-size: 1.5rem;                                    /* Font size */
+    box-sizing: border-box;                               /* Box sizing */
+    background: rgba(255, 255, 255, 0.25);              /* Background color with opacity */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);   /* Box shadow */
+    backdrop-filter: blur(4px);                           /* Apply backdrop filter */
+    -webkit-backdrop-filter: blur(4px);                   /* Apply backdrop filter for webkit */
+    border-radius: 10px;                                  /* Border radius */
+    border: 1px solid rgba(255, 255, 255, 0.18);        /* Border */
+    align-items: center;                                  /* Center items vertically */
+}
+
+/* Styling for elements with the class day */
+.day {
+    display: flex;                                      /* Display as flex container */
+    width: 10rem;                                       /* Width */
+    height: 10rem;                                      /* Height */
+    margin: 0.25rem;                                    /* Margin */
+    flex-flow: column;                                  /* Arrange items in a column */
+    border-radius: 0.2rem;                              /* Border radius */
+    padding: 1rem;                                      /* Padding */
+    font-weight: 300;                                   /* Font weight */
+    font-size: 1.75rem;                                 /* Font size */
+    box-sizing: border-box;                             /* Box sizing */
+    background: rgba(255, 255, 255, 0.25);            /* Background color with opacity */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Box shadow */
+    backdrop-filter: blur(4px);                         /* Apply backdrop filter */
+    -webkit-backdrop-filter: blur(4px);                 /* Apply backdrop filter for webkit */
+    border-radius: 10px;                                /* Border radius */
+    border: 1px solid rgba(255, 255, 255, 0.18);      /* Border */
+}
+
+/* Styling for elements with the class day on hover */
+.day:hover {
+    transform: scale(1.25);             /* Scale on hover */
+    transition: transform 0.5s ease;    /* Transition effect */
+    z-index: 99;                        /* Set z-index */
+}
+
+/* Styling for elements in event-des class for .day class on hover */
+.day:hover .event-des{
+    display: block;
+    transition: 0.5s;
+}
+
+/* Styling for elements within class event-day */
+.event-day {
+    background-color: rgba(255, 255, 255, 0.5);   /* Background color */
+}
+
+/* Styling for elements with the class event-title */
+.event-title {
+    font-weight: 1000;         /* Font weight */
+    font-size: 50%;            /* Font size */
+}
+
+/* Styling for elements with the class event-des */
+.event-des {
+    display: none;            /* Hidden by default */
+    font-size: 50%;           /* 50% font-size */
+}
+
+
+
+
+
+
+
+
+
