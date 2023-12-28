@@ -9,6 +9,23 @@
     font-weight: bold;    /* Apply bold font weight */
 }
 
+/* Styling for the author-showcase id */
+#author-showcase {
+    color: white;                             /* Text color */
+    background-image: url(../img/IMG_0099.jpg);    /* Background image */
+    background-repeat: no-repeat;               /* Prevent background image from repeating */
+    background-size: cover;                     /* Scale background image to cover the container */
+    height: 80vh;                               /* Set the height to 80% of the viewport height */
+}
+  
+/* Styling for the row elements within the author-showcase ID */
+#author-showcase .row {
+    padding-right: 10vw;  /* Right padding using viewport width units */
+    padding-left: 10vw;   /* Left padding using viewport width units */
+    padding-top: 10vw;    /* Top padding using viewport width units */
+    text-align: justify;  /* Justify text alignment */
+}
+
 /* Styling for text with the a-showcase-text class*/
 .a-showcase-text {
     padding-top: 2vw;       /* Top padding using viewport width units */
@@ -27,6 +44,21 @@
     margin: 20px auto;  /* Margin for centering */
 }
 
+/* Styling for elements with the class img-sizing */
+.img-sizing {
+    width: 50%;         /* Set width to 50% */
+    display: block;     /* Display as a block element */
+    margin: auto;       /* Center horizontally */
+    position: relative; /* Position relative to the normal flow */
+    bottom: 25px;       /* Adjust position from the bottom */
+}
+
+/* Styling for elements with the class modal-author */
+.modal-author {
+    display: inline-flex; /* Display as inline-flex container */
+    margin-left: 5%;      /* Margin on the left */
+}
+
 /* Styling for elements with the class cmp-container */
 .cmp-container {
     background-color: #F7F5F3; /* Background color */
@@ -37,4 +69,35 @@
     margin: 0 5%;           /* Margin on left and right */
     position: relative;     /* Relative positioning */
 }
+
+/* Styling for the element with the ID cmp-title */
+#cmp-title {
+    color: #001936;         /* Text color */
+    font-size: 33px;          /* Font size */
+}
+
+/* Styling for the element with the ID cmp-text */
+#cmp-text {
+    color: #001936;         /* Text color */
+    font-size: 24px;            /* Font size */
+}
+
+/* Styling for the element with the ID cmp-btn */
+#cmp-btn {
+    background-color: #49516f;  /* Background color */
+    color: #fff;                /* Text color */
+    font-size: 18px;              /* Font size */
+}
+
+/* Styling for the hover effect on the element with the ID cmp-btn */
+#cmp-btn:hover {
+    background-color: #353C55;            /* Background color on hover */
+    transition: background-color 0.35s;     /* Transition for background color */
+}
+
+/* Styling for the element with the ID cmp-image */
+#cmp-image {
+    border-radius: 5%;     /* Border radius */
+}
+
 

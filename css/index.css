@@ -3,6 +3,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800&display=swap");
 
 /* CSS styling for elements in index.html organized by location in index.html file */
+/* Styling for the element with the ID navbar-index */
+#navbar-index {
+    background-color: rgba(80, 117, 164, 0); /* Transparent background color */
+}
+
+/* Styling for the showcase class */
+.showcase {
+    color: white;                                                                                                         /* Text color */
+    background-image: linear-gradient(to top, rgb(80,117,164), transparent 50%, transparent), url(../img/indexbackground.jpg); /* Background image */
+    background-repeat: no-repeat, no-repeat;                                                                                    /* Prevent background image from repeating */
+    background-size: cover, cover;                                                                                            /* Scale background image to cover the container */
+    height: 100vh;                                                                                                            /* Set the height to 100% of the viewport height */
+}
+  
+/* Add padding to the row elements within the showcase class */
+.showcase .row {
+    padding-top: 20vh;
+}
 
 /* Styling for elements with the class basic-info */
 .basic-info {
@@ -10,15 +28,45 @@
     color: cornflowerblue;      /* Text color in cornflower blue */
 }
 
-    /* Styling for row elements within elements with the class basic-info */
-    .basic-info .row {
+/* Styling for row elements within elements with the class basic-info */
+.basic-info .row {
     padding-left: 10vw;       /* Left padding using viewport width units */
     padding-right: 10vw;      /* Right padding using viewport width units */
 }
 
-    /* Styling for a elements within elements with the class basic-info */
-    .basic-info a {
+/* Styling for a elements within elements with the class basic-info */
+.basic-info a {
     color: cornflowerblue;      /* Text color in cornflower blue */
+}
+
+
+/* Styling for the element with the ID wave3 */
+#wave3 {
+    animation-duration: 7s;   /* Animation duration */
+    opacity: 0.3;             /* Opacity */
+}
+
+/* Styling for the wave class */
+.wave {
+    animation: wave 3s linear;               /* Wave animation */
+    animation-iteration-count: infinite;     /* Infinite animation iteration */
+    fill: rgb(80, 117, 164);               /* Color of the waves */
+}
+
+/* Styling for the element with the ID wave2 */
+#wave2 {
+    animation-duration: 5s;           /* Animation duration */
+    animation-direction: reverse;     /* Reverse animation direction */
+    opacity: 0.6;                     /* Opacity */
+}
+
+/* Styling for the topball class */
+.topball {
+    animation: ball 1.5s ease-in-out;       /* Ball animation */
+    animation-iteration-count: infinite;    /* Infinite animation iteration */
+    animation-direction: alternate;         /* Alternate animation direction */
+    animation-delay: 0.3s;                  /* Animation delay */
+    cursor: pointer;                        /* Cursor style */
 }
   
 /* Styling for svg elements */
