@@ -205,7 +205,7 @@ window.onload = function(){
     userLink.innerText = "Create New Account";
     userLink.classList.replace("nav-link", "btn");
     userLink.classList.add("btn-primary");
-    userLink.href = 'register.html';
+    userLink.href = 'signup.html';
 
     signOutLink.innerText = "Sign In";
     signOutLink.classList.replace('nav-link','btn');
