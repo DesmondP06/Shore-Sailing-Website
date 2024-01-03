@@ -204,12 +204,10 @@ window.onload = function(){
   if (currentUser == null) {
     userLink.innerText = "Create New Account";
     userLink.classList.replace("nav-link", "btn");
-    userLink.classList.add("btn-primary");
     userLink.href = 'signup.html';
 
     signOutLink.innerText = "Sign In";
-    signOutLink.classList.replace('nav-link','btn');
-    signOutLink.classList.add('btn-success');
+    signOutLink.classList.replace('nav-link','btn')
     signOutLink.href = 'signIn.html';
   }
 
@@ -218,12 +216,10 @@ window.onload = function(){
     userLink.innerText = currentUser.firstName;
     welcome.innerText = "Welcome " + currentUser.firstName;
     userLink.classList.replace("btn", "nav-link");
-    userLink.classList.add("btn-primary");
     userLink.href = '#';
 
     signOutLink.innerText = "Sign Out";
     signOutLink.classList.replace('btn', 'nav-link');
-    signOutLink.classList.add('btn-success');
     document.getElementById('signOut').onclick = function () { 
       signOutUser();
     }
