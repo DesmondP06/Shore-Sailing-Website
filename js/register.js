@@ -89,20 +89,20 @@ function isEmptyorSpaces(str){
 function validation(firstName, lastName, email, password) { 
   let fNameRegex = /^[a-zA-Z]+$/;
   let lNameRegex = /^[a-zA-Z]+$/;
-  let emailRegex =  /^[a-zA-Z0-9]+@gmail\.com+$/;
+  let emailRegex =  /^[a-zA-Z0-9]+(@ctemc.org|@gmail\.com)+$/;
 
   if (isEmptyorSpaces(firstName) || isEmptyorSpaces(lastName) || isEmptyorSpaces(email) || isEmptyorSpaces(password)){
     alert("Please be cool dude. Stop w this wack info");
     return false;
   }
   if(!fNameRegex.test(firstName)){
-    alert( "The first name should only contian letters");
+    alert( "The first name should only contain letters");
     return false;
   }
 
   if(!lNameRegex.test(lastName))
   {
-    alert( "The last name should only contian letters");
+    alert( "The last name should only contain letters");
     return false;
   }
 
