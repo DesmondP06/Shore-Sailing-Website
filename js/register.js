@@ -11,6 +11,9 @@ import {getDatabase, ref, set, update, child, get} from "https://www.gstatic.com
 
 // Your web app's Firebase configuration
 //From website
+// Import the functions you need from the SDKs you need
+
+// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCe7ou1G1JOX9IageTZpCmejeaB2NyZuWw",
   authDomain: "shoresailing2023.firebaseapp.com",
@@ -21,7 +24,7 @@ const firebaseConfig = {
   appId: "1:99745152338:web:6ced14170f65d326844e8b"
 };
 
-  // Initialize Firebase
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 //initialize firebase authentication
@@ -76,7 +79,7 @@ document.getElementById('submitData').onclick = function(){
     const errorMessage = error.message
     alert(errorMessage);
   });
-  window.location = 'signin.html'
+  //window.location = 'signin.html'
 }
 
 
@@ -92,7 +95,7 @@ function validation(firstName, lastName, email, password) {
   let emailRegex =  /^[a-zA-Z0-9]+(@ctemc.org|@gmail\.com)+$/;
 
   if (isEmptyorSpaces(firstName) || isEmptyorSpaces(lastName) || isEmptyorSpaces(email) || isEmptyorSpaces(password)){
-    alert("Please be cool dude. Stop w this wack info");
+    alert("Please fill out all required sections");
     return false;
   }
   if(!fNameRegex.test(firstName)){
