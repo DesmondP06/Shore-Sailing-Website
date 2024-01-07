@@ -19,7 +19,6 @@ const updateCalendar = () => {
     const lastDay = new Date(currentYear, currentMonth + 1, 0);     // Variable for last day of current month
     const totalDays = lastDay.getDate();                            // Variable for total days in current month
     const firstDayIndex = firstDay.getDay();                        // Variable for index of firstDay
-    const lastDayIndex = lastDay.getDay();                          // Variable for index of lastDay
 
     // Create header string for calendar
     const monthYearString = currentDate.toLocaleString      
@@ -46,12 +45,6 @@ const updateCalendar = () => {
             datesHTML += `<div class="date ${activeClass}">${i}</div>`;                                 // If not, creates HTML as a normal day 
         }
         
-    }
-    
-    // Creates invisible days after last day of the month
-    for (let i = 1; i <= 7-lastDayIndex; i++) {                                 
-        const nextDate = new Date(currentYear, currentMonth + 1, i);
-        datesHTML += `<div class="date inactive">${nextDate.getDate()}</div>`;
     }
     
     // Edits inner HTML of id='dates' element in HTML
@@ -81,7 +74,7 @@ nextBtn.addEventListener('click', () => {
     updateCalendar();
 })
 
-// Create button using id of month and day
+// Create variable for event button using id of month and day
 const event1Btn = document.getElementById('0 13');
 // Create boolean for event button
 let event1Bool = false;
@@ -114,7 +107,6 @@ const updateEvents = () => {
         eventCards.innerHTML = ``
     }
 }
-
 
 
 
