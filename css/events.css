@@ -3,199 +3,123 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800&display=swap");
 
 /* CSS styling for elements in events.html organized by location in events.html file */
-
-/* Calendar formatting */
-/* Source: https://codepen.io/PepitaK/pen/mdqpRee */
-.calendars {
+/* Source: https://www.youtube.com/watch?v=OcncrLyddAs */
+body {
+    margin: auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*background: #6f97c4;*/
     background-image: url(../img/cal-bg2.jpg);     /* Background image */
     background-repeat: no-repeat;
+    flex-direction: column;
 }
 
-/* Styling for elements with the class calendar */
 .calendar {
-    display: flex;                              /* Display as a flex container */
-    flex-flow: column;                          /* Arrange items in a column */
-    align-items: center;                        /* Center items horizontally */
-    font-family: "Poppins", serif;              /* Font family */
-    margin-top: 6.5rem;                         /* Top margin */
-    margin-bottom: -2rem;                       /* Negative bottom margin */
-    padding: 1rem 4rem 1rem 4rem;               /* Padding */
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    margin-top: 10vw;
 }
 
-/* Styling for the element with the ID calendar-1 */
-#calendar-1 {
-    margin-bottom: -12.5%;   /* Negative bottom margin */
-    padding-bottom: 5%;      /* Padding at the bottom */
-    height: 100%;            /* Full height */
-    width: 100%;             /* Full width */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
 }
 
-/* Styling for elements with the class cal-head */
-.cal-head { 
-    display: inline-flex;       /* Display as inline-flex container */
-    margin: auto;               /* Center horizontally */
+.arrow-size {
+    width: 75%; 
 }
 
-/* Styling for the element with the ID cal-head-1 */
-#cal-head-1 {
-    margin-top: 0.5rem;          /* Top margin */
-    display: inline-flex;       /* Display as inline-flex container */
-}
-
-/* Styling for elements with the class prev */
-.prev {
-    margin-right: 18rem;        /* Right margin */
-    margin-top: 1rem;           /* Top margin */
-    opacity: 0.25;              /* Opacity */
-}
-  
-/* Styling for elements with the class prev on hover */
-.prev:hover {
-    background-color: #898989;                  /* Background color on hover */
-    transition: background-color 0.35s;           /* Transition effect */
-}
-
-/* Styling for elements with the class cal-title */
-.cal-title {
-    font-weight: 800;           /* Font weight */
-    margin: 1rem 0 0;           /* Margins */
-}
-
-/* Styling for elements with the class cal-caption */
-.cal-caption {
-    font-weight: 600;           /* Font weight */
-    margin: 0.5rem 0 0;         /* Margins */
-}
-
-/* Styling for elements with the class next */
-.next {
-    margin-left: 18rem;         /* Left margin */
-    margin-top: 1rem;           /* Top margin */
-}
-
-/* Styling for elements with the class next on hover */
-.next:hover {
-    background-color: #898989;              /* Background color on hover */
-    transition: background-color 0.35s;       /* Transition effect */
-  }
-
-/* Styling for elements with the class cal-boxes */
-.cal-boxes {
-    margin: 1rem;               /* Margin */
-}
-
-/* Styling for the element with the ID cal-1 */
-#cal-1 {
-    display: grid;              /* Display as a grid */
-}
-
-/* Styling for elements with the class cal-days */
-.cal-days {
-    display: grid;                                          /* Display as a grid */
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;     /* Grid template columns */
-    flex-wrap: wrap;                                        /* Wrap items */
-    list-style: none;                                       /* Remove list style */
-}
-
-/* Styling for elements with the class day-head */
-.day-head {
-    display: flex;                                        /* Display as flex container */
-    width: 10rem;                                         /* Width */
-    height: 2.5rem;                                       /* Height */
-    margin: 0.25rem;                                      /* Margin */
-    flex-flow: column;                                    /* Arrange items in a column */
-    border-radius: 0.2rem;                                /* Border radius */
-    font-weight: 600;                                     /* Font weight */
-    font-size: 1.5rem;                                    /* Font size */
-    box-sizing: border-box;                               /* Box sizing */
-    background: rgba(255, 255, 255, 0.25);              /* Background color with opacity */
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);   /* Box shadow */
-    backdrop-filter: blur(4px);                           /* Apply backdrop filter */
-    -webkit-backdrop-filter: blur(4px);                   /* Apply backdrop filter for webkit */
-    border-radius: 10px;                                  /* Border radius */
-    border: 1px solid rgba(255, 255, 255, 0.18);        /* Border */
-    align-items: center;                                  /* Center items vertically */
-}
-
-/* Styling for elements with the class day */
-.day {
-    display: flex;                                      /* Display as flex container */
-    width: 10rem;                                       /* Width */
-    height: 10rem;                                      /* Height */
-    margin: 0.25rem;                                    /* Margin */
-    flex-flow: column;                                  /* Arrange items in a column */
-    border-radius: 0.2rem;                              /* Border radius */
-    padding: 1rem;                                      /* Padding */
-    font-weight: 300;                                   /* Font weight */
-    font-size: 1.75rem;                                 /* Font size */
-    box-sizing: border-box;                             /* Box sizing */
-    background: rgba(255, 255, 255, 0.25);            /* Background color with opacity */
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Box shadow */
-    backdrop-filter: blur(4px);                         /* Apply backdrop filter */
-    -webkit-backdrop-filter: blur(4px);                 /* Apply backdrop filter for webkit */
-    border-radius: 10px;                                /* Border radius */
-    border: 1px solid rgba(255, 255, 255, 0.18);      /* Border */
-}
-
-/* Styling for elements with the class day on hover */
-.day:hover {
-    transform: scale(1.25);             /* Scale on hover */
-    transition: transform 0.5s ease;    /* Transition effect */
-    z-index: 99;                        /* Set z-index */
-}
-
-/* Styling for elements in event-des class for .day class on hover */
-.day:hover .event-des{
-    display: block;
+.arrow:hover {
+    opacity: 0.5;
     transition: 0.5s;
 }
 
-/* Styling for elements within class event-day */
-.event-day {
-    background-color: rgba(255, 255, 255, 0.5);   /* Background color */
+.monthYear {
+    text-align: center;
+    font-weight: 600;
+    width: 150px;
 }
 
-/* Styling for elements with the class event-title */
-.event-title {
-    font-weight: 1000;         /* Font weight */
-    font-size: 50%;            /* Font size */
+.header button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
 }
 
-/* Styling for elements with the class event-des */
-.event-des {
-    display: none;            /* Hidden by default */
-    font-size: 50%;           /* 50% font-size */
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
 }
 
-/* Styling for elements with the class sign-up */
-.sign-up {
-  color: rgb(77, 153, 225);   /* Text color*/
+.day {
+    text-align: center;
+    padding: 5px;
+    color: #999FA6;
+    font-weight: 500;
 }
 
-/* Styling for the element with the ID calendar-2 */
-#calendar-2 {
-    margin-top: 7%;          /* Top margin */
-    height: 100%;            /* Full height */
-    width: 100%;             /* Full width */
+.dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
 }
 
-/* Styling for the element with the ID cal-head-2 */
-#cal-head-2 {
-    display: none;              /* Hidden */
+.date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: 0.2s;
 }
 
-/* Styling for the element with the ID cal-2 */
-#cal-2 {
-    display: none;              /* Hidden */
+.date:hover,
+.date:active {
+    background: rgb(88, 144, 255);
+    color: #fff;
 }
 
+.date.inactive {
+    color: #fff;
+}
 
+.date.inactive:hover {
+    color: #fff;
+}
 
+.event {
+    background: rgba(109, 183, 247, 0.5)
+}
 
+.event-cards {
+    margin-top: 2.5%;
+}
 
-
-
-
-
-
+.footer-events {
+    width: 100%;
+    margin-top: 5%;
+}
 
