@@ -142,18 +142,22 @@
     </section>
 
     <!-- Source: https://www.youtube.com/watch?v=OcncrLyddAs' -->
-    <div class="calendar container">
+    <!--Calendar-->
+    <div class="calendar container"> 
+        <!--Header of calendar with class header for css-->       
         <div class="header">
+            <!--Previous button-->
             <button class="arrow" id="prevBtn">
-                <!--<i class="fa-solid fa-chevron-left"></i>-->
                 <img src="img/left-arrow.png" alt="left arrow" class="arrow-size">
             </button>
+            <!--Header for month with month and year completed by javascript-->
             <div class="monthYear" id="monthYear"></div>
+            <!--Next button-->
             <button class="arrow" id="nextBtn">
-                <!--<i class="fa-solid fa-chevron-right"></i>-->
                 <img src="img/right-arrow.png" alt="right arrow" class="arrow-size">
             </button>
         </div>
+        <!--Day headers for calendar-->
         <div class="days">
             <div class="day">Mon</div>
             <div class="day">Tue</div>
@@ -163,12 +167,12 @@
             <div class="day">Sat</div>
             <div class="day">Sun</div>
         </div>
+        <!--Dates element completed by javascript-->
         <div class="dates" id="dates"></div>
     </div>
-
-    <div class="event-cards" id="event-cards">
-
-    </div>
+    <!--Event cards completed by javascript-->
+    <div class="event-cards" id="event-cards"></div>
+    <!--Javascript source for calendar-->
     <script src="js/calendar.js"></script>
     
 
