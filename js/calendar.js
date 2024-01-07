@@ -34,15 +34,15 @@ const updateCalendar = () => {
         datesHTML += `<div class="date inactive">${prevDate.getDate()}</div>`;
     }
     
-    for(let i = 1; i <= totalDays; i++) {                                                               // For loop to create all days of the current month
-        const date = new Date(currentYear, currentMonth, i);                                            // Create new date with each day of the month
-        const checkDate = date.toDateString();                                                          // Create variable for checking whether date is an event date
-        const activeClass = date.toDateString() === new Date().toDateString() ? 'active' : '';          // Create activeClass variable that assigns 'active' to variable if date = current date and '' to variable if not 
-        if (eventDates.includes(checkDate)) {                                                           // Checks whether date is in the eventDate array
-            datesHTML += `<btn class="date event ${activeClass}" id="${currentMonth} ${i}">${i}</btn>`  // If so, creates HTML as a btn with class event
+    for(let i = 1; i <= totalDays; i++) {                                                                       // For loop to create all days of the current month
+        const date = new Date(currentYear, currentMonth, i);                                                    // Create new date with each day of the month
+        const checkDate = date.toDateString();                                                                  // Create variable for checking whether date is an event date
+        const activeClass = date.toDateString() === new Date().toDateString() ? 'active' : '';                  // Create activeClass variable that assigns 'active' to variable if date = current date and '' to variable if not 
+        if (eventDates.includes(checkDate)) {                                                                   // Checks whether date is in the eventDate array
+            datesHTML += `<div class="date event ${activeClass}" id="event-${currentMonth}-${i}">${i}</div>`    // If so, creates HTML as a div with class event
         }
         else {
-            datesHTML += `<div class="date ${activeClass}">${i}</div>`;                                 // If not, creates HTML as a normal day 
+            datesHTML += `<div class="date ${activeClass}">${i}</div>`;                                         // If not, creates HTML as a normal date 
         }
         
     }
@@ -74,17 +74,26 @@ nextBtn.addEventListener('click', () => {
     updateCalendar();
 })
 
+const signUpLink = document.getElementById('sign-up-link');  // Variable for editing inner HTML of sign up link in event card
+
+if ()
+
+/*
 // Create variable for event button using id of month and day
-const event1Btn = document.getElementById('0 13');
-// Create boolean for event button
-let event1Bool = false;
+const event1 = document.getElementById('0 13');
 
 // If button is clicked
-event1Btn.addEventListener('click', () => {
-    // Set boolean to opposite
-    event1Bool = !event1Bool;
-    // Call updateEvents function
-    updateEvents();
+event1.addEventListener('mouseover', () => {
+     // Create card for id='event-cards' element
+     eventCards.innerHTML = `
+     <div class="card" style="width: 18rem;">
+         <img src="..." class="card-img-top" alt="...">
+             <div class="card-body">
+             <h5 class="card-title">Event 1</h5>
+             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+             <a href="#" class="btn btn-primary">Sign up</a>
+         </div>
+     </div>`;
 })
 
 // Create updateEvents function
@@ -107,6 +116,16 @@ const updateEvents = () => {
         eventCards.innerHTML = ``
     }
 }
+*/
+/*eventCards.innerHTML = `
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Event 1</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Sign up</a>
+            </div>
+        </div>`;*/
 
 
 

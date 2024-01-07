@@ -121,6 +121,11 @@ body {
     margin-top: 2.5%;
 }
 
+#event-0-13:hover{
+    scale: (1.2);
+    transition: 0.5s;
+}
+
 .footer-events {
     width: 100%;
     margin-top: 5%;
