@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" 
+          integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href = "css/signin.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+            crossorigin="anonymous">defer</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" 
+            defer integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" 
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="js/home.js" defer></script>
+</head>
+<body>
+    <nav class="navbar navbar-sign navbar-expand-lg" id = "navbar-sign">
+        <!-- lg = large breakpoint, navbar-light = make text dark, header-->
+        
+            <div class="container">
+                <a href="index.html" class="logo navbar-brand">
+                    <img src="img/logo.png" alt="Placeholder Logo" class="d-inline-block align-text-top w-25">
+                </a>
+    
+                <button class = "navbar-toggler" type = "button" data-bs-toggle = "collapse" data-bs-target = "#navmenu">
+                    <span class = "navbar-toggler-icon"></span>
+                </button>
+                
+    
+                <!-- Collapsible navbar menu with custom hover underline CSS animation-->
+                <div class = "collapse navbar-collapse" id="navmenu">
+                    <!-- Links to hamburger menu button -->
+                    <ul class="navbar-nav ms-auto"> <!-- ms-auto is margin spacing -->
+                        <li class="nav-item">
+                            <a href="events.html" class="nav-link hover-underline-animation nbMenuItem">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="authors.html" class="nav-link hover-underline-animation nbMenuItem">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <!--Link to donate modal-->
+                            <button type = "button" class = "nav-link hover-underline-animation nbMenuItem"  data-bs-toggle="modal" data-bs-target="#donate-modal">
+                                Donate
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <a  id="userLink" class="nav-link hover-underline-animation nbMenuItem" href="">User Name</a>
+                        </li>
+                        <li class="nav-item">
+                            <a  id="signOut" class="nav-link hover-underline-animation nbMenuItem" href="">Sign Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+            <!--Donation Modal that pops up upon clicking of the donate button-->
+    <section>
+        <div class="col">
+            <!--Modal backdrop that pops up on the click of the card, Bootstrap 5 -->
+            <div class="modal fade" id="donate-modal" tabindex="-1" aria-hidden="true">
+                <!--Modal content centered-->
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <!--Donation modal header-->
+                        <div class="modal-header">
+                            <h3 class = "modal-title">Make a donation</h3>
+                            <!--Button to close modal-->
+                            <button type="button" class="btn-close btn-position" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body row text-center">
+                        <!--Based on donation card from https://codepen.io/Webevasion/details/BYwdgV--> 
+                            <div class = "donation_wrapper">
+                                    <div class="single_amount_wrapper">
+                                        <!--Buttons for preset donation amounts-->
+                                        <button class="single_amount btn-primary btn" value="10">$10</button>
+                                        <button class="single_amount btn-primary btn" value="25">$25</button>
+                                        <button class="single_amount btn-primary btn" value="50">$50</button>
+                                        <button class="single_amount btn-primary btn" value="100">$100</button>
+                                    </div>
+                                <h4>Or enter custom amount</h2>
+                                <!--Input field to enter custom donation amount-->
+                                <div class="amount_wrapper">
+                                    <input id = "input" type="number" value="10.00" step="1" min="1.00">
+                                    <div class="suffix">$</div>
+                                </div>
+                                <!--Link to https://www.paypal.me/ styled the same as the other buttons-->
+                                <a href="https://www.paypal.me/" target="_blank" rel="nofollow" class="btn btn-primary">Donate with paypal.me</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section><div class="container">
+            <br><br>
+            <h1 id = "welcome"></h1><br><br>
+        </div>
+    
+        <!--Firebase Data Operations -->
+        <!--Set and Update Data-->
+        <div class="container border">
+            <br><h2>Set & Update Data</h2><br>
+            <ol class="list-group list-group-numbered notes">
+                <li class="list-group-item border-0"><strong>Set</strong> - will completely overwrite all of the data stored at the node.</li>
+                <li class="list-group-item border-0"><strong>Update</strong> - will only replace the fields that have changed at the node, or add new fields if they aren't present</li>
+                <li class="list-group-item border-0">If you're collecting data from a sensor, you probably want to use update.</li>
+            </ol><br>
+            
+            <div class="container dataForm mb-5">
+                <form>
+                    <select class="form-select mb-3" aria-label="Default select example" id="year">
+                        <option selected>Trial (Year)</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                    </select>
+                    <select class="form-select mb-3" aria-label="Default select example" id="month">
+                        <option selected>Month</option>
+                        <option value="Jan">Jan</option>
+                        <option value="Feb">Feb</option>
+                        <option value="Mar">Mar</option>
+                        <option value="Apr">Apr</option>
+                        <option value="May">May</option>
+                        <option value="Jun">Jun</option>
+                        <option value="Jul">Jul</option>
+                        <option value="Aug">Aug</option>
+                        <option value="Sep">Sep</option>
+                        <option value="Oct">Oct</option>
+                        <option value="Nov">Nov</option>
+                        <option value="Dec">Dec</option>
+                    </select>
+                    <select class="form-select mb-3" aria-label="Default select example" id="day">
+                        <option selected>Day</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                                    
+                    </select>
+                    <input type="text" class="form-control mb-3" placeholder="Temperature (°F)" id="temperature">
+                    <button type = "button" id="set" name="set" class="btn btn-outline-primary mb-3 w-100">Set</button>
+                    <button type = "button" id="update" name="update" class="btn btn-outline-secondary mb-3 w-100">Update</button>
+                </form>       
+            </div>
+        </div><br>
+    
+        <!--Get a single datum -->
+        <div class="container border">
+            <br><h2>Get a Datum (single data point)</h2><br>
+            <ol class="list-group list-group-numbered notes">
+                <li class="list-group-item border-0">Retrieve a single datum from a node and display it in a table.</li>
+            </ol><br>
+            
+            <div class="container dataForm mb-5">
+                <form>
+                    <select class="form-select mb-3" aria-label="Default select example" id="getYear">
+                        <option selected>Trial (Year)</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                    </select>
+                    <select class="form-select mb-3" aria-label="Default select example" id="getMonth">
+                        <option selected>Month</option>
+                        <option value="Jan">Jan</option>
+                        <option value="Feb">Feb</option>
+                        <option value="Mar">Mar</option>
+                        <option value="Apr">Apr</option>
+                        <option value="May">May</option>
+                        <option value="Jun">Jun</option>
+                        <option value="Jul">Jul</option>
+                        <option value="Aug">Aug</option>
+                        <option value="Sep">Sep</option>
+                        <option value="Oct">Oct</option>
+                        <option value="Nov">Nov</option>
+                        <option value="Dec">Dec</option>
+                    </select>
+                    <select class="form-select mb-3" aria-label="Default select example" id="getDay">
+                        <option selected>Day</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>                                
+                    </select>
+                    <button type = "button" id="get" name="get" class="btn btn-outline-primary mb-3 w-100">get</button>
+                </form>       
+            </div>
+    
+            <!-- Table for displaying selected data -->
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Year</th>
+                    <th scope="col">Month</th>
+                    <th scope="col">Day</th>
+                    <th scope="col">Temperature (°F)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><p id ="yearVal"></p></td>
+                    <td><p id ="monthVal"></td>
+                    <td><p id ="dayVal"></td>
+                    <td><p id ="tempVal"></p></td>
+                  </tr>
+                  <tr>
+                </tbody>
+              </table>
+        </div><br>
+    
+        <!--Get a data set -->
+        <div class="container border">
+            <br><h2>Get a Data Set</h2><br>
+            <ol class="list-group list-group-numbered notes">
+                <li class="list-group-item border-0">Retrieve an entire month's set of data and display in a table</li>
+            </ol><br>
+            
+            <div class="container dataForm mb-5">
+                <form>
+                    <select class="form-select mb-3" aria-label="Default select example" id="getSetYear">
+                        <option selected>Trial (Year)</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                    </select>
+                    <select class="form-select mb-3" aria-label="Default select example" id="getSetMonth">
+                        <option selected>Month</option>
+                        <option value="Jan">Jan</option>
+                        <option value="Feb">Feb</option>
+                        <option value="Mar">Mar</option>
+                        <option value="Apr">Apr</option>
+                        <option value="May">May</option>
+                        <option value="Jun">Jun</option>
+                        <option value="Jul">Jul</option>
+                        <option value="Aug">Aug</option>
+                        <option value="Sep">Sep</option>
+                        <option value="Oct">Oct</option>
+                        <option value="Nov">Nov</option>
+                        <option value="Dec">Dec</option>
+                    </select>
+                    <button type = "button" id="getDataSet" name="getDataSet" class="btn btn-outline-primary mb-3 w-100">Get Dataset</button>
+                </form>       
+            </div>
+    
+            <div>
+                <h5 id="setYearVal"></h5>
+                <h5 id="setMonthVal"></h5>
+            </div>
+    
+            <!-- Table for displaying data set -->
+            <div class="container">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Day</th>
+                        <th scope="col">Temperature (°F)</th>
+                    </tr>
+                    </thead>
+                    <tbody id = "tbody-2">
+                    </tbody>
+                </table>
+            </div>
+        </div><br>
+    
+        </div><br>
+    
+        <!--Delete Data-->
+        <div class="container border">
+            <br><h2>Delete Data</h2><br>
+            <ol class="list-group list-group-numbered notes">
+                <li class="list-group-item border-0">This function will allow you to delete a single day's data</li>
+                <li class="list-group-item border-0">To delete an entire month's data, you need to remove modify the directory path removing the 'day' part.</li>
+            </ol><br>
+            
+            <div class="container dataForm mb-5">
+                <form>
+                    <select class="form-select mb-3" aria-label="Default select example" id="delYear">
+                        <option selected>Trial (Year)</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                    </select>
+                    <select class="form-select mb-3" aria-label="Default select example" id="delMonth">
+                        <option selected>Month</option>
+                        <option value="Jan">Jan</option>
+                        <option value="Feb">Feb</option>
+                        <option value="Mar">Mar</option>
+                        <option value="Apr">Apr</option>
+                        <option value="May">May</option>
+                        <option value="Jun">Jun</option>
+                        <option value="Jul">Jul</option>
+                        <option value="Aug">Aug</option>
+                        <option value="Sep">Sep</option>
+                        <option value="Oct">Oct</option>
+                        <option value="Nov">Nov</option>
+                        <option value="Dec">Dec</option>
+                    </select>
+                    <select class="form-select mb-3" aria-label="Default select example" id="delDay">
+                        <option selected>Day</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>                                
+                    </select>
+                    <button type = "button" id="delete" name="delete" class="btn btn-outline-primary mb-3 w-100">Delete</button>
+                </form>       
+            </div>
+        </div><br>
+    </section>
+            <!--Footer Section-->    
+      <!-- Footer (requires Bootstrap icons CSS)-->
+      <footer class="p-5 footer text-light text-center position-relative">      <!-- footer is custom css, bg color-->
+        <div class="container">
+             <p class="lead">Copyright &copy; SE 2023 Bootstrap Demo</p> 
+             <a href="#" class="position-absolute bottom-0 end-0 p-5">
+                 <i class="bi bi-arrow-up-circle h2 icon-white"></i>        <!--button to return to top-->
+             </a>
+     </footer> 
+</body>
+</html>
