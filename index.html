@@ -13,7 +13,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
             crossorigin="anonymous">defer</script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script type="module" src="js/navbar.js" defer> </script>
+    <script type ="module" src="js/chart.js" defer></script>
 </head>
 <body>
     <nav class="navbar navbarClass navbar-expand-lg nb-background-color" id = "navbar-index">
@@ -84,6 +86,9 @@
                             <h3 class = "modal-title">Make a donation</h3>
                             <!--Button to close modal-->
                             <button type="button" class="btn-close btn-position" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class ="container">
+                            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
                         </div>
                         <div class="modal-body row text-center">
                         <!--Based on donation card from https://codepen.io/Webevasion/details/BYwdgV--> 
