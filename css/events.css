@@ -29,7 +29,7 @@ body {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    margin-top: 10vw;
+    margin-top: 30vh;
     margin-bottom: 10vh;
 }
 
@@ -134,12 +134,11 @@ body {
 
 /* Styling for event-cards class */
 .event-cards {
-    margin-top: 2.5%;
     margin-bottom: -2%;
 }
 
 /* Styling for event when hovered */
-.event:hover#event-cards{
+.event-0-13:hover .event-cards{
     /*background-color: aqua;*/
     scale: (2);
     transition: 0.5s;
@@ -151,6 +150,6 @@ body {
     margin-top: 5%;
     margin-bottom: 0;
     bottom: 0;
-    position: fixed;
+    position: absolute;
 }
 
