@@ -57,8 +57,26 @@ function getUsername() {
       signOutLink.href = 'signInTest.html';
       donateButton.href = 'signInTest.html';
       }
-      if (currentUser != null)
-      {
+
+    else{
+      signOutLink.innerText = "Sign Out";
+      donateButton.href = 'https://www.paypal.me/';
+      donateButton.target = "_blank"
+      donateButton.onclick = function(){
+        let inputElem = document.getElementById("input");
+        let value = parseFloat(inputElem.value);
+        push(ref(db, 'users/' + currentUser.uid + '/accountInfo/data/donations'), {
+          amount: value
+        }).then(()=>{
+          alert("Data stored successfully")
+        }).catch((error) => {
+          alert("There was an error: " + error)
+        });
+      }
+      document.getElementById('signOut').onclick = function () { 
+        signOutUser();
+      }
+
       var donationsRef = ref(db, 'users/' + currentUser.uid + '/accountInfo/data/donations');
 
       // Fetch all donation records and print to console
@@ -79,34 +97,11 @@ function getUsername() {
         console.error("Error fetching donations: ", error);
       });
 
-      
-      
 
-    }
+      }
   
-    else{
-      signOutLink.innerText = "Sign Out";
-      donateButton.href = 'https://www.paypal.me/';
-      donateButton.target = "_blank"
-      donateButton.onclick = function(){
-        let inputElem = document.getElementById("input");
-        let value = parseFloat(inputElem.value);
-        push(ref(db, 'users/' + currentUser.uid + '/accountInfo/data/donations'), {
-          amount: value
-        }).then(()=>{
-          alert("Data stored successfully")
-        }).catch((error) => {
-          alert("There was an error: " + error)
-        });
-      }
+    
       
-
-
-
-      }
-      document.getElementById('signOut').onclick = function () { 
-        signOutUser();
-      }
   
     }
     function signOutUser(){
