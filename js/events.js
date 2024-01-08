@@ -1,33 +1,60 @@
+// ----------------- Page Loaded After User Sign-in -------------------------//
+
+// ----------------- Firebase Setup & Initialization ------------------------//
+
+// Import the functions you need from the SDKs you need
 
 
-// If month is January (month with an event), create event card below calendar
-if (currentMonth == 0) {
-    // If user is signed in, make sign up link bring user to index page
-    if (signedIn) {
-        eventCards.innerHTML = `
-        <div class="card" style="width: 18rem;" id="card-1">
-            <img src="img/420BackgroundImage.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                <h5 class="card-title">Sailing Day</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a class="btn btn-primary" src="index.html">Sign up</a>
-            </div>
-        </div>`
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAuth} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import {getDatabase, ref, set, update, child, get, remove} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCe7ou1G1JOX9IageTZpCmejeaB2NyZuWw",
+  authDomain: "shoresailing2023.firebaseapp.com",
+  databaseURL: "https://shoresailing2023-default-rtdb.firebaseio.com",
+  projectId: "shoresailing2023",
+  storageBucket: "shoresailing2023.appspot.com",
+  messagingSenderId: "99745152338",
+  appId: "1:99745152338:web:6ced14170f65d326844e8b"
+};
+
+  // Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+const auth  = getAuth(); //Firebase authentication
+
+//Return an instance of the database associated with your app
+const db = getDatabase(app) 
+
+const signUpLink = document.getElementById('signUpLink');
+
+let currentUser = null; //initialize currentUser to null
+
+function getUsername() {
+    //Grab value for the 'keep logged in' switch
+    let keepLoggedIn = localStorage.getItem('keepLoggedIn')
+  
+    //Grab user information passed from signIn.js
+    if(keepLoggedIn == 'yes'){
+      currentUser = JSON.parse(localStorage.getItem('user'))
     }
-    // If user is signed in, make sign up link bring user to signin/signup page
-    else {
-        eventCards.innerHTML = `
-        <div class="card" style="width: 18rem;" id="card-1">
-            <img src="img/420BackgroundImage.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                <h5 class="card-title">Sailing Day</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a class="btn btn-primary" src="signInTest.html">Sign up</a>
-            </div>
-        </div>` 
+    else{
+      currentUser = JSON.parse(sessionStorage.getItem('user'))
     }
-}
-// If month doesn't have any events, leave event-cards section empty
-else {
-    eventCards.innerHTML = '';
+  }
+
+window.onload = function(){
+    getUsername();   //Get current users first name
+    if (currentUser == null) {
+        signUpLink.href = 'signInTest.html';
+    }
+
+    else{
+        signUpLink.href = 'index.html';
+    }
 }

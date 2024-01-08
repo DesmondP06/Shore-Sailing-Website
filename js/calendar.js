@@ -6,7 +6,6 @@ const prevBtn = document.getElementById('prevBtn');             // Variable for 
 const nextBtn = document.getElementById('nextBtn');             // Variable for editing inner HTML next button for calendar
 const eventCards = document.getElementById('event-cards');      // Variable for editing inner HTML event days for calendar
 
-
 let currentDate = new Date();               // Create new current date
 
 let eventDates = ['Sat Jan 13 2024'];       // Create array for dates with events
@@ -50,6 +49,24 @@ const updateCalendar = () => {
     
     // Edits inner HTML of id='dates' element in HTML
     datesElement.innerHTML = datesHTML;
+
+    // If month is January (month with an event), create event card below calendar
+    if (currentMonth == 0) {
+        eventCards.innerHTML = `
+        <div class="card" id="card-1">
+            <img src="img/420BackgroundImage.jpeg" class="card-img-top" alt="Sailing image">
+                <div class="card-body">
+                <h5 class="card-title">Sailing Day</h5>
+                <p class="card-text">Time: 10:00 a.m. - 2:00 p.m.</p>
+                <p class="card-text">Location: <a class="event-location" href="https://www.google.com/maps/place/Shrewsbury+River+Yacht+Club/@40.3684869,-74.0325092,17z/data=!3m1!4b1!4m6!3m5!1s0x89c23a7f704adb61:0x27e1284beb81060c!8m2!3d40.3684828!4d-74.0299343!16s%2Fg%2F1tlqqx31?entry=ttu">Shrewsbury River Yacht Club</a></p>
+                <p class="card-text">Description: Join our sailing experts Desmond and Sophia for a fun day of sailing on the Shrewsbury River!</p>
+                <a class="btn btn-primary" id="signUpLink" href="signInTest">Sign up</a>
+            </div>
+        </div>`
+    }
+    else {
+        eventCards.innerHTML = '';
+    }
 }
 
 // Calls updateCalendar function
@@ -70,64 +87,3 @@ nextBtn.addEventListener('click', () => {
     // Call updateCalendar function
     updateCalendar();
 })
-
-
-
-
-
-
-/*
-// Create variable for event button using id of month and day
-const event1 = document.getElementById('0 13');
-
-// If button is clicked
-event1.addEventListener('mouseover', () => {
-     // Create card for id='event-cards' element
-     eventCards.innerHTML = `
-     <div class="card" style="width: 18rem;">
-         <img src="..." class="card-img-top" alt="...">
-             <div class="card-body">
-             <h5 class="card-title">Event 1</h5>
-             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-             <a href="#" class="btn btn-primary">Sign up</a>
-         </div>
-     </div>`;
-})
-
-// Create updateEvents function
-const updateEvents = () => {
-    // If event1 boolean is true
-    if (event1Bool){
-        // Create card for id='event-cards' element
-        eventCards.innerHTML = `
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                <h5 class="card-title">Event 1</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Sign up</a>
-            </div>
-        </div>`;
-    }
-    else{
-        // If event1 boolean is false, clear id='event-cards' element
-        eventCards.innerHTML = ``
-    }
-}
-*/
-/*eventCards.innerHTML = `
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                <h5 class="card-title">Event 1</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Sign up</a>
-            </div>
-        </div>`;*/
-
-
-
-
-
-
-
