@@ -1,3 +1,5 @@
+
+
 const signInBtn = document.getElementById("signInSwitch");
 const signUpBtn = document.getElementById("signUpSwitch");
 const fistForm = document.getElementById("form1");
