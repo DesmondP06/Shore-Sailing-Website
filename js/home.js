@@ -1,3 +1,11 @@
+//THIS PAGE IS NOT NECESSARY IN FINAL VERSION
+
+//USED AS REFERENCE
+
+//DELETE WHEN DONE
+
+
+
 // ----------------- Page Loaded After User Sign-in -------------------------//
 
 // ----------------- Firebase Setup & Initialization ------------------------//

@@ -68,6 +68,7 @@ document.getElementById('submitData').onclick = function(){
     .then(() => {
       //Data saved successfully
       alert("User successfully created")
+      document.getElementById("accountCreationContainer").classList.remove("right-panel-active");
     })
     .catch((error) => {
       //the write failed
@@ -80,6 +81,7 @@ document.getElementById('submitData').onclick = function(){
     alert(errorMessage);
   });
   //window.location = 'signin.html'
+  
 }
 
 
