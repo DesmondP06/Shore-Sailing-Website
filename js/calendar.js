@@ -6,9 +6,12 @@ const prevBtn = document.getElementById('prevBtn');             // Variable for 
 const nextBtn = document.getElementById('nextBtn');             // Variable for editing inner HTML next button for calendar
 const eventCards = document.getElementById('event-cards');      // Variable for editing inner HTML event days for calendar
 
+
 let currentDate = new Date();               // Create new current date
 
 let eventDates = ['Sat Jan 13 2024'];       // Create array for dates with events
+
+let signUp = false;         // Boolean for whether or not user is signed in
 
 // Update calendar function
 const updateCalendar = () => {
@@ -39,7 +42,7 @@ const updateCalendar = () => {
         const checkDate = date.toDateString();                                                                  // Create variable for checking whether date is an event date
         const activeClass = date.toDateString() === new Date().toDateString() ? 'active' : '';                  // Create activeClass variable that assigns 'active' to variable if date = current date and '' to variable if not 
         if (eventDates.includes(checkDate)) {                                                                   // Checks whether date is in the eventDate array
-            datesHTML += `<div class="date event ${activeClass}" id="event-${currentMonth}-${i}">${i}</div>`    // If so, creates HTML as a div with class event
+            datesHTML += `<div class="date event ${activeClass}" id="event-${currentMonth}-${i}">${i}</div>`    // If so, creates HTML date with class event class 
         }
         else {
             datesHTML += `<div class="date ${activeClass}">${i}</div>`;                                         // If not, creates HTML as a normal date 
@@ -49,6 +52,38 @@ const updateCalendar = () => {
     
     // Edits inner HTML of id='dates' element in HTML
     datesElement.innerHTML = datesHTML;
+
+    // If month is January (month with an event), create event card below calendar
+    if (currentMonth == 0) {
+        // If user is signed in, make sign up link bring user to index page
+        if (signUp) {
+            eventCards.innerHTML = `
+            <div class="card" style="width: 18rem;" id="card-1">
+                <img src="img/420BackgroundImage.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Sailing Day</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a class="btn btn-primary" src='index.html'>Sign up</a>
+                </div>
+            </div>`
+        }
+        // If user is signed in, make sign up link bring user to signin/signup page
+        else {
+            eventCards.innerHTML = `
+            <div class="card" style="width: 18rem;" id="card-1">
+                <img src="img/420BackgroundImage.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Sailing Day</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a class="btn btn-primary" src='signin.html'>Sign up</a>
+                </div>
+            </div>` 
+        }
+    }
+    // If month doesn't have any events, leave event-cards section empty
+    else {
+        eventCards.innerHTML = '';
+    }
 }
 
 // Calls updateCalendar function
@@ -58,8 +93,6 @@ updateCalendar();
 prevBtn.addEventListener('click', () => {
     // Set month to previous month
     currentDate.setMonth(currentDate.getMonth() - 1);   
-    // Clear id='event-cards' HTML
-    eventCards.innerHTML = ``;
     // Call updateCalendar function
     updateCalendar();
 })
@@ -68,15 +101,14 @@ prevBtn.addEventListener('click', () => {
 nextBtn.addEventListener('click', () => {
     // Set month to next month
     currentDate.setMonth(currentDate.getMonth() + 1);
-    // Clear id='event-cards' HTML
-    eventCards.innerHTML = ``;
     // Call updateCalendar function
     updateCalendar();
 })
 
-const signUpLink = document.getElementById('sign-up-link');  // Variable for editing inner HTML of sign up link in event card
 
-if ()
+
+
+
 
 /*
 // Create variable for event button using id of month and day

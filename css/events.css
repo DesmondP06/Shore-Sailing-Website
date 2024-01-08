@@ -6,22 +6,23 @@
 /* Source: https://www.youtube.com/watch?v=OcncrLyddAs */
 /* Styling for body element */
 body {
-    margin: auto;                                   /* Set margin to auto*/                                             
-    min-height: 100vh;                              /* Set min height to 100 % of vew height */
-    display: flex;                                  /* Set display to flex */
-    align-items: center;                            /* Align items to center */
-    justify-content: center;                        /* Justify content to center */       
-    background-image: url(../img/cal-bg2.jpg);      /* Background image */
-    width: 100%;                                    /*  */
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    flex-direction: column;
+    margin: auto;                                                                               
+    min-height: 100vh;                              
+    display: flex;                                  
+    align-items: center;                            
+    justify-content: center;                               
+    background-image: url(../img/cal-bg2.jpg);  
+    width: 100%;                                    
+    height: 100%;                                   
+    background-position-x: center;                    
+    background-repeat: no-repeat;                   
+    flex-direction: column;                         
 }
 
-.calendar {
-    width: 100%;
-    height: auto;
+/* Styling for calendar class elements */
+.calendar { 
+    width: 100%;                                    
+    height: auto;                                   
     display: flex;
     flex-direction: column;
     padding: 3%;
@@ -29,8 +30,10 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     margin-top: 10vw;
+    margin-bottom: 10vh;
 }
 
+/* Styling for elements with class header */
 .header {
     display: flex;
     justify-content: space-between;
@@ -38,21 +41,25 @@ body {
     padding: 2%;
 }
 
+/* Adjusts size of arrows */
 .arrow-size {
     width: 75%;
 }
 
+/* Changes opacity of arrows when hovered */
 .arrow:hover {
     opacity: 0.5;
     transition: 0.5s;
 }
 
+/* Styling for calendar header with month and year */
 .monthYear {
     text-align: center;
     font-weight: 600;
     width: 25%;
 }
 
+/* Styling for arrow buttons in calendar header */
 .header button {
     display: flex;
     align-items: center;
@@ -66,11 +73,13 @@ body {
     box-shadow: 0 0 4px rgba(0,0,0,0.2);
 }
 
+/* Styling for calendar day headers */
 .days {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
 }
 
+/* Styling for day class elements */
 .day {
     text-align: center;
     padding: 5%;
@@ -78,12 +87,14 @@ body {
     font-weight: 500;
 }
 
+/* Styling for calendar dates in a grid */
 .dates {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     
 }
 
+/* Styling for dates in calendar */
 .date {
     display: flex;
     align-items: center;
@@ -99,36 +110,47 @@ body {
     transition: 0.2s;
 }
 
+/* Styling for calendar dates when hovered */
 .date:hover {
     background: rgb(88, 144, 255);
     color: #fff;
 }
 
+/* Styling for invisible dates in calendar */
 .date.inactive {
     color: #fff;
 }
 
+/* Styling for invisible dates in calendar when hovered */
 .date.inactive:hover {
     color: #fff !important;
     background-color: #fff;
 }
 
+/* Styling for event dates in calendar */
 .event {
     background: rgba(109, 183, 247, 0.5);
 }
 
+/* Styling for event-cards class */
 .event-cards {
     margin-top: 2.5%;
+    margin-bottom: -2%;
 }
 
-#event-0-13:hover{
-    scale: (1.2);
+/* Styling for event when hovered */
+.event:hover#event-cards{
+    /*background-color: aqua;*/
+    scale: (2);
     transition: 0.5s;
 }
 
+/* Styling for footer of events page */
 .footer-events {
     width: 100%;
     margin-top: 5%;
     margin-bottom: 0;
+    bottom: 0;
+    position: fixed;
 }
 
