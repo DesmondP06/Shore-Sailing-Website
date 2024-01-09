@@ -4,11 +4,16 @@ const monthYearElement = document.getElementById('monthYear');  // Variable for 
 const datesElement = document.getElementById('dates');          // Variable for editing inner HTML of days for calendar
 const prevBtn = document.getElementById('prevBtn');             // Variable for editing inner HTML previous button for calendar
 const nextBtn = document.getElementById('nextBtn');             // Variable for editing inner HTML next button for calendar
-const eventCards = document.getElementById('event-cards');      // Variable for editing inner HTML event days for calendar
+const eventCards = document.getElementById('event-cards');      // Variable for editing inner HTML event days for calendar  
+const eventSignUpBtn = document.getElementById('event-sign-up');   // Variable for adding event to database
 
 let currentDate = new Date();               // Create new current date
 
 let eventDates = ['Sat Jan 13 2024'];       // Create array for dates with events
+
+function scrollEvent1() {
+    eventCards.scrollIntoView();
+}
 
 // Update calendar function
 const updateCalendar = () => {
@@ -39,7 +44,7 @@ const updateCalendar = () => {
         const checkDate = date.toDateString();                                                                  // Create variable for checking whether date is an event date
         const activeClass = date.toDateString() === new Date().toDateString() ? 'active' : '';                  // Create activeClass variable that assigns 'active' to variable if date = current date and '' to variable if not 
         if (eventDates.includes(checkDate)) {                                                                   // Checks whether date is in the eventDate array
-            datesHTML += `<div class="date event ${activeClass}" id="event-${currentMonth}-${i}">${i}</div>`    // If so, creates HTML date with class event class 
+            datesHTML += `<btn onclick="scrollEvent1()" class="date event ${activeClass}" id="event-${currentMonth}-${i}">${i}</btn>`    // If so, creates HTML date with class event class 
         }
         else {
             datesHTML += `<div class="date ${activeClass}">${i}</div>`;                                         // If not, creates HTML as a normal date 
@@ -60,7 +65,7 @@ const updateCalendar = () => {
                 <p class="card-text">Time: 10:00 a.m. - 2:00 p.m.</p>
                 <p class="card-text">Location: <a class="event-location" href="https://www.google.com/maps/place/Shrewsbury+River+Yacht+Club/@40.3684869,-74.0325092,17z/data=!3m1!4b1!4m6!3m5!1s0x89c23a7f704adb61:0x27e1284beb81060c!8m2!3d40.3684828!4d-74.0299343!16s%2Fg%2F1tlqqx31?entry=ttu">Shrewsbury River Yacht Club</a></p>
                 <p class="card-text">Description: Join our sailing experts Desmond and Sophia for a fun day of sailing on the Shrewsbury River!</p>
-                <a class="btn btn-primary" id="signUpLink" href="signInTest">Sign up</a>
+                <a onclick="signUp()" class="btn btn-primary" id="signUpLink" href="">Sign up</a>
             </div>
         </div>`
     }
@@ -87,3 +92,7 @@ nextBtn.addEventListener('click', () => {
     // Call updateCalendar function
     updateCalendar();
 })
+
+function signUp() {
+    
+}
