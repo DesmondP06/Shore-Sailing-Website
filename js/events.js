@@ -50,21 +50,22 @@ function getUsername() {
 
 
     getUsername();   //Get current users first name
+    // If not logged in, send user to sign in page
     if (currentUser == null) {
-        ;
+        signUpLink.href = 'signInTest.html';
+    }
+    // If user logged in, keep user in events page
+    else{
+        signUpLink.href = '';
     }
 
-    else{
-        signUpLink.href = 'index.html';
-    }
 
 
 let signedUp = false;
 
-
 document.getElementById("signUpLink").onclick = function(){
   if (!signedUp){
-    update(ref(db, 'users/' + user.uid + '/accountInfo' + '/events'), {
+    set(ref(db, 'users/' + user.uid + '/accountInfo' + '/events'), {
       [event1]: '0/13/24'
     })
     .then(() => {
@@ -78,16 +79,15 @@ document.getElementById("signUpLink").onclick = function(){
       alert(error)
     })
   }
-}
-else {
-document.getElementById("signUpLink").onclick = function(){
-  remove(ref(db, 'users/' + user.uid + '/accountInfo' + '/events' + 'event1'))
-  .then(() => {
-    alert("Event removed successfully");
-    signUpLink.innerText = 'Sign Up';
-  })
-  .catch((error) => {
-    alert(error);
-  })
-}
+  else {
+    remove(ref(db, 'users/' + user.uid + '/accountInfo' + '/events/' + event1))
+    .then(() => {
+      alert("Event removed successfully");
+      signUpLink.innerText = 'Sign Up';
+      signedUp = false;
+    })
+    .catch((error) => {
+      alert(error);
+    })
+  }
 }
