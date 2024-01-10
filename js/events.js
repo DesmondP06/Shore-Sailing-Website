@@ -112,12 +112,14 @@ document.getElementById("signUpLink").onclick = async function(){
 }
 */
 
+// If user signs up for event, add event date to database
 document.getElementById("signUpLink").onclick = function(){
   set(ref(db, 'users/' + currentUser.uid + '/accountInfo' + '/events'), {
     ['event1']: '0/13/24'
   })
 }
 
+// If user removes event, remove event from database
 document.getElementById("removeEvent").onclick = function(){
   remove(ref(db, 'users/' + currentUser.uid + '/accountInfo' + '/events/' + 'event1'))
 }
