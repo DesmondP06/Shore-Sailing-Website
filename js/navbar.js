@@ -76,14 +76,14 @@ function getUsername() {
         }).catch((error) => {
           alert("There was an error: " + error)
         });
+
+        updateUserTotalDonations(currentUser.uid)
       }
       
       // Functionality for the sign-out button
       document.getElementById('signOut').onclick = function () { 
         signOutUser();
       }
-      // Fetch all donation records and print to console
-      fetchUserDonations(currentUser.uid);
     }  
       // Fetch all donation records from all users and print to console
       fetchAllDonations();
@@ -104,44 +104,35 @@ function getUsername() {
         window.location = 'index.html'  // Reidrect to the index/home page
      }
   
-// Function that fetches the donations of an individual user
-async function fetchUserDonations(userId) {
-  var userDonationsRef = ref(db, 'users/' + userId + '/accountInfo/data/donations');
-
-  get(userDonationsRef).then((snapshot) => {
-    if (snapshot.exists()) {
-      snapshot.forEach((donationSnapshot) => {
-        var donationKey = donationSnapshot.key;
-        var donationValue = donationSnapshot.val();
-
-        // Process each donation here
-        console.log("Donation key: " + donationKey + ", Amount: " + donationValue.amount);
-      });
-    } else {
-      console.log("No donations found for user " + userId);
-    }
-  }).catch((error) => {
-    console.error("Error fetching user donations: ", error);
-  });
-}
 // Function that fetches the donations of all users
 async function fetchAllDonations() {
+  // Return a new promise
   return new Promise((resolve, reject) => {
+    // Reference to the 'users' node in the database
     var donationsRef = ref(db, 'users/');
+    // Retrieve the data at the reference
     get(donationsRef).then((snapshot) => {
+      // Check if the snapshot has data
       if (snapshot.exists()) {
         let sumOfDonations = 0;
+        // Iterate over each user's snapshot
         snapshot.forEach((userSnapshot) => {
+          // For each user, iterate over the donations data
           userSnapshot.child('accountInfo/data/donations').forEach((donationSnapshot) => {
+            // Get the donation amount
             var donationValue = donationSnapshot.val();
+            // Add the donation amount to the total sum
             sumOfDonations += donationValue.amount;
           });
         });
+        // Resolve the promise with the total sum of donations
         resolve(sumOfDonations);
       } else {
+        // If no data exists, resolve the promise with 0
         resolve(0);
       }
     }).catch((error) => {
+      // Log and reject the promise if there is an error fetching the data
       console.error("Error fetching donations: ", error);
       reject(error);
     });
@@ -179,7 +170,7 @@ async function createChart (totalDonated) {
       },
       tooltips: {
         callbacks: {
-          // label functionfor tooltips, executed when hovering over chart elements
+          // label function for tooltips, executed when hovering over chart elements
           label: function(tooltipItem, data) {
             var label = data.labels[tooltipItem.index] || ''; // Get the label for the hovered data point
             if (label) {
@@ -195,6 +186,10 @@ async function createChart (totalDonated) {
   // Update the percentage in the HTML for the element that has the id 'percentage'
   const percentageElement = document.getElementById('percentage');
   percentageElement.textContent = donatedPercentage;
+
+  const contribution = document.getElementById('contribution');
+  getUserTotalDonations(currentUser.uid, contribution)
+  
 }
 async function setupChart() {
   try {
@@ -207,5 +202,54 @@ async function setupChart() {
   }
 }
 
+async function updateUserTotalDonations(userId) {
+  // Reference to the user's donations
+  const userDonationsRef = ref(db, 'users/' + userId + '/accountInfo/data/donations');
+  
+  // Get the current donations and calculate the sum
+  get(userDonationsRef).then((snapshot) => {
+    if (snapshot.exists()) {
+      let totalAmount = 0;
+      snapshot.forEach((donationSnapshot) => {
+        const donation = donationSnapshot.val();
+        totalAmount += donation.amount;
+      });
+
+      // Update the total donations for the user
+      const totalDonationsRef = ref(db, 'users/' + userId + '/accountInfo/data/totalDonations');
+      const updates = {};
+      updates['/totalAmount'] = totalAmount;
+
+      update(totalDonationsRef, updates).then(() => {
+        console.log("Total donations updated successfully");
+      }).catch((error) => {
+        console.error("Error updating total donations: ", error);
+      });
+    } else {
+      console.log("No donations to update");
+    }
+  }).catch((error) => {
+    console.error("Error fetching donations: ", error);
+  });
+}
+
+function getUserTotalDonations(userId, totalDonationsElement) {
+  // Reference to the user's total donations
+  const totalDonationsRef = ref(db, 'users/' + userId + '/accountInfo/data/totalDonations/totalAmount');
+  
+  // Retrieve the total donations amount
+  get(totalDonationsRef).then((snapshot) => {
+    if (snapshot.exists()) {
+      const totalAmount = snapshot.val();
+      // Update the HTML element with the total amount
+      totalDonationsElement.textContent = totalAmount;
+    } else {
+      // If the total donations amount doesn't exist, set the content to '0'
+      totalDonationsElement.textContent = '0';
+    }
+  }).catch((error) => {
+    console.error("Error retrieving total donations: ", error);
+  });
+}
 
 
