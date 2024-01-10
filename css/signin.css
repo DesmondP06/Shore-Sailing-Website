@@ -1,5 +1,6 @@
 /* CSS styling for elements in signin.html organized by location in signin.html file */
 
+/* Styling for table header cells */
 table th{
     /*Keep column headers at the top as table is scrolled*/
     position: sticky;
@@ -10,43 +11,54 @@ table th{
 
 /* ----------------- Class CSS ----------------- */
 
+/* Styling for the signinbody class */
 .signinbody{
     height: 100vh;
 }
+
+/* Styling for the dataForm class */
 .dataForm{
     display: flex;
     justify-content: left;
     align-items: center;
 }
 
+/* Styling for the days class */
 .days{
     text-align: center;
     vertical-align: middle;
 }
 
+/* Styling for the headerBG class */
 .headerBG{
     background-color: #e6e6e6;
 }
 
+/* Styling for the footerBG class */
 .footerBG{
     background-color: #e6e6e6;
 }
 
+/* Styling for the ordered-List-item-font class */
 .ordered-List-item-font{
     font-size:22px;
 }
+
+/* Styling for the overview-font class */
 .overview-font{
     font-size:25px;
 }
 
+/* Styling for the signUpForm class */
 .signUpForm{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Styling for the navbar-sign id */
 #navbar-sign {            
-    position: static;                          /* Fixed positioning */
+    position: static;                         /* Fixed positioning */
     padding: 1.5vh;                           /* Large padding which will shrink on scroll (using JS)*/       
     width: 100%;                              /* Full width of page*/
     top: 0;                                   /* At the top */
