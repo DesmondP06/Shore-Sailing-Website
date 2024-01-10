@@ -176,17 +176,20 @@ body {
     transition: 0.25s;
 }
 
+/* Styling for remove event button */
 #removeEvent {
     position: relative;
     float: right;
 }
 
+/* Styling for sign up and remove event button */
 #signUpLink, #removeEvent {
     background-color: #181ba5;
     border-width: 2%;
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
+/* Styling for sign up and remove event button when hovered */
 #signUpLink:hover, #removeEvent:hover {
     background-color: #fff;
     border-color:rgb(19, 59, 189);
