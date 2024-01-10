@@ -5,7 +5,7 @@ const datesElement = document.getElementById('dates');          // Variable for 
 const prevBtn = document.getElementById('prevBtn');             // Variable for editing inner HTML previous button for calendar
 const nextBtn = document.getElementById('nextBtn');             // Variable for editing inner HTML next button for calendar
 const eventCards = document.getElementById('event-cards');      // Variable for editing inner HTML event days for calendar  
-const eventSignUpBtn = document.getElementById('event-sign-up');   // Variable for adding event to database
+const signedUpEvents = document.getElementById('signedUpEvents');   // Variable for editing inner HTML of signedUpEvents
 
 let currentDate = new Date();               // Create new current date
 
@@ -54,6 +54,7 @@ const updateCalendar = () => {
     
     // Edits inner HTML of id='dates' element in HTML
     datesElement.innerHTML = datesHTML;
+
 
     // If month is January (month with an event), create event card below calendar
     if (currentMonth == 0) {

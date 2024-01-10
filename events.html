@@ -182,16 +182,35 @@
         </div>
         <!--Dates element completed by javascript-->
         <div class="dates" id="dates"></div>
+
+        <!--Your Events Modal-->
+        <button type="button" class="btn btn-primary w-25" id="yourEvents" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Your Events
+          </button>
+          
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Your Events</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="signedUpEventsCard"></div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
     </div>
     
     <!--Event cards completed by javascript-->
     <div class="event-cards" id="event-cards"></div>
     
-    
 
     <!--Footer Section-->    
     <!-- Footer (requires Bootstrap icons CSS)-->   
-    
     <footer class="p-5 footer text-light text-center position-relative footer-events">      
         <div class="container">
             <p class="lead">Copyright &copy; Shore Sailing 2023</p> 
