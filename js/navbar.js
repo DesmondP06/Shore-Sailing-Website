@@ -1,11 +1,13 @@
+// ------------- This JS file is for displaying a pie chart for the data -------------//
+
+// ----------------- Firebase Setup & Initialization ------------------------//
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import {getDatabase, ref, set, update, child, get, remove, push} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
+// Our web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCe7ou1G1JOX9IageTZpCmejeaB2NyZuWw",
   authDomain: "shoresailing2023.firebaseapp.com",
@@ -17,24 +19,26 @@ const firebaseConfig = {
 };
 
 
-  // Initialize Firebase
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-const auth  = getAuth(); //Firebase authentication
+// Initialize Firebase Authentication
+const auth  = getAuth();
 
 //Return an instance of the database associated with your app
 const db = getDatabase(app) 
 
 
-    // ------------------------- Set Welcome Message -------------------------
-let donateButton = document.getElementById("donate_button")
-let signOutLink = document.getElementById('signOut') //sign out link
-let currentUser = null; //initialize currentUser to null
+// ------------------------- Get reference values -------------------------
+let donateButton = document.getElementById("donate_button") // Donate with paypal.me button
+let signOutLink = document.getElementById('signOut') // Sign out link
+let currentUser = null; // Initializes currentUser to null
+// ----------------------- Get User's Name --------------------------------
 function getUsername() {
-    //Grab value for the 'keep logged in' switch
+    // Grab value for the 'keep logged in' switch
     let keepLoggedIn = localStorage.getItem('keepLoggedIn')
   
-    //Grab user information passed from signIn.js
+    // Grab user information passed from signIn.js
     if(keepLoggedIn == 'yes'){
       currentUser = JSON.parse(localStorage.getItem('user'))
     }
@@ -42,25 +46,29 @@ function getUsername() {
       currentUser = JSON.parse(sessionStorage.getItem('user'))
     }
   }
-  
+  // Execeutes once the window is loaded
   window.onload = function(){
     setupChart();
-    getUsername();   //Get current users first name
+    getUsername();   // Get current user's first name
+    
+    // Check if the user is signed in
     if (currentUser == null) {
       signOutLink.innerText = "Sign In";
       signOutLink.href = 'signInTest.html';
       donateButton.href = 'signInTest.html';
       donateButton.innerText = "Sign in to donate"
       }
-
     else{
       signOutLink.innerText = "Sign Out";
       donateButton.href = 'https://www.paypal.me/';
       donateButton.target = "_blank";
       donateButton.innerText = "Donate with paypal.me";
+
+      // Functionality for the donate button
       donateButton.onclick = function(){
         let inputElem = document.getElementById("input");
         let value = parseFloat(inputElem.value);
+        // Push the donation data to the user's record in the database
         push(ref(db, 'users/' + currentUser.uid + '/accountInfo/data/donations'), {
           amount: value
         }).then(()=>{
@@ -69,6 +77,8 @@ function getUsername() {
           alert("There was an error: " + error)
         });
       }
+      
+      // Functionality for the sign-out button
       document.getElementById('signOut').onclick = function () { 
         signOutUser();
       }
@@ -77,25 +87,24 @@ function getUsername() {
     }  
       // Fetch all donation records from all users and print to console
       fetchAllDonations();
-
     }
 
-
+    // Function to sign out the current user
     function signOutUser(){
-        sessionStorage.removeItem('user'); //Clear session storage
-        localStorage.removeItem('user'); //Clear local storage
+        sessionStorage.removeItem('user'); // Clear session storage
+        localStorage.removeItem('user');   // Clear local storage
         localStorage.removeItem('keepLoggedIn') 
      
         signOutLink(auth).then(() => {
-         //Sign-out successful
+         // Sign-out successful
         }).catch((error) => {
-         //error occured
+         // Error occured
         });
      
-        window.location = 'index.html'
+        window.location = 'index.html'  // Reidrect to the index/home page
      }
   
-//Fetches the donations of an individual user
+// Function that fetches the donations of an individual user
 async function fetchUserDonations(userId) {
   var userDonationsRef = ref(db, 'users/' + userId + '/accountInfo/data/donations');
 
@@ -115,7 +124,7 @@ async function fetchUserDonations(userId) {
     console.error("Error fetching user donations: ", error);
   });
 }
-//Fetches the donations of all users
+// Function that fetches the donations of all users
 async function fetchAllDonations() {
   return new Promise((resolve, reject) => {
     var donationsRef = ref(db, 'users/');
@@ -139,6 +148,7 @@ async function fetchAllDonations() {
   });
 }
 
+// Function that creates a pie chart based on donation progress
 async function createChart (totalDonated) {
   const ctx = document.getElementById('myChart');
 
@@ -162,24 +172,29 @@ async function createChart (totalDonated) {
       }]
     },
     options: {
+      responsive: true,           // Re-size based on screen size
       title: {
-        display: true,
-        text: "Donation Goal Progress"
+        display: true,            // Display the chart title
+        text: "Donation Goal Progress" 
       },
       tooltips: {
         callbacks: {
+          // label functionfor tooltips, executed when hovering over chart elements
           label: function(tooltipItem, data) {
-            var label = data.labels[tooltipItem.index] || '';
+            var label = data.labels[tooltipItem.index] || ''; // Get the label for the hovered data point
             if (label) {
-              label += ': ';
+              label += ': ';  // Add a colon if there is a label
             }
             label += Math.round(data.datasets[0].data[tooltipItem.index]) + '%';
-            return label;
+            return label; // Return the formatted label that is displayed in the tooltip
           }
         }
       }
     }
   });
+  // Update the percentage in the HTML for the element that has the id 'percentage'
+  const percentageElement = document.getElementById('percentage');
+  percentageElement.textContent = donatedPercentage;
 }
 async function setupChart() {
   try {

@@ -21,10 +21,10 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-//initialize firebase authentication
+// Initialize firebase authentication
 const auth = getAuth();
 
-//Returns the instance of your app's FRD
+// Returns the instance of your app's FRD
 const db = getDatabase(app);
 
 

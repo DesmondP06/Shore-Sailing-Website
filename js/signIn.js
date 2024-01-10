@@ -1,17 +1,13 @@
-// ----------------- User Sign-In Page --------------------------------------//
+// ----------------- This JS file is for an old user to sign in -----------------//
 
 // ----------------- Firebase Setup & Initialization ------------------------//
-// Import the functions you need from the SDKs you need
 
-
-// Import the functions you need from the SDKs you need
+// Import needed functions from the SDKs
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import {getDatabase, ref, set, update, child, get} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
+// Our web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyCe7ou1G1JOX9IageTZpCmejeaB2NyZuWw",
     authDomain: "shoresailing2023.firebaseapp.com",
@@ -21,45 +17,45 @@ const firebaseConfig = {
     messagingSenderId: "99745152338",
     appId: "1:99745152338:web:6ced14170f65d326844e8b"
   };
-  // Initialize Firebase
+
+//  Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-const auth = getAuth(app); //Firebase authentication
+//  Initialize Firebase Authentication
+const auth = getAuth(app); 
 
-//Return an instance of the database associated with your app
+//  Return an instance of the database associated with your app
 const db = getDatabase(app) 
 
 // ---------------------- Sign-In User ---------------------------------------//
 document.getElementById('signIn').onclick = function(){
-    //get user's email and password for sign in
+    // Get user's email and password for sign in
     const email = document.getElementById("loginEmail").value;
     const password = document.getElementById("loginPassword").value;
- 
-    //console.log(email, password)
 
-    //Attempt to sign user in 
+    // Attempt to sign user in 
     signInWithEmailAndPassword(auth, email, password)
     .then(
     (userCredential) => {
-        //Create user credential and store user Id
+        // Create user credential and store user Id
         const user = userCredential.user;
-        //alert(user.uid)
 
-        //Log the sign in date in database
-        //'Update' will only add the last log in info. Will not overwrite everything else
+        // Log the sign in date to the database
+        // 'Update' function will only add the last log in info. Will not overwrite everything else
         let logDate = new Date();
         update(ref(db, 'users/' + user.uid + '/accountInfo'), {
             last_login: logDate,
         })
         .then( () => {
-            //User signed in succesfully
+            // User signed in succesfully
             alert("Signed in successfully")
-            //get snapshot of all the user info (including uid) that will be 
-            //passed into login() function function and stored in session or local storage
+            
+            // Get snapshot of all the user info (including uid) that will be 
+            // Passed into login() function function and stored in session or local storage
             get(ref(db, 'users/' + user.uid + '/accountInfo')).then((snapshot) => {
                 if (snapshot.exists()){
                     console.log(snapshot.val());
-                    logIn(snapshot.val());
+                    logIn(snapshot.val());  // login function will keep user signed in
                 } else {
                     console.log("User does not exist")
                     
@@ -67,12 +63,12 @@ document.getElementById('signIn').onclick = function(){
             }).catch((error) => {console.log(error);})
         })
         .catch( (error) => {
-            //Sign in failed
+            // Sign in failed...
             alert(error)})
     })
     .catch((error) =>
     {
-        const errorCode = error.code; //Not used for now. Error message more preferable
+        const errorCode = error.code; // Not used for now. Error message more preferable
         const errorMessage = error.message
         alert(errorMessage)
     }
@@ -84,21 +80,22 @@ document.getElementById('signIn').onclick = function(){
 // ---------------- Keep User Logged In ----------------------------------//
 function logIn(user){
     let keepLoggedIn = document.getElementById('keepLoggedInSwitch').ariaChecked;
-    //Session storage is temporary (only while session active)
-    //Info. saved as a string (must convert the JS object to a string to save)
-    //Session storage will be cleared with a signOut() function in the home.js file
+    
+    // Session storage is temporary (only while session active)
+    // Info. saved as a string (must convert the JS object to a string to save)
+    // Session storage will be cleared with a signOut() function in the home.js file
     if (!keepLoggedIn){
         sessionStorage.setItem('user',JSON.stringify(user));
-        window.location = "index.html"
+        window.location = "index.html"  // Redirect browser to index.html
     }
 
-    //local storage is permenant (keeps user logged in if browser is closed)
-    //local storage will be cleared with signOut() function
+    // local storage is permanent (keeps user logged in if browser is closed)
+    // local storage will be cleared with signOut() function
 
     else{
         localStorage.setItem('keepLoggedIn' , 'yes');
         localStorage.setItem('user', JSON.stringify(user));
-        window.location = 'index.html'
+        window.location = 'index.html'  // Redirect browser to home.html
     }
 
 }
