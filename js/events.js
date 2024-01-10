@@ -53,8 +53,8 @@ function getUsername() {
     getUsername();   //Get current users first name
     // If not logged in, send user to sign in page
     if (currentUser == null) {
-        signUpLink.href = 'signInTest.html';
-        removeEvent.href = 'signInTest.html';
+        signUpLink.href = 'signIn.html';
+        removeEvent.href = 'signIn.html';
     }
     // If user logged in, keep user in events page
     else{

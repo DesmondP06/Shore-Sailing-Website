@@ -56,8 +56,8 @@ function getUsername() {
     // Check if the user is signed in
     if (currentUser == null) {
       signOutLink.innerText = "Sign In";
-      signOutLink.href = 'signInTest.html';
-      donateButton.href = 'signInTest.html';
+      signOutLink.href = 'signIn.html';
+      donateButton.href = 'signIn.html';
       donateButton.innerText = "Sign in to donate"
       }
     else{
@@ -74,7 +74,7 @@ function getUsername() {
         push(ref(db, 'users/' + currentUser.uid + '/accountInfo/data/donations'), {
           amount: value
         }).then(()=>{
-          alert("Data stored successfully")
+          alert("Donation Processed Successfully")
         }).catch((error) => {
           alert("There was an error: " + error)
         });
