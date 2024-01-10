@@ -27,8 +27,7 @@ const auth  = getAuth();
 // Return an instance of the database associated with your app
 const db = getDatabase(app) 
 
-// Firebase parameter for getting data
-const dbref = ref(db); 
+
 
 
 // --------------------- Get reference values -----------------------------
@@ -77,23 +76,5 @@ document.getElementById("signUpLink").onclick = function(){
 document.getElementById("removeEvent").onclick = function(){
   remove(ref(db, 'users/' + currentUser.uid + '/accountInfo' + '/events/' + 'eventName'))
   remove(ref(db, 'users/' + currentUser.uid + '/accountInfo' + '/events/' + 'eventDate'))
-}
-
-window.onload = function(){
-  get(child(dbref, '/users/' + currentUser.uid + '/accountInfo/events/eventName'))
-  .then((snapshot) => {
-    if (snapshot.exists()){
-      document.getElementById('signedUpEventsCard').innerText = `
-      Name: ${snapshot.val()}`;
-      get(child(dbref, '/users/' + currentUser.uid + '/accountInfo/events/eventDate'))
-      .then((snapshot) => {
-        document.getElementById('signedUpEventsCard').innerText += `
-        Date: ${snapshot.val()}`;
-      })
-    }
-    else {
-      document.getElementById('signedUpEventsCard').innerText = `You aren't signed up for any events`;
-    }
-})
 }
 
