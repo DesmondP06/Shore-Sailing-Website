@@ -1,19 +1,13 @@
-// This JS file is for registering a new app user ---------------------------//
+// ------------- This JS file is for registering a new app user -------------//
 
 // ----------------- Firebase Setup & Initialization ------------------------//
 
-// Import the functions you need from the SDKs you need
+// Import needed functions from the SDKs
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import {getDatabase, ref, set, update, child, get} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-//From website
-// Import the functions you need from the SDKs you need
-
-// Your web app's Firebase configuration
+// Our web app's Firebase configuration 
 const firebaseConfig = {
   apiKey: "AIzaSyCe7ou1G1JOX9IageTZpCmejeaB2NyZuWw",
   authDomain: "shoresailing2023.firebaseapp.com",
@@ -44,21 +38,22 @@ document.getElementById('submitData').onclick = function(){
   //Firebase requires a password of at least 6 characters
   const password = document.getElementById('userPass').value;
 
+  // Validate the user inputs
   if (!validation(firstName, lastName, email, password)){
     return;
   };
 
-  //Create a new app user using email and password authentication 
+  // Create a new app user using email and password authentication 
   createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
-    //Create the user credential 
+    // Create the user credential 
     const user = userCredential.user; 
 
-    //Add the user account info to the FRD
-    //set function will create a new reference or completely replace existing reference
-    //Each new user will be placed under the user's node 
+    // Add the user account info to the FRD
+    // Set function will create a new reference or completely replace existing reference
+    // Each new user will be placed under the 'users' node 
     set(ref(db, "users/" + user.uid + '/accountInfo'), {
-      uid: user.uid,//save userID for home.js
+      uid: user.uid,  // save userID 
       email: email,
       password: encryptPass(password),
       firstName: firstName,
@@ -66,12 +61,12 @@ document.getElementById('submitData').onclick = function(){
 
     })
     .then(() => {
-      //Data saved successfully
+      // Data saved successfully
       alert("User successfully created")
       document.getElementById("accountCreationContainer").classList.remove("right-panel-active");
     })
     .catch((error) => {
-      //the write failed
+      // The write failed...
       alert(error)
     })
 
@@ -79,9 +74,7 @@ document.getElementById('submitData').onclick = function(){
     const errorCode = error.code;
     const errorMessage = error.message
     alert(errorMessage);
-  });
-  //window.location = 'signin.html'
-  
+  });  
 }
 
 
@@ -94,7 +87,7 @@ function isEmptyorSpaces(str){
 function validation(firstName, lastName, email, password) { 
   let fNameRegex = /^[a-zA-Z]+$/;
   let lNameRegex = /^[a-zA-Z]+$/;
-  let emailRegex =  /^[a-zA-Z0-9]+(@ctemc.org|@gmail\.com)+$/;
+  let emailRegex =  /^[a-zA-Z0-9]+(@ctemc\.org|@gmail\.com)+$/;
 
   if (isEmptyorSpaces(firstName) || isEmptyorSpaces(lastName) || isEmptyorSpaces(email) || isEmptyorSpaces(password)){
     alert("Please fill out all required sections");
