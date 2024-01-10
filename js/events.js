@@ -58,3 +58,33 @@ window.onload = function(){
         signUpLink.href = 'index.html';
     }
 }
+
+let signedUp = false;
+
+if (!signedUp){
+  document.getElementById("signUpLink").onclick = function(){
+    update(ref(db, 'users/' + user.uid + '/accountInfo' + '/events'), {
+      [event1]: '0/13/24'
+    })
+    .then(() => {
+      //Data updated successfully
+      alert("Successfully signed up for event")
+      signUpLink.innerText = 'Remove Event'
+    })
+    .catch((error) => {
+      // Update failed
+      alert(error)
+    })
+  }
+}
+else {
+  document.getElementById("signUpLink").onclick = function(){
+    remove(ref(db, 'users/' + user.uid + '/accountInfo' + '/events' + 'event1'))
+    .then(() => {
+      alert("Event removed successfully");
+    })
+    .catch((error) => {
+      alert(error);
+    })
+  }
+}
