@@ -58,7 +58,7 @@ document.getElementById('submitData').onclick = function(){
       password: encryptPass(password),
       firstName: firstName,
       lastName: lastName,
-      events: 0
+      events: 0,
     })
     .then(() => {
       //Data saved successfully
