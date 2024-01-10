@@ -57,12 +57,12 @@ document.getElementById('submitData').onclick = function(){
       email: email,
       password: encryptPass(password),
       firstName: firstName,
-      lastName: lastName
-
+      lastName: lastName,
+      events: 0
     })
     .then(() => {
-      // Data saved successfully
-      alert("User successfully created")
+      //Data saved successfully
+      alert("User successfully created. Please sign in.")
       document.getElementById("accountCreationContainer").classList.remove("right-panel-active");
     })
     .catch((error) => {

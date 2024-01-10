@@ -46,13 +46,49 @@ function getUsername() {
     }
   }
 
-window.onload = function(){
+
     getUsername();   //Get current users first name
+    // If not logged in, send user to sign in page
     if (currentUser == null) {
         signUpLink.href = 'signInTest.html';
     }
-
+    // If user logged in, keep user in events page
     else{
-        signUpLink.href = 'index.html';
+        signUpLink.href = '';
     }
+
+
+// Boolean for whether user has signed up for event or not
+let signedUp = false;
+
+// When Sign Up button clicked, this function runs
+document.getElementById("signUpLink").onclick = function(){
+  // If user is not signed up, add the event to database
+  if (!signedUp){
+    set(ref(db, 'users/' + user.uid + '/accountInfo' + '/events'), {
+      ['event1']: '0/13/24'
+    })
+    .then(() => {
+      //Data updated successfully
+      alert("Successfully signed up for event");
+      signUpLink.innerText = 'Remove Event';
+      signedUp = true;
+    })
+    .catch((error) => {
+      // Update failed
+      alert(error)
+    })
+  }
+  // If user is signed up, remove event from database
+  else {
+    remove(ref(db, 'users/' + user.uid + '/accountInfo' + '/events/' + event1))
+    .then(() => {
+      alert("Event removed successfully");
+      signUpLink.innerText = 'Sign Up';
+      signedUp = false;
+    })
+    .catch((error) => {
+      alert(error);
+    })
+  }
 }
