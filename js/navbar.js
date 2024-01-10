@@ -76,7 +76,7 @@ function getUsername() {
         }).catch((error) => {
           alert("There was an error: " + error)
         });
-
+        //Updates total amount a user has donated in firebase
         updateUserTotalDonations(currentUser.uid)
       }
       
