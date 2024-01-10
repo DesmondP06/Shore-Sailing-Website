@@ -65,10 +65,11 @@ const updateCalendar = () => {
                 <p class="card-text">Time: 10:00 a.m. - 2:00 p.m.</p>
                 <p class="card-text">Location: <a class="event-location" href="https://www.google.com/maps/place/Shrewsbury+River+Yacht+Club/@40.3684869,-74.0325092,17z/data=!3m1!4b1!4m6!3m5!1s0x89c23a7f704adb61:0x27e1284beb81060c!8m2!3d40.3684828!4d-74.0299343!16s%2Fg%2F1tlqqx31?entry=ttu">Shrewsbury River Yacht Club</a></p>
                 <p class="card-text">Description: Join our sailing experts Desmond and Sophia for a fun day of sailing on the Shrewsbury River!</p>
-                <a onclick="signUp()" class="btn btn-primary" id="signUpLink" href="">Sign up</a>
+                <a class="btn btn-primary" id="signUpLink">Sign up</a>
             </div>
         </div>`
     }
+    // If not, leave cards section empty
     else {
         eventCards.innerHTML = '';
     }
@@ -93,6 +94,3 @@ nextBtn.addEventListener('click', () => {
     updateCalendar();
 })
 
-function signUp() {
-    
-}
