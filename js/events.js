@@ -65,13 +65,13 @@ let signedUp = false;
 document.getElementById("signUpLink").onclick = function(){
   // If user is not signed up, add the event to database
   if (!signedUp){
-    set(ref(db, 'users/' + user.uid + '/accountInfo' + '/events'), {
+    set(ref(db, 'users/' + currentUser.uid + '/accountInfo' + '/events'), {
       ['event1']: '0/13/24'
     })
     .then(() => {
       //Data updated successfully
       alert("Successfully signed up for event");
-      signUpLink.innerText = 'Remove Event';
+      document.getElementById("signUpLink").innerText = 'Remove Event';
       signedUp = true;
     })
     .catch((error) => {
@@ -81,7 +81,7 @@ document.getElementById("signUpLink").onclick = function(){
   }
   // If user is signed up, remove event from database
   else {
-    remove(ref(db, 'users/' + user.uid + '/accountInfo' + '/events/' + event1))
+    remove(ref(db, 'users/' + currentUser.uid + '/accountInfo' + '/events/' + 'event1'))
     .then(() => {
       alert("Event removed successfully");
       signUpLink.innerText = 'Sign Up';
@@ -92,3 +92,5 @@ document.getElementById("signUpLink").onclick = function(){
     })
   }
 }
+
+
