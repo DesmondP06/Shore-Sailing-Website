@@ -48,28 +48,30 @@ function getUsername() {
     }
   }
 
-window.onload = function(){
+
     getUsername();   //Get current users first name
     if (currentUser == null) {
-        signUpLink.href = 'signInTest.html';
+        ;
     }
 
     else{
         signUpLink.href = 'index.html';
     }
-}
+
 
 let signedUp = false;
 
-if (!signedUp){
-  document.getElementById("signUpLink").onclick = function(){
+
+document.getElementById("signUpLink").onclick = function(){
+  if (!signedUp){
     update(ref(db, 'users/' + user.uid + '/accountInfo' + '/events'), {
       [event1]: '0/13/24'
     })
     .then(() => {
       //Data updated successfully
-      alert("Successfully signed up for event")
-      signUpLink.innerText = 'Remove Event'
+      alert("Successfully signed up for event");
+      signUpLink.innerText = 'Remove Event';
+      signedUp = true;
     })
     .catch((error) => {
       // Update failed
@@ -78,13 +80,14 @@ if (!signedUp){
   }
 }
 else {
-  document.getElementById("signUpLink").onclick = function(){
-    remove(ref(db, 'users/' + user.uid + '/accountInfo' + '/events' + 'event1'))
-    .then(() => {
-      alert("Event removed successfully");
-    })
-    .catch((error) => {
-      alert(error);
-    })
-  }
+document.getElementById("signUpLink").onclick = function(){
+  remove(ref(db, 'users/' + user.uid + '/accountInfo' + '/events' + 'event1'))
+  .then(() => {
+    alert("Event removed successfully");
+    signUpLink.innerText = 'Sign Up';
+  })
+  .catch((error) => {
+    alert(error);
+  })
+}
 }
