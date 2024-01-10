@@ -198,6 +198,33 @@ body {
     transform: scale(1.05);
 }
 
+/* Styling for yourEvents modal */
+#yourEvents {
+    position: relative;
+    margin-top: 2.5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Styling for signedUpEvents card */
+.signedUpEvents {
+    margin-top: 5%;
+}
+
+/* Styling for your events card */
+#signedUpEvents {
+    padding: 7.5%;
+    width: 20vw;
+    border-color: black;
+    border-style: double;
+}
+
+/* Styling for your events card text */
+#signedUpEventsCard {
+    text-align: center;
+    font-size: large;
+}
+
 /* Styling for footer of events page */
 .footer-events {
     width: 100%;

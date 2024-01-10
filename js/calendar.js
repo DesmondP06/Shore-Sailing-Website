@@ -70,13 +70,6 @@ const updateCalendar = () => {
                 <a class="btn btn-primary " id="removeEvent">Remove Event</a>
             </div>
         </div>`
-        signedUpEvents.innerHTML = `
-        <div class="card">
-            <div class="card-body">
-            <h5 class="card-title">Events You Are Signed Up For</h5>
-            <p class="card-text" id="signedUpEventsCard"></p>
-            </div>
-        </div>`
     }
     // If not, leave cards section empty
     else {

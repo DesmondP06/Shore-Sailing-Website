@@ -68,26 +68,31 @@ function getUsername() {
 // If user signs up for event, add event date to database
 document.getElementById("signUpLink").onclick = function(){
   set(ref(db, 'users/' + currentUser.uid + '/accountInfo' + '/events'), {
-    ['event1']: '1/13/24'
+    ['eventName']: 'Sailing Day',
+    ['eventDate']: '1/13/24'
   })
 }
 
 // If user removes event, remove event from database
 document.getElementById("removeEvent").onclick = function(){
-  remove(ref(db, 'users/' + currentUser.uid + '/accountInfo' + '/events/' + 'event1'))
+  remove(ref(db, 'users/' + currentUser.uid + '/accountInfo' + '/events/' + 'eventName'))
+  remove(ref(db, 'users/' + currentUser.uid + '/accountInfo' + '/events/' + 'eventDate'))
 }
 
 window.onload = function(){
-  get(child(dbref, '/users/' + currentUser.uid + '/accountInfo/events'))
+  get(child(dbref, '/users/' + currentUser.uid + '/accountInfo/events/eventName'))
   .then((snapshot) => {
     if (snapshot.exists()){
       document.getElementById('signedUpEventsCard').innerText = `
-      Sailing Day
-      Date: ${snapshot.val()}
-      `;
+      Name: ${snapshot.val()}`;
+      get(child(dbref, '/users/' + currentUser.uid + '/accountInfo/events/eventDate'))
+      .then((snapshot) => {
+        document.getElementById('signedUpEventsCard').innerText += `
+        Date: ${snapshot.val()}`;
+      })
     }
     else {
-
+      document.getElementById('signedUpEventsCard').innerText = `You aren't signed up for any events`;
     }
 })
 }
