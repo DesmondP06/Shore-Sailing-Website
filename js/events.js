@@ -60,13 +60,15 @@ function getUsername() {
     }
 
 
-
+// Boolean for whether user has signed up for event or not
 let signedUp = false;
 
+// When Sign Up button clicked, this function runs
 document.getElementById("signUpLink").onclick = function(){
+  // If user is not signed up, add the event to database
   if (!signedUp){
     set(ref(db, 'users/' + user.uid + '/accountInfo' + '/events'), {
-      [event1]: '0/13/24'
+      ['event1']: '0/13/24'
     })
     .then(() => {
       //Data updated successfully
@@ -79,6 +81,7 @@ document.getElementById("signUpLink").onclick = function(){
       alert(error)
     })
   }
+  // If user is signed up, remove event from database
   else {
     remove(ref(db, 'users/' + user.uid + '/accountInfo' + '/events/' + event1))
     .then(() => {
