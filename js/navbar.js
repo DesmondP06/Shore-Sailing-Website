@@ -42,19 +42,22 @@ function getUsername() {
       currentUser = JSON.parse(sessionStorage.getItem('user'))
     }
   }
-
+  
   window.onload = function(){
+    setupChart();
     getUsername();   //Get current users first name
     if (currentUser == null) {
       signOutLink.innerText = "Sign In";
       signOutLink.href = 'signInTest.html';
       donateButton.href = 'signInTest.html';
+      donateButton.innerText = "Sign in to donate"
       }
 
     else{
       signOutLink.innerText = "Sign Out";
       donateButton.href = 'https://www.paypal.me/';
-      donateButton.target = "_blank"
+      donateButton.target = "_blank";
+      donateButton.innerText = "Donate with paypal.me";
       donateButton.onclick = function(){
         let inputElem = document.getElementById("input");
         let value = parseFloat(inputElem.value);
@@ -69,34 +72,15 @@ function getUsername() {
       document.getElementById('signOut').onclick = function () { 
         signOutUser();
       }
-
-      var donationsRef = ref(db, 'users/' + currentUser.uid + '/accountInfo/data/donations');
-
       // Fetch all donation records and print to console
-      get(donationsRef).then((snapshot) => {
-        
-        if (snapshot.exists()) {
-          snapshot.forEach((childSnapshot) => {
-            var donationKey = childSnapshot.key;
-            var donationValue = childSnapshot.val();
+      fetchUserDonations(currentUser.uid);
+    }  
+      // Fetch all donation records from all users and print to console
+      fetchAllDonations();
 
-            // Process each donation here
-            console.log("Donation key: " + donationKey + ", Amount: " + donationValue.amount);
-          });
-        } else {
-          console.log("No donations found");
-        }
-      }).catch((error) => {
-        console.error("Error fetching donations: ", error);
-      });
-
-
-      }
-  
-    
-      
-  
     }
+
+
     function signOutUser(){
         sessionStorage.removeItem('user'); //Clear session storage
         localStorage.removeItem('user'); //Clear local storage
@@ -111,42 +95,102 @@ function getUsername() {
         window.location = 'index.html'
      }
   
+//Fetches the donations of an individual user
+async function fetchUserDonations(userId) {
+  var userDonationsRef = ref(db, 'users/' + userId + '/accountInfo/data/donations');
 
+  get(userDonationsRef).then((snapshot) => {
+    if (snapshot.exists()) {
+      snapshot.forEach((donationSnapshot) => {
+        var donationKey = donationSnapshot.key;
+        var donationValue = donationSnapshot.val();
+
+        // Process each donation here
+        console.log("Donation key: " + donationKey + ", Amount: " + donationValue.amount);
+      });
+    } else {
+      console.log("No donations found for user " + userId);
+    }
+  }).catch((error) => {
+    console.error("Error fetching user donations: ", error);
+  });
+}
+//Fetches the donations of all users
+async function fetchAllDonations() {
+  return new Promise((resolve, reject) => {
+    var donationsRef = ref(db, 'users/');
+    get(donationsRef).then((snapshot) => {
+      if (snapshot.exists()) {
+        let sumOfDonations = 0;
+        snapshot.forEach((userSnapshot) => {
+          userSnapshot.child('accountInfo/data/donations').forEach((donationSnapshot) => {
+            var donationValue = donationSnapshot.val();
+            sumOfDonations += donationValue.amount;
+          });
+        });
+        resolve(sumOfDonations);
+      } else {
+        resolve(0);
+      }
+    }).catch((error) => {
+      console.error("Error fetching donations: ", error);
+      reject(error);
+    });
+  });
+}
+
+async function createChart (totalDonated) {
+  const ctx = document.getElementById('myChart');
+
+  const donationGoal = 1000; // Example donation goal
   
-  
-  /*async function getDataSet(userId, year, month){
-      let yearVal = document.getElementById("setYearVal");
-      let monthVal = document.getElementById("setMonthVal");
-    
-      yearVal.textContent = `Year: ${year}`;
-      monthVal.textContent = `Year: ${month}`;
-    
-      const days = []; //If you wanted to graph the data, you would attach these arrays as the data for ChartJS
-      const temps = [];
-    
-      const dbref = ref(db); //Firebase parameter for requesting data
-    
-      //Wait for all data to be pulled from FRD
-      //Must provide the path thrugh the nodes to the data
-    
-      await get(child(dbref, 'users/' + userId + '/data/' + year + '/' + month))
-      .then((snapshot) => {
-        if (snapshot.exists()){
-          console.log(snapshot.val())
-    
-          snapshot.forEach(child => {
-            console.log(child.key, child.val())
-            //Push values to corresponding arrays
-            days.push(child.key);
-            temps.push(child.val());
-          })
+  // Calculate percentages
+  const donatedPercentage = (totalDonated / donationGoal) * 100;
+  const remainingPercentage = 100 - donatedPercentage;
+
+  const xValues = ["Donated", "Remaining"];
+  const yValues = [donatedPercentage, remainingPercentage];
+  const barColors = ["#1100FF", "#FF0011"];
+
+  const myChart = new Chart(ctx, {
+    type: "pie", 
+    data: {
+      labels: xValues,
+      datasets: [{
+        backgroundColor: barColors,
+        data: yValues
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: "Donation Goal Progress"
+      },
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            var label = data.labels[tooltipItem.index] || '';
+            if (label) {
+              label += ': ';
+            }
+            label += Math.round(data.datasets[0].data[tooltipItem.index]) + '%';
+            return label;
+          }
         }
-        else {
-          alert("No data found");
-        }
-      }).catch ((error) => {
-        alert("Error: " + error)
-      }); */
-    
-    
-    
+      }
+    }
+  });
+}
+async function setupChart() {
+  try {
+    const totalDonated = await fetchAllDonations();
+    // Use totalDonated to set up your chart here
+    createChart(totalDonated);
+  } catch (error) {
+    console.error("Error in setting up chart: ", error);
+    // Handle any errors here
+  }
+}
+
+
+
