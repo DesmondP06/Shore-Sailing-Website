@@ -27,6 +27,9 @@ const auth  = getAuth();
 // Return an instance of the database associated with your app
 const db = getDatabase(app) 
 
+// Firebase parameter for getting data
+const dbref = ref(db); 
+
 
 // --------------------- Get reference values -----------------------------
 const signUpLink = document.getElementById('signUpLink');
@@ -60,62 +63,12 @@ function getUsername() {
         removeEvent.href = 'events.html';
     }
 
-/*    
-// Boolean for whether user has signed up for event or not
-let signedUp = false;
 
-// When Sign Up button clicked, this function runs
-document.getElementById("signUpLink").onclick = async function(){
-  await get(child(dbref, '/users/' + currentUser.uid + '/accountInfo' + '/eventBool'))
-  .then((snapshot) => {
-    
-    signedUp = snapshot.val();
-    
-  })
-  .catch((error) => {
-    alert(error);
-  })
-  // If user is not signed up, add the event to database
-  if (!signedUp){
-    set(ref(db, 'users/' + currentUser.uid + '/accountInfo' + '/events'), {
-      ['event1']: '0/13/24'
-    })
-    .then(() => {
-      //Data updated successfully
-      alert("Successfully signed up for event");
-      document.getElementById("signUpLink").innerText = 'Remove Event';
-      signedUp = true;
-    })
-    .catch((error) => {
-      // Update failed
-      alert(error)
-    }),
-    set(ref(db, 'users/' + currentUser.uid + '/accountInfo'), {
-      'eventBool': true
-    })
-  }
-  // If user is signed up, remove event from database
-  else {
-    remove(ref(db, 'users/' + currentUser.uid + '/accountInfo' + '/events/' + 'event1'))
-    .then(() => {
-      alert("Event removed successfully");
-      signUpLink.innerText = 'Sign Up';
-      signedUp = false;
-    })
-    .catch((error) => {
-      alert(error);
-    }),
-    set(ref(db, 'users/' + currentUser.uid + '/accountInfo'), {
-      'eventBool': false
-    })
-  }
-}
-*/
 
 // If user signs up for event, add event date to database
 document.getElementById("signUpLink").onclick = function(){
   set(ref(db, 'users/' + currentUser.uid + '/accountInfo' + '/events'), {
-    ['event1']: '0/13/24'
+    ['event1']: '1/13/24'
   })
 }
 
@@ -123,3 +76,19 @@ document.getElementById("signUpLink").onclick = function(){
 document.getElementById("removeEvent").onclick = function(){
   remove(ref(db, 'users/' + currentUser.uid + '/accountInfo' + '/events/' + 'event1'))
 }
+
+window.onload = function(){
+  get(child(dbref, '/users/' + currentUser.uid + '/accountInfo/events'))
+  .then((snapshot) => {
+    if (snapshot.exists()){
+      document.getElementById('signedUpEventsCard').innerText = `
+      Sailing Day
+      Date: ${snapshot.val()}
+      `;
+    }
+    else {
+
+    }
+})
+}
+
