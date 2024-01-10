@@ -28,6 +28,8 @@ const auth  = getAuth();
 //Return an instance of the database associated with your app
 const db = getDatabase(app) 
 
+// Firebase parameter for getting data
+const dbref = ref(db); 
 
 // ------------------------- Get reference values -------------------------
 let donateButton = document.getElementById("donate_button") // Donate with paypal.me button
@@ -87,6 +89,25 @@ function getUsername() {
     }  
       // Fetch all donation records from all users and print to console
       fetchAllDonations();
+
+      // Searches for event in database for Events page
+      // If event exists, insert it into Your Events modal in HTML
+      // If not, tell user that they aren't signed up for any events
+      get(child(dbref, '/users/' + currentUser.uid + '/accountInfo/events/eventName'))
+      .then((snapshot) => {
+        if (snapshot.exists()){
+          document.getElementById('signedUpEventsCard').innerText = `
+          Name: ${snapshot.val()}`;
+          get(child(dbref, '/users/' + currentUser.uid + '/accountInfo/events/eventDate'))
+          .then((snapshot) => {
+            document.getElementById('signedUpEventsCard').innerText += `
+            Date: ${snapshot.val()}`;
+          })
+        }
+        else {
+          document.getElementById('signedUpEventsCard').innerText = `You aren't signed up for any events`;
+        }
+    })
     }
 
     // Function to sign out the current user
