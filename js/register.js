@@ -67,7 +67,7 @@ document.getElementById('submitData').onclick = function(){
     })
     .then(() => {
       //Data saved successfully
-      alert("User successfully created")
+      alert("User successfully created. Please sign in.")
       document.getElementById("accountCreationContainer").classList.remove("right-panel-active");
     })
     .catch((error) => {
